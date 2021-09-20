@@ -12,7 +12,7 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: ba5e0fccfdb7cd278cc0ae57dc03da1e17b51577
+source-git-commit: 78d6cafa720b41bd638c2ef723b2d4a2def19cd5
 workflow-type: tm+mt
 source-wordcount: '998'
 ht-degree: 40%
@@ -45,7 +45,7 @@ ht-degree: 40%
 
 ![試用版請求表格](images/trial-land.png)
 
-在一個工作天內，Adobe Sign入門專家會為您的帳戶 （Adobe Sign） 規定 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
+在一個工作天內，Adobe Sign入門專家會將您的帳戶 （Adobe Sign 中） 規定為 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
 
 ![Adobe Sign 傳送的歡迎電子郵件](images/welcome-email-2020.png)
 
@@ -55,7 +55,7 @@ ht-degree: 40%
 
 ## 產生整合金鑰 {#generate-an-integration-key}
 
-對於新的安裝，您需要在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證彼此 [!DNL Workday] 信任及分享內容的Adobe Sign與環境。
+若要進行新安裝，您需要在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證Adobe Sign與 [!DNL Workday] 環境，以便彼此信任及共用內容。
 
 若要在 Adobe Sign 中產生整合金鑰：
 
@@ -113,11 +113,11 @@ ht-degree: 40%
 
 1. 提供下列四個欄位的資訊：
 
-   * **[!UICONTROL Adobe Document Cloud確認]** ：整合的修正文字辨識。
+   * **[!UICONTROL Adobe Document Cloud承認]** ：整合的修正文字辨識。
 
    * **[!UICONTROL Adobe Document Cloud API金鑰]** ：安裝整合金鑰的位置
 
-   * **[!UICONTROL Adobe Document Cloud寄件者電子郵件地址]** ：Adobe Sign中群組層級管理員的電子郵件地址
+   * **[!UICONTROL Adobe Document Cloud寄件者]** 電子郵件地址：Adobe Sign中群組層級管理員的電子郵件地址
 
    * **[!UICONTROL 「檔已取消」時移除需要電子簽名的檔]** ：如果檔已取消，可選擇性設定將檔從簽署週期中移除 [!DNL Workday] 。
 
@@ -131,7 +131,7 @@ ht-degree: 40%
 
    ![整合金鑰欄位和金鑰持有者電子郵件欄位](images/bp-filled-small.png)
 
-Adobe Sign功能現在可以新增到任何業務流程中，方法是新增「 [!UICONTROL  審核檔」步驟 ] ，並將其設為 **[!UICONTROL 使用]** eSign，方法是Adobe做為電子簽名類型。
+Adobe Sign功能現在可以新增到任何業務流程中，方法是新增「 [!UICONTROL  審核檔」步驟 ] ，並將其設為透過 **[!UICONTROL Adobe]** 作為電子簽名類型來使用 eSign。
 
 ### 設定「審核檔」步驟 {#configure-the-review-document-step}
 
@@ -139,7 +139,7 @@ Adobe Sign功能現在可以新增到任何業務流程中，方法是新增「 
 
 唯一能透過「審核檔」步驟使用Adobe Sign，是能夠將簽署者群組序列化。 簽署者群組可讓您指定依序登入的角色型群組。 Adobe Sign不支援平行簽署群組。
 
-如需設定「審核檔」步驟的協助，請參閱 [ 快速入門手冊 ](https://adobe.com//go/adobesign_workday_quick_start) {target=&quot;_blank}。
+如需設定「審核檔」步驟的協助，請參閱 [ 快速入門手冊 ](https://adobe.com//go/adobesign_workday_quick_start) {target=&quot;_blank}」。
 
 ## 支援 {#support}
 
@@ -163,6 +163,6 @@ Adobe Sign 客戶應連絡其 Customer Success Manager (CSM) 以取得支援。�
 
 * [新增 Adobe Text 標籤至文件](https://adobe.com/go/adobesign_text_tag_guide)
 
-* [檢閱文件設定和範例](https://www.adobe.com/go/adobesign_workday_quick_start)
+* [檢閱文件設定和範例](https://www.adobe.com//go/adobesign_workday_quick_start)
 
 [**連絡 Adobe Sign 支援人員**](https://adobe.com/go/adobesign-support-center_tw)
