@@ -12,9 +12,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 8f12b524-2123-45d4-98d5-b2b23580a5ea
-source-git-commit: d462ccf41fa5483cfa02f5eaf154c23f26157a1e
+source-git-commit: ba5e0fccfdb7cd278cc0ae57dc03da1e17b51577
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1133'
 ht-degree: 24%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 24%
 
 ## 概覽 {#overview}
 
-本檔說明如何將Adobe Sign整合至 [!DNL Workday] 租使用者。 若要在應用程式內使用 [!DNL Workday] Adobe Sign，您需要瞭解如何建立和修改 [!DNL Workday] 專案，例如：
+本檔說明如何將Adobe Sign整合至 [!DNL Workday] 租使用者。 若要在應用程式內使用 [!DNL Workday] Adobe Sign，您需要瞭解如何建立和修改專案， [!DNL Workday] 例如：
 
 * 業務流程框架
 * 租使用者設定和設定
@@ -35,13 +35,13 @@ ht-degree: 24%
 
 * 在 Adobe Sign 中啟用您的管理帳戶 （僅限新客戶）
 * 在Adobe Sign中設定群組以保持 [!DNL Workday] 整合使用者
-* 建立 OAuth 和 [!DNL Workday] Adobe Sign
+* 建立 OAuth 關係 [!DNL Workday] 與Adobe Sign
 
 ## 啟用您的Adobe Sign帳戶 {#activating-your-adobe-sign-account}
 
-已建立帳戶的現有客戶可以跳到「 [ 設定  [!DNL Workday]](#config) Adobe Sign」主題。
+已建立帳戶的現有客戶可以跳至「 [ 設定  [!DNL Workday]](#config) Adobe Sign」主題。
 
-對於第一次使用Adobe Sign並且沒有現有的登入帳戶的客戶，Adobe入門專家會為您的帳戶 （在Adobe Sign中） 規定 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
+對於第一次Adobe Sign且沒有現有的登入帳戶的客戶，Adobe入門專家會為您的帳戶 （Adobe Sign） 提供下列資訊 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
 
 ![Adobe Sign 歡迎電子郵件影像](images/welcome-email-2020.png)
 
@@ -51,7 +51,7 @@ ht-degree: 24%
 
 ## 設定 Adobe Sign [!DNL Workday] {#config}
 
-若要設定 [!DNL Workday] Adobe Sign，您必須在Adobe Sign系統中產生下列兩個專用物件：
+若要設定 [!DNL Workday] Adobe Sign，您必須在 Adobe Sign 系統中產生以下兩個專用物件：
 
 * **[!DNL Workday]群組** ： [!DNL Workday] 需要Adobe Sign帳戶內的專用「群組」才能啟用整合功能。Adobe Sign群組僅用來控制 [!DNL Workday] Adobe Sign的使用方式。 任何其他可能的使用方式，例如 Salesforce.com 或 Arriba 則不會受到影響。 群組會隱藏電子郵件通知 [!DNL Workday] ，好讓 [!DNL Workday] 使用者只會在其 [!DNL Workday] 收件匣內收到通知。
 
@@ -113,7 +113,7 @@ ht-degree: 24%
 
 >[!NOTE]
 >
->Adobe Sign是整個 [!DNL Workday] 環境的Adobe Document Cloud。
+>Adobe Sign是整個環境中Adobe Document Cloud。 [!DNL Workday]
 
 建立信任關係的方式：
 
@@ -123,7 +123,7 @@ ht-degree: 24%
 
    ![](images/esignature_configurations.png)
 
-1. 按一下 **[!UICONTROL 「使用 Adobe 進行驗證]** 」。
+1. 按一下 **[!UICONTROL 「使用 Adobe 驗證]** 」。
 
    這會啟動 OAuth2.0 驗證順序。
 
@@ -134,7 +134,7 @@ ht-degree: 24%
 >
 >請先確認您已完全登出任何其他Adobe Sign例項，再繼續進行。
 
-連線後，Adobe設定的啟用核取方塊就會設定完成，您就可以開始使用 [!DNL Workday] Adobe Sign。
+連線後，會設定啟用 Adobe 設定的核取方塊，您就可以開始使用 [!DNL Workday] Adobe Sign。
 
 ### 設定「審核檔」步驟 {#configure-review}
 
@@ -144,11 +144,11 @@ ht-degree: 24%
 * 在同一個業務流程中由「產生檔」步驟產生的檔
 * 使用報告建立的格式化報告 [!DNL Workday] Designer
 
-您可以新增具有 [ 「Adobe文字標籤」的任何檔 ](https://adobe.com/go/adobesign_text_tag_guide_tw) ，以控制「簽署」特定元件Adobe外觀和位置。 文件來源必須在業務流程定義中指定。您無法在執行業務流程時上傳隨選文件。
+您可以新增具有 [ Adobe 文字標籤的任何檔 ](https://adobe.com/go/adobesign_text_tag_guide_tw) ，以控制「簽署特定元件」Adobe的外觀和位置。 文件來源必須在業務流程定義中指定。您無法在執行業務流程時上傳隨選文件。
 
-唯一能透過「審核檔步驟」使用Adobe Sign，才能將簽署者群組序列化。 此優勢可讓您指定以角色為基礎的群組，依序完成簽署作業。Adobe Sign不支援平行簽署群組。
+唯一能透過「審核檔」步驟使用Adobe Sign，是能夠將簽署者群組序列化。 此優勢可讓您指定以角色為基礎的群組，依序完成簽署作業。Adobe Sign不支援平行簽署群組。
 
-如需設定「審核檔」步驟的協助，請參閱 [ 快速入門手冊 ](https://adobe.com//go/adobesign_workday_quick_start) {target=&quot;_blank}。
+如需設定「審核檔」步驟的協助，請參閱 [ 快速入門手冊 ](https://adobe.com//go/adobesign_workday_quick_start) {target=&quot;_blank&quot;}。
 
 ## 支援 {#support}
 
@@ -170,7 +170,7 @@ Adobe Sign 是整合合作夥伴，同時也是當整合無法取得簽名，或
 Adobe Sign 客戶應連絡其 Customer Success Manager (CSM) 以取得支援。或是以電話連絡 Adobe Technical Support：輸入 1-866-318-4100，等候電話語音提供產品清單，然後依序輸入 4 和 2 (依提示操作)。
 
 * [將Adobe文字標籤新增至檔](https://adobe.com/go/adobesign_text_tag_guide)
-* [檢閱檔設定和範例 ](https://experienceleague.adobe.com/docs/dc-sign-integrations/using/workday/quick-start.html?lang=en) {target=&quot;_blank&quot;}
+* [檢閱檔設定和範例](https://www.adobe.com/go/adobesign_workday_quick_start)
 
 ## 常見問題 {#faq}
 

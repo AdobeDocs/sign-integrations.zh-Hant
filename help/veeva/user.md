@@ -20,15 +20,15 @@ ht-degree: 3%
 
 [**連絡 Adobe Sign 支援人員**](https://adobe.com/go/adobesign-support-center_tw)
 
-本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用Adobe Sign [!DNL Veeva Vault] 整合來傳送合約。
+本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用 Adobe Sign [!DNL Veeva Vault] 整合來傳送合約。
 
 ## 概覽 {#overview}
 
-Adobe Sign整合 [!DNL Veeva Vault] 有助於取得簽名或核准流程，以利任何需要合法簽名或可稽核檔處理的檔。
+Adobe Sign整合 [!DNL Veeva Vault] 有助於取得簽名或核准任何需要合法簽名或可稽核檔處理的檔的程式。
 
 傳送檔以供簽署的整體程式類似于傳送電子郵件，因此大多數使用者都容易採用。
 
-Adobe Sign與簡化程式的整合 [!DNL Veeva Vault] ，並加快您的檔和簽名工作流程。 使用整合工作流程，您可以：
+Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽名工作流程。 使用整合工作流程，您可以：
 
 * 節省在縮圖郵件、隔夜和傳真上花費的時間和資源。
 * 傳送合約以索取電子簽名或核准 [!DNL Veeva Vault] ，存取即時合約記錄，並檢視已儲存的合約。
@@ -98,9 +98,9 @@ Adobe Sign與簡化程式的整合 [!DNL Veeva Vault] ，並加快您的檔和�
 
    ![](images/in-adobe-signing.png)
 
-1. 在Adobe Sign擷取並完成所有簽名後，「保存庫中的狀態」檔會變更為「 [!UICONTROL  已核准 ] 」。
+1. 在Adobe Sign擷取並完成所有簽名後，保存庫中的檔「狀態」會變更為「 [!UICONTROL  已核准 ] 」。
 
-1. 選 **[!UICONTROL 取「檔檔案」]** 選項，然後展開「 **[!UICONTROL 保存庫」中的「轉譯」]** 區段。 一旦檔處於核准狀態，就會自動建立名為「Adobe Sign轉譯」的新轉譯。
+1. 選 **[!UICONTROL 取「檔檔案」]** 選項，然後展開「 **[!UICONTROL 保存庫」中的「轉譯」]** 區段。 檔處於核准狀態後，系統會自動建立名為「Adobe Sign轉譯」的新轉譯。
 
    ![](images/document-files.png)
 
@@ -114,11 +114,11 @@ Adobe Sign與簡化程式的整合 [!DNL Veeva Vault] ，並加快您的檔和�
 
    ![](images/vault-home.png)
 
-1. 選取「 **[!UICONTROL 資料庫」]** 索引標籤，然後選取檔。 檔狀態可以是： [!UICONTROL  在「草稿Adobe Sign ] 中， [!UICONTROL  于「Adobe Sign撰寫」或「 ] [!UICONTROL  在Adobe中簽署 ] 」。
+1. 選取「 **[!UICONTROL 資料庫」]** 索引標籤，然後選取檔。 檔狀態可以是： [!UICONTROL  在「草稿Adobe Sign ] [!UICONTROL  中，于「Adobe Sign撰寫」或「 ] [!UICONTROL  在Adobe中簽署 ] 」。
 
    ![](images/document-adobe-sign-authoring.png)
 
-1. 選 **[!UICONTROL 取「取消]** Adobe Sign」。
+1. 選取 **[!UICONTROL 「取消]** Adobe Sign」。
 
    ![](images/cancel-document.png)
 
