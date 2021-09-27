@@ -12,9 +12,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: 3f826e88969562a69279a29dfdd98775ec01fd51
+source-git-commit: c25be043b404e9bf7a90496d4e47c1f22069313d
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '995'
 ht-degree: 39%
 
 ---
@@ -23,13 +23,13 @@ ht-degree: 39%
 
 ## 概覽 {#overview}
 
-本檔旨在協助 [!DNL Workday] 客戶瞭解如何透過 Adobe Sign 啟用試用帳戶，然後將其整合至 [!DNL Workday] 租使用者。 若要在其中使用 [!DNL Workday] Adobe Sign，您需要瞭解如何建立和修改專案， [!DNL Workday] 例如：
+本檔旨在協助 [!DNL Workday] 客戶瞭解如何使用 Adobe Sign 啟用試用帳戶，然後將其整合至 [!DNL Workday] 租使用者。 若要在其中使用 [!DNL Workday] Adobe Sign，您必須知道如何建立和修改專案， [!DNL Workday] 例如：
 
 * 業務流程框架
 * 租使用者設定和設定
 * 報告與 [!DNL Workday] Studio 整合
 
-**注意** ：如果您有現有的 Adobe Sign 帳戶，則無需開始試用。 您可以聯絡客戶成功經理以請求 [!DNL Workday] 整合。
+**注意** ：如果您有現有的 Adobe Sign 帳戶，就不必開始試用。 您可以聯絡客戶成功經理以請求 [!DNL Workday] 整合。
 
 以下是完整整合的高階步驟：
 
@@ -41,7 +41,7 @@ ht-degree: 39%
 
 若要申請 30 天的Adobe Sign試用版，您必須填寫此 [ 註冊表單 ](https://land.echosign.com/esign-trial-workday-registration.html) 。
 
-**注意** ：我們強烈建議您使用有效功能的電子郵件地址來建立試用版，而不是臨時電子郵件。 您必須存取此電子郵件才能驗證帳戶，因此位址必須有效。
+**注意** ：我們強烈建議您使用有效功能的電子郵件地址來建立試用版，而不是臨時電子郵件。 您必須存取此電子郵件才能驗證帳戶，因此該位址必須有效。
 
 ![試用版請求表格](images/trial-land.png)
 
@@ -49,13 +49,13 @@ ht-degree: 39%
 
 ![Adobe Sign 傳送的歡迎電子郵件](images/welcome-email-2020.png)
 
-請依照電子郵件中的指示初始化您的帳戶，並存取您的Adobe Sign  首頁。
+若要初始化您的帳戶並存取Adobe Sign  首頁，請依照電子郵件中的指示操作。
 
 ![Adobe Sign儀表板](images/classic-home.png)
 
 ## 產生整合金鑰 {#generate-an-integration-key}
 
-若要進行新安裝，您需要在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證Adobe Sign和 [!DNL Workday] 環境，以便彼此信任及共用內容。
+對於新的安裝，您必須在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證Adobe Sign和 [!DNL Workday] 環境，以便彼此信任及共用內容。
 
 若要在 Adobe Sign 中產生整合金鑰：
 
@@ -115,7 +115,7 @@ ht-degree: 39%
 
    * **[!UICONTROL Adobe Document Cloud確認]** ：整合的修正文字辨識。
 
-   * **[!UICONTROL Adobe Document Cloud API鍵]** ：安裝整合金鑰的位置
+   * **[!UICONTROL Adobe Document Cloud API金鑰]** ：安裝整合金鑰的位置
 
    * **[!UICONTROL Adobe Document Cloud寄件者]** 電子郵件地址：Adobe Sign中群組層級管理員的電子郵件地址
 
@@ -165,4 +165,4 @@ Adobe Sign 客戶應連絡其 Customer Success Manager (CSM) 以取得支援。�
 
 * [審核檔設定和範例 ](https://www.adobe.com//go/adobesign_workday_quick_start) {target=&quot;_blank&quot;}
 
-[**連絡 Adobe Sign 支援人員**](https://adobe.com/go/adobesign-support-center_tw)
+[**連絡 Adobe Sign 支援人員**](https://www.adobe.com/go/adobesign-support-center)
