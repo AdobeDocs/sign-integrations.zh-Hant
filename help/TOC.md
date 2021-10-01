@@ -2,7 +2,7 @@
 user-guide-title: Adobe Sign整合指南
 index: true
 role: Leader
-source-git-commit: 924813403d8e13f816347dd548a68a16d78d866e
+source-git-commit: a262c45fa21bf5d7d0536588d2a621c50d1e8fa0
 workflow-type: tm+mt
 source-wordcount: '64'
 ht-degree: 35%
@@ -26,5 +26,5 @@ ht-degree: 35%
    + [安裝指南](veeva/install.md)
    + [使用者指南](veeva/user.md)
 + Adobe Sign for NetSuite {#netsuite}
-+ [Adobe Sign for NetSuite 發行說明](release-notes.md)
++ [Adobe Sign for NetSuite 發行說明](netsuite/release-notes.md)
 + [Adobe Sign For NetSuite 安裝指南](netsuite/install.md)
