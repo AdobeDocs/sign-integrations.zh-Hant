@@ -24,7 +24,7 @@ ht-degree: 31%
 
 ## 概覽 {#overview}
 
-本檔旨在協助 [!DNL Workday] 管理員瞭解如何自訂 [!DNL Workday] 業務流程，以納入Adobe Sign以取得電子簽名。 若要在應用程式內使用 [!DNL Workday] Adobe Sign，您必須瞭解如何建立和修改 [!DNL Workday] 專案，例如：
+本檔旨在協助 [!DNL Workday] 管理員瞭解如何自訂 [!DNL Workday] 業務流程，以納入Adobe Sign以取得電子簽名。 若要在其中使用 [!DNL Workday] Adobe Sign，您必須知道如何建立和修改專案， [!DNL Workday] 例如：
 
 * [!UICONTROL 業務流程框架]
 * 租使用者設定和設定
@@ -36,17 +36,17 @@ ht-degree: 31%
 
 ## [!UICONTROL 「審核文件」步驟] {#review-document-step}
 
-Adobe Sign會 [!DNL Workday] 透過「 [!UICONTROL  審核檔」步驟顯示 ] ，您可以在其中新增到 400 多個業務流程中的任何一個 [!DNL Workday] ，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分派檔和工作 ] 、退約 [!UICONTROL  補償 ] 等。
+Adobe Sign [!DNL Workday] 會透過「 [!UICONTROL  審核檔」步驟公開 ] ，您可以在其中新增到 400 多個業務流程中的任何一個 [!DNL Workday] ，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分派檔和工作 ] 、退約 [!UICONTROL  補償 ] 等。
 
 您可參閱「 [[!DNL Workday]  審核檔步驟」上的社群文章  ](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg) 。
 
-「 [!UICONTROL [!UICONTROL  審核檔步驟」與 ] 含 Adobe Sign 的 ] 可計費交易之間有一對一關聯性。 您可以在單一「 [!UICONTROL  審核檔」步驟中合併多份檔 ] ，這些檔會顯示為單一套件以供簽署。
+「審核檔步驟」與含 Adobe Sign [!UICONTROL  的 ] 可計費交易之間有一對一關聯性。 您可以在單一「 [!UICONTROL  審核檔」步驟中合併多份檔 ] ，這些檔會顯示為單一套件以供簽署。
 
 **注意** ：只能在 *特定「* 審核檔」步驟中參考單一「動態 [!UICONTROL  檔 ] 」。
 
 若要定義功能性 [!UICONTROL  「審核檔」步驟 ] ：
 
-1. 插入「 [!UICONTROL  審核檔」步驟 ] 。
+1. 插入 [!UICONTROL  「審核檔」步驟 ] 。
 1. 指定可依「審核檔」步驟操作的群組 （角色  ）。
 
 ![業務流程步驟](images/insert-review-doc-steptornm-575.png)
@@ -70,7 +70,7 @@ Adobe Sign會 [!DNL Workday] 透過「 [!UICONTROL  審核檔」步驟顯示 ] �
 
 1. 您也可以選擇新增「重新導向使用者」，以擷取「拒絕簽署」動作。 當使用者拒絕時，請 [!DNL Workday] 將檔重新傳送至已設定的安全群組以供審核。
 
-從「審核檔步驟」的相關動作選單  中，選取「 **[!UICONTROL 業務流程]** **[!UICONTROL 」>「維持重新導向]** 」。 接著，選取下列其中一項：
+從「審核檔步驟」的相關動作選單  中，選取 **[!UICONTROL 「業務流程]** **[!UICONTROL 」>「維持重新導向]** 」。 接著，選取下列其中一項：
 
 * **[!UICONTROL 返回]** ：讓安全群組成員退回業務流程的上一步。 業務流程會從該步驟重新開始。
 * **[!UICONTROL 移至下]** 一步：讓安全群組成員可以前進到業務流程的下一步。
