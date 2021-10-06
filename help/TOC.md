@@ -2,10 +2,10 @@
 user-guide-title: Adobe Sign整合指南
 index: true
 role: Leader
-source-git-commit: 5ac9dc27dcdb6cab19281e6aafd4ea0524cc01d6
+source-git-commit: 27610773d47a947dbfa1deb3f594667406a9aefb
 workflow-type: tm+mt
-source-wordcount: '48'
-ht-degree: 27%
+source-wordcount: '70'
+ht-degree: 35%
 
 ---
 
@@ -25,4 +25,9 @@ ht-degree: 27%
 + Veeva Vault 的Adobe Sign {#veeva}
    + [安裝指南](veeva/install.md)
    + [使用者指南](veeva/user.md)
++ Adobe Sign for NetSuite {#netsuite}
+   + [Adobe Sign for NetSuite 發行說明](netsuite/release-notes.md)
+   + [Adobe Sign for NetSuite 安裝指南](netsuite/install.md)
++ 一Adobe Sign的並排定滑鼠 {#sugarcrm}
+   + [安裝指南](sugarcrm/install.md)
 
