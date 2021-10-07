@@ -7,9 +7,9 @@ type: Documentation
 solution: Adobe Sign
 role: User, Developer
 topic: Integrations
-source-git-commit: 27610773d47a947dbfa1deb3f594667406a9aefb
+source-git-commit: 40fe3649aab0499ce8e5fbd1b11308ffbd759a44
 workflow-type: tm+mt
-source-wordcount: '2336'
+source-wordcount: '2354'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合約解決方案， [!DNL SugarCRM] 可針對電子簽名和傳真簽名提供電子簽名自動化。 使用者可以直接從 這些帳戶和產品中傳送合約、檢視合約記錄，以及儲存包含相關帳戶、連絡人、報價等的 eSigned 合約。Adobe [!DNL EchoSign] [!DNL SugarCRM] 適用于所有受支援的 3.3 - 6.7 版，適用于隨選或內部部署解決方案。
 
-本檔是 [!DNL SugarCRM] 管理員瞭解如何安裝和設定增效模組Adobe [!DNL EchoSign] [!DNL SugarCRM] 指南。
+本檔為 [!DNL SugarCRM] 管理員學習如何安裝和設定增效模組Adobe [!DNL EchoSign] [!DNL SugarCRM] 指南。
 
 ## 安裝此增效模組 {#install-plugin}
 
-1. 從「格外引標籤」清單中取得 [!DNL EchoSign] [!DNL SugarCRM]  封存檔案的 [ ](http://www.sugarexchange.com/product_details.php?product=1123) Adobe。
+1. 從「格外引標籤」清單中取得 [!DNL EchoSign] [!DNL SugarCRM]  封存檔案的Adobe [ ](http://www.sugarexchange.com/product_details.php?product=1123) 。
 1. 使用 [!DNL SugarCRM] 您的管理員帳戶登入。
 1. 前往 **[!UICONTROL 「管理]** 」> **[!UICONTROL 模組載入器]** 。
 
@@ -34,7 +34,7 @@ Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合
 1. 若要上傳外掛程式Adobe的封存檔案 [!DNL EchoSign] [!DNL SugarCRM] ，請選取 **[!UICONTROL 「流覽]** 」，然後選擇封存檔案，然後選取「 **[!UICONTROL 上傳]** 」。
 1. 上傳封存檔案後，選取「 **[!UICONTROL 安裝]** 」即可開始安裝。
 1. 檢閱條款與條件，然後選取「 **[!UICONTROL 接受]** > **[!UICONTROL 修訂]** 」。
-1. 如果外掛程式安裝成功，進度列會顯示 100% 成功。  如果進度列未達到 100%，請選取 **[!UICONTROL 「顯示記錄」]** 以查看在 100 度選單中發生的錯誤。
+1. 如果外掛程式安裝成功，進度列會顯示 100% 成功。  如果進度列未達到 100%，請選取 **[!UICONTROL 「顯示記錄」]** 以查看在 100%時發生小寫記錄檔時發生的錯誤。
 
    ![影像](images/display-log.png)
 
@@ -46,7 +46,7 @@ Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合
 
 ## 升級增效模組 {#upgrade-plugin}
 
-如果要將增效模組的Adobe更新 [!DNL EchoSign] [!DNL SugarCRM] 為較新版本，請先安裝該增效模組，而不需卸載舊版。升級增效模組後，前往 **[!UICONTROL 「管理]** > **[!UICONTROL 修復]** 」，然後選取 **[!UICONTROL 「快速修復和重建]** 」。
+如果您要將增效模組的Adobe更新 [!DNL EchoSign] [!DNL SugarCRM] 為較新版本，請先安裝該增效模組，而不需卸載舊版。升級增效模組後，前往 **[!UICONTROL 「管理]** > **[!UICONTROL 修復]** 」，然後選取 **[!UICONTROL 「快速修復和重建]** 」。
 
 **注意：** 如果您卸載先前的增效模組，請勿在卸載期間移除表格。 否則，您可能會遺失 [!DNL EchoSign] 合約資料。
 
@@ -70,7 +70,7 @@ Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合
    1. 將傳送按鈕新增至這些模組：選取是否要將「報價」 [!DNL EchoSign] 模組的主要動作包含「建立合約」按鈕/動作。
    1. 選 **[!UICONTROL 取「]** 儲存」以儲存設定。
 
-**注意：** 增效模組 [!DNL EchoSign] 的Adobe [!DNL SugarCRM] 需要 [ PHP SOAP 擴充功能 ](http://www.php.net/manual/en/book.soap.php) 。 若要啟用 SOAP 支援，請使用 enable-soap 設定 PHP。
+**注意：** 增效模組的Adobe [!DNL EchoSign] [!DNL SugarCRM] 需要 [ PHP SOAP 擴充功能 ](http://www.php.net/manual/en/book.soap.php) 。 若要啟用 SOAP 支援，請使用 enable-soap 設定 PHP。
 
 ## 取得合約更新 （ [!DNL SugarCRM] 適用于 6.3 版或更新版本） {#get-agreement-updates}
 
@@ -106,7 +106,7 @@ Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合
 
 若要將 EchoSign 合約新增至其他 [!DNL SugarCRM] 模組：
 
-1. 前往 **[!UICONTROL 管理]** > **** Studio。
+1. 前往 **[!UICONTROL 管理]** > Studio **** 。
 1. 從左欄資料夾樹狀結構中，選取新增合約的模組 [!DNL EchoSign] 。
 1. 選 **** 取「關係」> **[!UICONTROL 新增關係]** 。
 1. 從下拉式選單中，選取「類型為 **[!UICONTROL 一到多]** 」，將「模組」選取為 **[!UICONTROL 「EchoSign 合約]** 」。
@@ -149,7 +149,7 @@ Adobe [!DNL EchoSign] [!DNL SugarCRM] 是領先業界的電子簽名和網頁合
 
    1. **[!UICONTROL 名稱：]** 輸入合約的名稱。
    1. **[!UICONTROL 簽名類型：]** 選取檔接受的簽名類型。 這些選項包括電子簽名和傳真簽名。
-   1. **[!UICONTROL 我也需要簽署這份合約：]** 指示傳送者是否也需要簽署合約。
+   1. **[!UICONTROL 我也需要簽署此合約：]** 指示傳送者是否也需要簽署合約。
    1. **[!UICONTROL 簽名順序：]** 如果勾選了上一個「我也需要簽署此合約」選項，則也請選取傳送者和收件者應簽署的順序。
    1. **[!UICONTROL 提醒收件者簽署：]** 選取提醒收件者簽署檔的頻率。 選項為「每日」或「每週」。
    1. **[!UICONTROL 「簽署截止日期前天數」：]** 指定必須簽署合約的天數。
@@ -235,6 +235,10 @@ Adobe [!DNL EchoSign] 與引號直接整合 [!DNL SugarCRM] ，系統會自動�
 合約 [!UICONTROL  的「事件」 ] 子面板 [!DNL EchoSign] 會追蹤傳送以供簽署的合約狀態。 若要查看合約的最新更新 [!DNL EchoSign] ，請選取「 **[!UICONTROL 更新狀態]** 」。  只有在傳送合約以供簽署後，才能使用「更新狀態」按鈕。
 
 ![影像](images/update-cancel-status.png)
+
+傳送合約以索取簽名後，選取 **[!UICONTROL 「更新狀態」]** 以擷取最新狀態。
+
+![影像](images/events-subpanel.png)
 
 ### 傳送提醒 {#send-reminders}
 
