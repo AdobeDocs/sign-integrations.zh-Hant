@@ -32,11 +32,11 @@ ht-degree: 31%
 
 ## 在 中存取 Adobe Sign[!DNL Workday] {#access-adobe-sign}
 
-[!UICONTROL Adobe Sign電子簽名功能 ] 會顯示為  [!UICONTROL  「業務流程架構」（BPF） 中的「審核檔步驟」動作， ] 並會顯示為「分送檔工作」。
+[!UICONTROL Adobe Sign電子簽名功能 ] 會顯示為  [!UICONTROL  「業務流程架構」（BPF） 中的「審核檔步驟」動作， ] 並顯示為「分送檔工作」。
 
 ## [!UICONTROL 「審核文件」步驟] {#review-document-step}
 
-Adobe Sign [!DNL Workday] 會透過「 [!UICONTROL  審核檔」步驟公開 ] ，您可以在其中新增到 400 多個業務流程中的任何一個 [!DNL Workday] ，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分派檔和工作 ] 、退約 [!UICONTROL  補償 ] 等。
+Adobe Sign會 [!DNL Workday] 透過「 [!UICONTROL  審核檔」步驟公開 ] ，您可以在其中新增到 400 多個業務流程中的任何一個 [!DNL Workday] ，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分發檔和工作 ] 、退約 [!UICONTROL  補償 ] 等。
 
 您可參閱「 [[!DNL Workday]  審核檔步驟」上的社群文章  ](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg) 。
 
@@ -70,7 +70,7 @@ Adobe Sign [!DNL Workday] 會透過「 [!UICONTROL  審核檔」步驟公開 ] �
 
 1. 您也可以選擇新增「重新導向使用者」，以擷取「拒絕簽署」動作。 當使用者拒絕時，請 [!DNL Workday] 將檔重新傳送至已設定的安全群組以供審核。
 
-從「審核檔步驟」的相關動作選單  中，選取 **[!UICONTROL 「業務流程]** **[!UICONTROL 」>「維持重新導向]** 」。 接著，選取下列其中一項：
+從「審核檔步驟」的相關動作選單  中，選取「 **[!UICONTROL 業務流程]** **[!UICONTROL 」>「維持重新導向]** 」。 接著，選取下列其中一項：
 
 * **[!UICONTROL 返回]** ：讓安全群組成員退回業務流程的上一步。 業務流程會從該步驟重新開始。
 * **[!UICONTROL 移至下]** 一步：讓安全群組成員可以前進到業務流程的下一步。
@@ -120,7 +120,7 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
 在「 [!UICONTROL  審核檔」步驟中 ] ，系統會參考上一個步驟中的動態檔，並透過兩個簽署群組定義連續的簽名程式。
 
-以下說明的行為會先將動態產生的檔傳送給雇用經理，然後路由至應徵者。
+以下說明的行為會先將動態產生的檔傳送給雇用管理員，然後路由至應徵者。
 
 ![[!DNL Workday] 定義的簽署群組](images/configure-rd-stepsmaller-575.png)
 
@@ -154,11 +154,11 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
 ## 已簽署的檔 {#signed-documents}
 
-[!DNL Workday]簽署週期會透過Adobe Sign來隱藏所有電子郵件通知。使用者會在其 [!DNL Workday] 收件匣中得知待處理的動作。
+簽署 [!DNL Workday] 週期會透過Adobe Sign來隱藏所有電子郵件通知。 使用者會在其 [!DNL Workday] 收件匣中得知待處理的動作。
 
 一旦所有「簽名群組」簽署檔，已簽署檔的副本便會透過電子郵件分發給「簽名群組」的所有成員。
 
-若要抑制此行為，您可以聯絡 [!UICONTROL  您的 Adobe Sign Success Manager 或 Adobe Sign ] [ 支援小組 ](https://adobe.com/go/adobesign-support-center) 。
+若要抑制此行為，您可以聯絡 [!UICONTROL  您的Adobe Sign Success Manager ] 或 [ Adobe Sign 支援小組 ](https://adobe.com/go/adobesign-support-center) 。
 
 在內部 [!DNL Workday] ，您可以在完整程式記錄中存取已簽署的檔。 您可能會發現：
 

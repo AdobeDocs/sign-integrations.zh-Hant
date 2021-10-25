@@ -28,6 +28,6 @@ ht-degree: 35%
 + Adobe Sign for NetSuite {#netsuite}
    + [Adobe Sign for NetSuite 發行說明](netsuite/release-notes.md)
    + [Adobe Sign for NetSuite 安裝指南](netsuite/install.md)
-+ 一Adobe Sign的並排定滑鼠 {#sugarcrm}
++ 3200 年 11 月版 Adobe Sign {#sugarcrm}
    + [安裝指南](sugarcrm/install.md)
 
