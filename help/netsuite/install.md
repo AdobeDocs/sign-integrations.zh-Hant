@@ -8,7 +8,7 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: f8d0bc748872e675dc1c638eb4050efe9e3147ef
+source-git-commit: 7ded835b48519cba656f160e691c697c91e2c8d0
 workflow-type: tm+mt
 source-wordcount: '4870'
 ht-degree: 0%
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 ## 概覽 {#overview}
 
-Adobe Sign [!DNL NetSuite] 提供與 [!DNL NetSuite] 。 您可以使用Adobe Sign [!DNL NetSuite] 整合功能，將合約 （例如合約、報價和其他需要電子簽名的檔） 直接傳送給收件者 [!DNL NetSuite] 。 您可以從客戶、商機、報價和其他記錄建立和傳送Adobe Sign [!DNL NetSuite] 合約。 Adobe Sign更新合約 [!DNL NetSuite] 狀態，並在 [!DNL NetSuite] 合約完整執行後儲存相關記錄。 您可以檢視從產品內傳送所有合約 [!DNL NetSuite] 的記錄。
+Adobe Sign [!DNL NetSuite] 提供與 [!DNL NetSuite] 。 您可以使用Adobe Sign [!DNL NetSuite] 整合功能，將合約 （例如合約、報價和其他需要電子簽名的檔） 直接傳送給收件者 [!DNL NetSuite] 。 您可以從客戶、商機、報價和其他記錄建立及傳送Adobe Sign [!DNL NetSuite] 合約。 Adobe Sign更新合約 [!DNL NetSuite] 狀態，並在 [!DNL NetSuite] 合約完整執行後儲存相關記錄。 您可以檢視從產品內傳送所有合約 [!DNL NetSuite] 的記錄。
 
 如需詳細資訊，請參閱 [ Adobe Sign  [!DNL NetSuite]  以 ](https://experienceleague.adobe.com/docs/sign-integrations/using/netsuite/release-notes.html?lang=en) 取得版本資訊。
 
 ## 安裝套裝組合並設定 OAuth {#install}
 
-只有 [!DNL NetSuite] 管理員可以安裝或更新此套裝組合。 若要設定 OAuth， [!DNL NetSuite] 管理員必須具有管理員存取Adobe Sign。 在「生產」帳戶中安裝套件之前，您應該先在沙箱帳戶中安裝套件並加以測試 [!DNL NetSuite] 。
+只有 [!DNL NetSuite] 管理員可以安裝或更新此套裝組合。 若要設定 OAuth， [!DNL NetSuite] 管理員必須具有Adobe Sign的管理員存取權限。 在「生產」帳戶中安裝套件之前，您應該先在沙箱帳戶中安裝套件並加以測試 [!DNL NetSuite] 。
 
 如需 [ 測試的詳細資訊，請參閱建立Adobe Sign ](#createagreement) 合約。
 
@@ -39,11 +39,11 @@ Adobe Sign [!DNL NetSuite] 提供與 [!DNL NetSuite] 。 您可以使用Adobe Si
 
 1. 流覽至 [!UICONTROL **「Customization > SuiteBundler > Search &amp; Install**] Bundles」。
 
-1. 在 *「Search和安裝套件」頁面上* ，輸入 **** 「Adobe Sign」作為關鍵字，然後選 **[!UICONTROL 取]** 「Search」。
+1. 在 *「Search和安裝套件」* 頁面上，輸入 **** 「Adobe Sign」作為關鍵字，然後選 **[!UICONTROL 取]** 「Search」。
 
 1. 選取 **Adobe Sign** 組合名稱。
 
-   ![套件的Search](images/search-for-the-bundle.png)
+   ![套件套件的Search](images/search-for-the-bundle.png)
 
 1. 在「 *[!UICONTROL 套件詳細資料」]* 頁面上，選取「 **[!UICONTROL 安裝]** 」。
 1. 在 *[!UICONTROL 「預覽套件安裝]* 」頁面中，選取「 **[!UICONTROL 安裝套件]** 」。
@@ -60,33 +60,33 @@ Adobe Sign [!DNL NetSuite] 提供與 [!DNL NetSuite] 。 您可以使用Adobe Si
 
 1. 若要顯示更新的狀態，請選取 **[!UICONTROL 「重新整理]** 」。
 
-   套裝安裝完成後，「已安裝組合 *」[!DNL NetSuite]* 頁面Adobe Sign顯示 ** 。
+   套裝安裝完成後 *，Adobe Sign[!DNL NetSuite]* 會顯示在「 *[!UICONTROL 已安裝的套裝組合」]* 頁面。
 
    ![已安裝的套件組合](images/installed-bundles.png)
 
 1. 如果您已是Adobe Sign客戶帳戶，請在  [ 安裝或升級後，按照「設定 OAuth」的步驟進行 ](#oauth) 。
 
-   如果您沒有Adobe Sign帳戶，可以 [ 註冊企業試用版 ] （HTTPs://esign.adobe.com/adobe-sign- [!DNL NetSuite] -trial-registration.html） 帳戶以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
+   如果您沒有Adobe Sign帳戶，您可以 [ 註冊企業試用版 ] （HTTPs://esign.adobe.com/adobe-sign- [!DNL NetSuite] -trial-registration.html） 帳戶以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
 
 ## 安裝或升級後設定 OAuth {#oauth}
 
 Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite] 。
 
-此通訊協定授權您已安裝的 [!DNL NetSuite] 套件可以與Adobe Sign通訊，而無需要求您的密碼。 敏感資訊不會直接在應用程式之間共用，因此降低了帳戶遭盜用的可能性。
+此通訊協定授權您已安裝的 [!DNL NetSuite] 套件可以與 Adobe Sign 通訊，而無需要求您的密碼。 敏感資訊不會直接在應用程式之間共用，因此降低了帳戶遭盜用的可能性。
 
 此驗證不會影響您的實作，但您必須在安裝或升級生產或沙箱帳戶中的套件後，進行一次性設定。
 
-設定 [!DNL NetSuite] OAuth 的管理員也必須擁有帳戶層級管理員的存取權，才能Adobe Sign。
+設定 [!DNL NetSuite] OAuth 的管理員也必須具有帳戶層級管理員存取Adobe Sign。
 
 1. 在 [!DNL NetSuite] 「設定」清單頁面 *中，流覽至* 「Adobe Sign」。
 
-1. Search Adobe Sign使用頁首中的Search欄位來設定 **** （自訂記錄類型）。
+1. Search Adobe Sign **** 在頁首中使用「Search」欄位來設定 （自訂記錄類型）。
 
-1. 在「Search結果」頁面中，選取 **** *「Adobe Sign設定」記錄的「檢視* 」。
+1. 在「Search結果」頁面中，選 **取** *「Adobe Sign設定」記錄的「檢視* 」。
 
    ![搜尋 Adobe Sign](images/search-for-adobesignconfig.png)
 
-1. 在「Adobe Sign設定清單」頁面中，選取 **** *「使用 OAuth 存取 Adobe Sign API」記錄的「檢視* 」。
+1. 在「Adobe Sign設定清單」頁面上，選取 **** *「使用 OAuth 存取 Adobe Sign API」記錄的「檢視* 」。
 
    ![Adobe Sign設定清單](images/adobe-sign-configlist.png)
 
@@ -102,7 +102,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    ![允許存取](images/confirm-access.png)
 
-1. 授權完成後，系統會將您重新導向至 Adobe Sign Config 頁面 [!DNL NetSuite] ，如下所示。
+1. 授權完成後，系統會將您重新導向至 Adobe Sign Config 頁面 [!DNL NetSuite] （如下所示）。
 
    ![成功的 OAuth](images/successful-oauth.png)
 
@@ -127,7 +127,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
 ## 更新套件組合 （現有使用者）
 
-[!DNL NetSuite] 套件更新會定期由 Adobe 發佈。 Adobe Sign整合的現有使用者 [!DNL NetSuite] 可以更新至最新的套件組合。
+[!DNL NetSuite] 套件更新會定期由 Adobe 發佈。 Adobe Sign整合的現有使用者 [!DNL NetSuite] 可以更新至最新的套裝組合。
 
 >[!CAUTION]
 >
@@ -141,11 +141,11 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
 若要決定要簽署的合約數量：
 
-1. 流覽至 **[!UICONTROL 「自訂>清單、記錄和檔案>記錄類型]** 」，然後找到 *「合約Adobe Sign」。*
+1. 流覽至 **[!UICONTROL 「自訂>清單、記錄和檔案>記錄類型]** 」，然後找到 *Adobe Sign合約」。*
 
    或在搜尋列中搜尋Adobe Sign合約。
 
-1. 若 [!UICONTROL  是「合約」記錄 ] Adobe Sign，請選 **[!UICONTROL 取]** 「Search」。
+1. 若是 [!UICONTROL  「合約Adobe Sign ] 記錄，請選 **[!UICONTROL 取「Search」。]**
 
    ![Search記錄類型](images/search-adobe-signagreements.png)
 
@@ -159,7 +159,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
 ### 更新套件組合 {#updating-the-bundle}
 
-1. 流覽至 **[!UICONTROL 「Customization > SuiteBundler > Search &amp;>清單]** 」，找到您目前的套件組合，如下所示。
+1. 流覽至 **[!UICONTROL 「Customization > SuiteBundler > Search &amp;> 清單]** 」，找到您目前的套件組合，如下所示。
 
    >[!NOTE]
    >
@@ -187,7 +187,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    >[!NOTE]
    >
-   >如果因為數份合約具有「傳出進行簽名」狀態而導致更新過程過長 ** ，您可以勾選「執行記錄」子索引標籤的 **** *「Adobe Sign套裝安裝* 」腳本，以決定更新的進度。 如 [ 需詳細資訊，請參閱判斷更新進度 ](#determineprogress) 。
+   >如果因為數份合約具有「傳出進行簽名」狀態而導致更新過程過長 ** ，您可以勾選「執行記錄」子索引標籤的 **** *「Adobe Sign套件安裝* 」腳本，以決定更新進度。 如 [ 需詳細資訊，請參閱判斷更新進度 ](#determineprogress) 。
 
    套裝更新完成後 *，Adobe Sign[!DNL NetSuite]* 會顯示在「 *已安裝的套裝組合」* 頁面上。
 
@@ -197,7 +197,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
 ### 設定自訂偏好設定  {#set-custom-preferences}
 
-您可以使用自訂偏好設定來指定合約的建立和儲存方式 [!DNL NetSuite] 。 此外 *，「Adobe Sign」偏好設定中的「自動布建使用者」* 可讓您指定 [!DNL NetSuite] 從簽署服務傳送合約時，使用者是否已自動布建 [!DNL NetSuite] 。
+您可以使用自訂偏好設定來指定合約的建立和儲存方式 [!DNL NetSuite] 。 此外 *，「Adobe Sign」偏好設定中的「自動布建使用者」* 可讓您指定從簽署服務傳送合約時，使用者是否已 [!DNL NetSuite] 自動布建 [!DNL NetSuite] 。
 
 1. 流覽至 **[!UICONTROL 「設定>公司>一般偏好設定]** 」。
 1. 向下捲動頁面，然後選取「 **[!UICONTROL 自訂偏好設定」]** 子索引標籤。
@@ -218,13 +218,13 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    **身分驗證方法** {#identity-verification-methods}
 
-   建立合約時可選取已啟用的身份驗證方法。 若此處啟用一種以上的身分驗證方法，「合約」頁面Adobe Sign會顯示「 **[!UICONTROL 驗證簽署者身分」]** 選項。
+   建立合約時可選取已啟用的身份驗證方法。 若此處啟用多個身分驗證方法，「合約」頁面Adobe Sign會顯示「 **[!UICONTROL 驗證簽署者身分」]** 選項。
 
    * **啟用簽署所需的** 密碼：要求籤署者輸入您指定的一次性密碼。
 
    * **啟用知識式** Authentication：要求籤署者提供其姓名、位址和 SSN 末四碼，然後回答問題清單，確認他們提供的資訊。 僅適用于美國。
 
-   * **啟用網頁身分** Authentication：要求籤署者登入以下網站之一來驗證其身分：Facebook、Google、LinkedIn、Microsoft Live、Twitter 或 Yahoo！。
+   * **啟用網頁身分** Authentication：要求籤署者登入以下其中一個網站以驗證其身分：Facebook、Google、LinkedIn、Microsoft Live、Twitter 或 Yahoo！。
 
    * **Adobe Sign自動布建使用者** ：若啟用此項，傳送合約登入 [!DNL NetSuite] 的使用者會自動布建Adobe Sign使用者帳戶。
 
@@ -233,7 +233,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
 ## 設定自動狀態更新 {#asu}
 
-Adobe Sign整合組合可讓您自動收到 [!DNL NetSuite] 有關已傳送合約狀態的更新 [!DNL NetSuite] 。 啟用此功能時， [!DNL NetSuite] 一律反映合約狀態。 您可以啟用自動狀態更新，如下所示：
+Adobe Sign整合組合可讓您自動收到所 [!DNL NetSuite] 傳送合約狀態的相關更新 [!DNL NetSuite] 。 啟用此功能時， [!DNL NetSuite] 一律反映合約狀態。 您可以啟用自動狀態更新，如下所示：
 
 1. 流覽至 **[!UICONTROL 「設定>公司>啟用功能 ] 」。**
 1. 選取 **[!UICONTROL 「SuiteCloud」]** 子索引標籤。
@@ -251,7 +251,7 @@ Adobe Sign整合組合可讓您自動收到 [!DNL NetSuite] 有關已傳送合�
 
 ## 物件和記錄類型 {#objects}
 
-Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL NetSuite] 物件，包括：「客戶」、「估算」、「商機」、「商機」及「合作夥伴」記錄。 您還可以搭配其他記錄類型 （包括自訂記錄） 使用Adobe Sign組合。
+Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL NetSuite] 物件，包括：「客戶」、「估算」、「商機」、「商機」及「合作夥伴」記錄。 您也可以搭配其他記錄類型 （包括自訂記錄） 一起使用Adobe Sign組合。
 
 「合約」索引標籤會顯示兩種類型的 [!DNL NetSuite] 記錄：「實體」和「事務記錄」。 我們通常假設交易記錄是可轉換為 PDF 檔的記錄 （例如報價）;而實體記錄無法轉換為 PDF。
 
@@ -272,7 +272,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 自訂套件包含下列專案：
 
 * 針對適當的記錄類型部署「合約」子標籤的腳本，以及「傳送以供簽署」按鈕。
-* 設定Adobe Sign記錄類型的角色許可權。
+* 為您的Adobe Sign記錄類型設定角色許可權。
 * 修改許可權，授予「 *合約」子索引標籤* 和「 *傳送以供簽署」按鈕的存取權限* 。
 
 ![腳本](images/scripts.png)
@@ -281,7 +281,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
 若要針對 *適當的記錄類型部署「合約」子索引標籤* 和「 *傳送以供簽署」* 按鈕：
 
-1. 流覽至「 **[!UICONTROL 自訂>腳本>腳本 ] 」。**
+1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本 ] 」。**
 
 1. 在 *出現的「腳本* 」清單頁面上，找到您必須部署的腳本，然後選取「 ****[!UICONTROL 檢視]**** 」。
 
@@ -328,7 +328,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >如果您看不到「 *記錄類型」* 專案，請流覽至 **[!UICONTROL 「設定>公司>「啟用功能> Suite Cloud」標籤]** ，然後啟用「 *自訂記錄」* 選項。
+   >如果您沒有看到「 *記錄類型* 」專案，請流覽至 **[!UICONTROL 「設定>公司>「啟用套件雲端」索引標籤>功能]** 」，然後啟用「 *自訂記錄」* 選項。
 
 1. 在「 *記錄類型」* 頁面上，選 **[!UICONTROL 取Adobe Sign]** 合約」加以選取
 
@@ -340,7 +340,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >*「Adobe Sign* 合約記錄」類型是唯一需要「 *使用許可權清單」存取類型的Adobe Sign記錄* 類型。
+   >*「Adobe Sign* 合約」記錄類型是唯一需要「 *使用許可權清單」存取類型的Adobe Sign記錄* 類型。
    >
    >
    >如需設定其他Adobe Sign記錄類型的存取類型指示，請參閱步驟 6。
@@ -351,11 +351,11 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    ![角色和許可權](images/roles-and-permissions.png)
 
-1. 請依照下列方式，為「Adobe Sign合約」記錄類型中新增的其他自訂角色設定權  限。
+1. 設定「Adobe Sign合約」記錄類型中新增的其他自訂角色的權  限。
 
    >[!NOTE]
    >
-   >請參閱 *[「設定自訂記錄類型許可權清單 ] 」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html）* [!DNL NetSuite] 有關詳細資訊的「說明中心」主題
+   >請參閱 *[「設定自訂記錄類型許可權清單 ] 」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html）* 主題請參 [!DNL NetSuite] 閱「支援中心」以取得詳細資訊
 
    1. 從「 *角色」清單中選取角色* 。
    1. 將 *「位准* 」設為 **[!UICONTROL 「完全]** 」。
@@ -374,7 +374,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
    * **** 設定所有角色的許可權後，選取「儲存在 *自訂記錄類型* 」頁面。
    「 *[!UICONTROL 客戶記錄類型」]* 頁面會重新顯示。
 
-1. 重複上述步驟 1 到步驟 3， ** 為所有其他Adobe Sign記錄類型設定「存取類型」
+1. 重複上述步驟 1 到步驟 3， ** 針對所有其他Adobe Sign記錄類型設定「存取類型」
 
    **[!UICONTROL 不需任何許可權 ] 。** 這適用于下列記錄類型：
 
@@ -388,15 +388,15 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
 ### 授予「合約」索引標籤和「傳送以供簽署」按鈕的存取權  {#granting-access-to-the-agreement-tab-and-send-for-signature-button}
 
-Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「客戶」、「估算報價」、「商機」等） 的Adobe Sign合約物件 [ ] 。 「 *合約」子索引標籤* 會針對下列類型的物件自動啟用：客戶、商機、機會、合作夥伴、潛在客戶、報價和廠商帳單。
+Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （客戶、估算 [ 報價、商機等） 的Adobe Sign合約物件 ] 。 「 *合約」子索引標籤* 會針對下列類型的物件自動啟用：客戶、商機、機會、合作夥伴、潛在客戶、報價和廠商帳單。
 
 「 *[!UICONTROL 傳送以供簽署」]* 按鈕會自動為 **[!UICONTROL  「引號」物件啟用]** 。
 
-[!DNL NetSuite] 管理員可以修改許可權，將「合約」子索引標籤 ** 、「傳 *送以供簽署」按鈕或兩者新增至* 這些物件，藉此擴大將合約建立至其他CRM物件的功能。
+[!DNL NetSuite] 管理員可以修改許可權，將「合約」子索引標籤 ** 、「 *傳送以供簽署」* 按鈕或這兩個物件新增至其他CRM物件，藉此延伸建立合約的功能。
 
 #### 修改授予「傳送以供簽署」按鈕存取權的許可權  {#modifying-permissions-to-grant-access-to-the-send-for-signature-button}
 
-1. 流覽至「 **[!UICONTROL 自訂>腳本>腳本]** 」。
+1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本]** 」。
 
    「 *腳本* 」清單頁面隨即顯示。
 
@@ -429,8 +429,8 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
 #### 修改授予「合約」索引標籤存取權的許可權  {#modifying-permissions-to-grant-access-to-the-agreements-tab}
 
-1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本」]**
-1. 在「 [!UICONTROL  腳本」 ] 頁面上，找到 *[!UICONTROL Adobe Sign合約載入器]* 」腳本 （控制「 *合約」標籤* ），然後選取「 **[!UICONTROL 檢視]** 」。
+1. 導覽至 **[!UICONTROL 「自訂>腳本>腳本」]**
+1. 在「 [!UICONTROL  腳本」 ] 頁面上，找到 *[!UICONTROL 「Adobe Sign合約載入器]* 」腳本 （控制「 *合約」標籤* ），然後選取「 **[!UICONTROL 檢視]** 」。
 1. 在「 *腳本」* 頁面上，執行下列動作：
 
    1. 選取「 **[!UICONTROL 部署」]** 子索引標籤
@@ -441,11 +441,11 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
 ## 使用套件的Adobe Sign [!DNL NetSuite]
 
-若要傳送 [!DNL NetSuite] 來自這些合約的合約並接收更新，使用者必須在Adobe Sign中擁有相同的登入 ID （電子郵件地址 [!DNL NetSuite] ）。
+若要傳送來自這些合約的合約 [!DNL NetSuite] 並接收更新，使用者必須在這些合約中和Adobe Sign中擁有相同的登入 ID （電子郵件地址 [!DNL NetSuite] ）。
 
 ### 建立Adobe Sign合約
 
-在沙箱或生產帳戶中安裝新套裝後，您應該透過建立新合約來測試套裝組合。 您可以從實體記錄、交易記錄或單獨合約建立Adobe Sign合約。
+在沙箱或生產帳戶中安裝新套裝後，您應該透過建立新合約來測試套裝組合。 您可以從實體記錄、交易記錄或獨立合約建立Adobe Sign合約。
 
 >[!NOTE]
 >
@@ -495,9 +495,9 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
    ![「檔」索引標籤](images/documents-tab.png)
 
-1. 在 *「檔* 」子標籤上，Adobe Sign 使用「檔」下拉式清單，從檔案封裝中附加現有 *檔* ，然後選取「 **[!UICONTROL 附加]** 」。
+1. 在「檔」子索引標籤上，Adobe Sign 使用「檔」下 ** 拉式清單從檔案封裝中附加現有 *檔* ，然後選取「 **[!UICONTROL 附加]** 」。
 
-   或者，按一下 **[!UICONTROL 「新增Adobe Sign檔」]** 以存取 *[!UICONTROL 「Adobe Sign檔」]* 頁面，然後在檔案夾中輸入檔案名稱 [!DNL NetSuite] 、從交易記錄中選取檔案 （如果適用） 或附加新檔。
+   或者，按一下 **[!UICONTROL 「新增Adobe Sign檔」]** 以存取 *[!UICONTROL 「Adobe Sign檔」]* 頁面，然後在檔案夾中輸入檔案名稱 [!DNL NetSuite] 、從交易記錄中選取檔案 （如果適用）或附加新檔。
 
    您可以將多份檔新增至合約。
 
@@ -573,7 +573,7 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
 
 ## 卸載套裝組合
 
-若要卸載此套裝組合，請依照「說明」中提供的步驟 [!DNL NetSuite] 操作。 如需詳細資訊，請參閱「卸載套裝組合 *[] （HTTPs://docs.oracle.com/cloud/latest/ [!DNL NetSuite] cs_gs/NSBDL/NSBDL.pdf」* 主題 [!DNL NetSuite] 。
+若要卸載此套裝組合，請依照「說明」中提供的步驟 [!DNL NetSuite] 操作。 如需詳細資訊，請參閱 *[「支援中心」中的「卸載套件 ] （HTTPs://docs.oracle.com/cloud/latest/ [!DNL NetSuite] cs_gs/NSBDL/NSBDL.pdf）」* 主題 [!DNL NetSuite] 。
 
 當您卸載套裝組合時，未簽署的合約會被刪除。 已簽署的合約及其對應的稽核 PDF 檔案不受影響。
 
@@ -585,7 +585,7 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
 
 如果更新似乎需要更長的時間，您可以勾選「執行記錄」子索引標籤的「Adobe Sign套裝安裝」腳本，以決定更新的進度，如下所示：
 
-1. 流覽至「 **[!UICONTROL 自訂>腳本>腳本]** 」。
+1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本]** 」。
 1. 在「 [!UICONTROL  腳本」 ] 頁面上，找到 *[!UICONTROL 「Adobe Sign套件安裝]* 」腳本，然後選取「 **[!UICONTROL 編輯]** 」。
 1. 在「 [!UICONTROL  腳本」 ] 頁面上，選取「 **執行記錄」** 子索引標籤。
 1. 選取 **「重新整理** 」。
@@ -612,7 +612,7 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
 
 如果 [ 設定自動狀態更新， ](#asu) 但合約狀態並未在傳送合約後更新，請嘗試下列操作：
 
-1. 檢查 *Adobe Sign External Update 腳本的部署執行記錄* ，查看您是否收到來自 Adobe Sign 的電話，如下所示：
+1. 檢查 *Adobe Sign External Update 腳本的部署執行記錄* ，確認您是否收到來自 Adobe Sign 的呼叫，如下所示：
 
    1. 導覽至 **[!UICONTROL 「自訂>腳本>腳本部署」]**
    1. 在「 *腳本部署」* 頁面上，找到 *「Adobe Sign外部更新* 」腳本，然後選取「 **[!UICONTROL 編輯」]**
@@ -620,7 +620,7 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
       * 您應該會看到 *每個合約 ID 的「更新合約記錄」* 專案
 
 
-1. 檢查 *Adobe Sign「更新合約」腳本的部署執行記錄* ，確認是否有下列錯誤：
+1. 檢查Adobe Sign「更新合約」腳本的部署執行記錄 ** ，確認是否有下列錯誤：
 
    1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本部署]** 」。
    1. 在「 [!UICONTROL  腳本部署」 ] 頁面上，找到 *[!UICONTROL Adobe Sign更新]* 合約」腳本的「 [!UICONTROL  已排程 ] 」狀態，然後選取「 **[!UICONTROL 編輯]** 」。
@@ -637,7 +637,7 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
 
 您也可以檢視與檔狀態問題無關之腳本的部署執行記錄。 如 [ 需詳細資訊，請參閱解決檔狀態問題 ](#resolvestatus) 。
 
-1. 流覽至「 **[!UICONTROL 自訂>腳本>腳本]** 」。
+1. 流覽至 **[!UICONTROL 「自訂>腳本>腳本]** 」。
 
    「 *腳本* 」清單頁面隨即顯示。 如有需要，請使用篩選器找出適當的腳本。
 
@@ -647,4 +647,4 @@ Adobe Sign與引號直接整合 [!DNL NetSuite] ，因此系統會自動產生�
 
 ## 支援 {#support}
 
-前往 [ Adobe Sign Support 入口網站 ](https://adobe.com/go/adobesign-support-center_tw) 存取常見問題、檔、知識庫文章，或聯絡Adobe支援。
+前往 [ Adobe Sign 支援入口網站 ](https://adobe.com/go/adobesign-support-center_tw) 存取常見問答集、檔、知識庫文章，或聯絡Adobe支援。
