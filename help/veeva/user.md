@@ -9,9 +9,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: e1394c24aebd1e026eb6c5a33935149f33ef8ea4
+source-git-commit: f460f23ac3e412b527a91668561fff48ac518941
 workflow-type: tm+mt
-source-wordcount: '668'
+source-wordcount: '667'
 ht-degree: 2%
 
 ---
@@ -20,7 +20,7 @@ ht-degree: 2%
 
 [**連絡 Adobe Sign 支援人員**](https://adobe.com/go/adobesign-support-center_tw)
 
-本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用Adobe Sign整合 [!DNL Veeva Vault] 來傳送合約。
+本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用 Adobe Sign 整合 [!DNL Veeva Vault] 來傳送合約。
 
 ## 概覽 {#overview}
 
@@ -30,7 +30,7 @@ Adobe Sign整合 [!DNL Veeva Vault] 有助於取得簽名或核准流程，以�
 
 Adobe Sign與 [!DNL Veeva Vault] 簡化程式的整合，並加快您的檔和簽名工作流程。 使用整合工作流程，您可以：
 
-* 節省在縮圖郵件、隔夜和傳真上花費的時間和資源。
+* 節省用於縮圖郵件、隔夜或傳真上的時間和資源。
 * 傳送合約以索取電子簽名或核准， [!DNL Veeva Vault] 存取即時合約記錄，並檢視已儲存的合約。
 * 即時追蹤整個組織的交易，並在合約被檢視、簽署、取消或拒絕時取得更新。
 * eSign 提供超過 20 種語言版本，支援全球超過 50 個地區的傳真回覆服務.
@@ -82,7 +82,7 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式的整合，並加快您的檔和�
 
    ![](images/reviewed-status.png)
 
-1. 選取 ![ 齒輪圖示 ](images/icon-gear.png) 下拉式選單，然後選 **[!UICONTROL 取「Adobe Sign]** 」。
+1. 選取 ![ 齒輪圖示 ](images/icon-gear.png) 下拉式功能表，然後選 **[!UICONTROL 取「Adobe Sign]** 」。
 
    ![](images/select-adobe-sign.png)
 
@@ -96,7 +96,7 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式的整合，並加快您的檔和�
 
    ![](images/iFrame-confirm-email.png)
 
-   但是，如果 *「自動布建 Sign 使用者* 」功能已停用，Adobe Sign使用者建立失敗，而且 iFrame 視窗會顯示訊息，要求使用者連絡其Adobe Sign帳戶管理員。 Adobe Sign帳戶管理員可以採取下列其中一個動作：
+   但是，如果 *「自動布建 Sign 使用者* 」功能已停用，Adobe Sign使用者建立失敗，而且 iFrame 視窗會顯示訊息，要求使用者連絡其Adobe Sign帳戶管理員。 Adobe Sign帳戶管理員可採取下列任一動作：
 
    * 啟用帳戶的 *「自動布建 Sign 使用者* 」功能。
    * 在使用 Veeva 保存庫Adobe Sign整合之前，先在Adobe Sign中建立使用者。
@@ -117,7 +117,7 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式的整合，並加快您的檔和�
 
    ![](images/document-files.png)
 
-1. 下載Adobe Sign轉譯」，以驗證再次傳送簽名。
+1. 下載Adobe Sign轉譯」，以驗證轉譯簽名。
 
    ![](images/verify-signature.png)
 
@@ -127,11 +127,11 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式的整合，並加快您的檔和�
 
    ![](images/vault-home.png)
 
-1. 選取「 **[!UICONTROL 資料庫」]** 索引標籤，然後選取檔。 檔狀態可以是： [!UICONTROL  在「草稿 ] Adobe Sign中、 [!UICONTROL  在「Adobe Sign撰 ] 寫」或 [!UICONTROL  「在Adobe中簽署」 ] 。
+1. 選取「 **[!UICONTROL 資料庫」]** 索引標籤，然後選取檔。 檔狀態可以是： [!UICONTROL  在「Adobe Sign 草稿」、「草稿 ] 」、 [!UICONTROL  「在Adobe Sign中撰 ] 寫」或 [!UICONTROL  「在Adobe中簽署」 ] 。
 
    ![](images/document-adobe-sign-authoring.png)
 
-1. 選取 **[!UICONTROL 「取消Adobe Sign」]** 。
+1. 選取 **[!UICONTROL 「取消Adobe Sign]** 」。
 
    ![](images/cancel-document.png)
 
