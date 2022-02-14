@@ -1,6 +1,6 @@
 ---
 title: '[!DNL Veeva Vault] 安裝指南'
-description: 啟用與 Veeva Adobe Sign整合的安裝指南
+description: 啟用 Adobe Sign 與 Veeva 整合的安裝指南
 product: Adobe Sign
 topic-tags: EchoSign/Integrations
 content-type: reference
@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: c3ad36ec887230d746d8d2084127155615f1d0b9
+source-git-commit: db0d9022e520e9db39254e78b66aab8b913f353a
 workflow-type: tm+mt
-source-wordcount: '3145'
+source-wordcount: '3169'
 ht-degree: 3%
 
 ---
@@ -34,6 +34,7 @@ ht-degree: 3%
 * 建立檔欄位和轉譯。
 * 設定網頁動作並更新檔生命週期。
 * 建立檔案類型使用者和使用者角色設定。
+* 使用中介軟體將 Veeva Vault 連接至Adobe Sign。
 
 >[!NOTE]
 >
@@ -41,11 +42,11 @@ ht-degree: 3%
 
 ## 配置 [!DNL Veeva Vault] {#configure-veeva}
 
-若要設定 [!DNL Veeva Vault] 與 Adobe Sign 的整合，您需要執行下列步驟。
+若要設定 [!DNL Veeva Vault] 與 Adobe Sign 整合，您需要執行下列步驟。
 
 ### 步驟 1. 建立群組 {#create-group}
 
-若要設定Adobe Sign，系統會建立一個名為 *「 [!DNL Vault] Adobe Sign管理員群組」的新群組* 。此群組是用來為Adobe Sign相關欄位設定檔欄位層級安全性，並且預設包含 *Adobe Sign整合描述檔* 」。
+若要設定Adobe Sign [!DNL Vault] ，系統會建立一個名為 *「Adobe Sign管理員群組」的新群組* 。 此群組是用來為Adobe Sign相關欄位設定檔欄位層級安全性，並且預設包含 *Adobe Sign整合描述檔* 」。
 
 ![簽名事件詳細資訊影像](images/create-admin-group.png)
 
@@ -75,8 +76,8 @@ ht-degree: 3%
 
 | 欄位 | 標籤 | 類型 | 描述 |
 | --- | --- | ---| --- | 
-| external_id__c | 合約 ID | 字串 （100） | 保持Adobe Sign唯一的合約 ID |
-| file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送給 Adobe Sign 的檔案的 md5 總和檢查碼 |
+| external_id__c | 合約 ID | 字串 （100） | 包含Adobe Sign唯一的合約 ID |
+| file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送至 Adobe Sign 的檔案的 md5 總和檢查碼 |
 | name__v | 名稱 | 字串 （128） | 包含合約名稱 |
 | sender__c | 寄件者 | 物件 （使用者） | 保留已建立合約之保存庫使用者的參照 |
 | signature_status__c | 簽名狀態 | 字串 （75） | 以Adobe Sign方式保留合約狀態 |
@@ -96,8 +97,8 @@ ht-degree: 3%
 
 | 欄位 | 標籤 | 類型 | 描述 |
 | --- | --- | ---| --- | 
-| email__c | 電子郵件 | 字串 （120） | 保持Adobe Sign唯一的合約 ID |
-| external_id__c | 參與者 ID | 字串 （80） | 持有Adobe Sign唯一參與者的識別碼 |
+| email__c | 電子郵件 | 字串 （120） | 持有Adobe Sign唯一的合約 ID |
+| external_id__c | 參與者 ID | 字串 （80） | 包含Adobe Sign唯一參與者的識別碼 |
 | name__v | 名稱 | 字串 （128） | 包含Adobe Sign參與者的名稱 |
 | order__c | 順序 | 數字 | 包含Adobe Sign合約參與者的訂單編號 |
 | role__c | 角色 | 字串 （30） | Adobe Sign合約參與者的角色 |
@@ -120,21 +121,21 @@ ht-degree: 3%
 | event_type__c | 事件種類 | 字串 | 包含Adobe Sign事件種類 |
 | name__v | 名稱 | 字串 | 自動產生的事件名稱 |
 | participant_comment__c | 參與者注釋 | 字串 | 如果有的話，請保留Adobe Sign參與者的注釋 |
-| participant_email__c | 參與者電子郵件 | 字串 | 拿著Adobe Sign參與者的電子郵件 |
-| participant_role__c | 參與者角色 | 字串 | Adobe Sign參與者的角色 |
+| participant_email__c | 參與者電子郵件 | 字串 | 包含Adobe Sign參與者的電子郵件 |
+| participant_role__c | 參與者角色 | 字串 | 擁有Adobe Sign參與者的角色 |
 | signature__c | 簽名 | 物件 （簽名） | 包含簽名父記錄的參考資訊 |
 
 ![簽名事件詳細資訊影像](images/signature-event-object-details.png)
 
 #### 處理鎖物件 {#process-locker}
 
-系統會建立處理鎖物件來鎖定Adobe Sign整合程式。 不需要任何自訂欄位。
+系統會建立 Process Locker 物件來鎖定Adobe Sign整合程式。 不需要任何自訂欄位。
 
 ![簽名事件詳細資訊影像](images/process-locker-details.png)
 
 ### 步驟 3. 設定安全性設定檔 {#security-profiles}
 
-在步驟 2 中成功部署套件會建立Adobe Sign整合描述檔。 Adobe Sign整合設定檔會指派給系統帳戶，並會在呼叫保存 API 時由整合使用。 此描述檔允許下列許可權：
+在步驟 2 中成功部署套件會建立Adobe Sign整合設定檔。 Adobe Sign整合設定檔會指派給系統帳戶，並在呼叫保存庫 API 時由整合使用。 此描述檔允許下列許可權：
 
 * 保存 API
 * 閱讀、建立、編輯和刪除：簽名、簽署者、簽名事件和處理鎖物件
@@ -164,7 +165,7 @@ Adobe Sign整合的保存庫系統帳戶使用者必須：
 
 ### 步驟 5. 設定檔案類型群組 {#create-document-type-group}
 
-部署Adobe Sign套件時，會建立名為「Adobe Sign檔」的檔案類型群組記錄。
+部署 Adobe Sign 套件時，會建立名為「Adobe Sign檔」的檔案類型群組記錄。
 
 ![檔案類型群組的影像](images/document-type-groups.png)
 
@@ -180,7 +181,7 @@ Adobe Sign整合的保存庫系統帳戶使用者必須：
 
 ### 步驟 6. 建立使用者角色設定 {#create-user-role-setup}
 
-正確設定生命週期後，系統應確保 DAC 為所有符合Adobe Sign程式資格的檔新增Adobe Sign管理員使用者。 建立適當的「使用者角色設定」記錄可指定：
+一旦正確設定生命週期，系統應確保 DAC 為所有符合Adobe Sign程式資格的檔新增Adobe Sign管理員使用者。 建立適當的「使用者角色設定」記錄可指定：
 
 * Adobe Sign檔案類型群組
 * Adobe Sign管理員角色的應用程式角色
@@ -199,12 +200,12 @@ Adobe Sign整合的保存庫系統帳戶使用者必須：
 
 若要設定檔欄位：
 
-1. 前往「設定」索引標籤，然後選取 **[!UICONTROL 「共用]** 欄位> **[!UICONTROL 檔欄位」]** 。
-1. 在「顯示區段」欄位中，選取「 **[!UICONTROL 建立顯示區段]** 」，然後將「Adobe簽名 ]**」指派**[!UICONTROL  為「區段」標籤。
+1. 前往「設定」索引標籤，然後選 **[!UICONTROL 取「共用]** 欄位> **[!UICONTROL 檔欄位」]** 。
+1. 在「顯示區段」欄位中，選取「 **[!UICONTROL 建立顯示區段」]** ，然後將「Adobe簽名 ]**」指派**[!UICONTROL  為「區段」標籤。
 
    ![影像](images/create-display-section.png)
 
-1. 對於兩個共用的檔欄位 （signature__c 和 allow_adobe_sign_user_actions__c），請更新「UI」區段，並以 **[!UICONTROL 「Adobe簽名]** 」作為區段標籤。
+1. 對於兩個共用的「檔」欄位 （signature__c 和 allow_adobe_sign_user_actions__c），請更新「UI」區段，並以 **[!UICONTROL 「Adobe簽名]** 」作為區段標籤。
 1. 將三個共用欄位新增至所有符合Adobe簽名資格的檔案類型。 若要這麼做，請在「基本檔」頁面中，選 **[!UICONTROL 取右上角的「新增]** > **[!UICONTROL 現有共用欄位]** 」。
 
    ![影像](images/create-document-fields.png)
@@ -221,7 +222,7 @@ Adobe Sign整合的保存庫系統帳戶使用者必須：
 
 ### 步驟 8. 宣告檔轉譯 {#declare-renditions}
 
-「保存庫」整合使用名為 *「Adobe Sign轉譯」（adobe_sign_rendition__c）* 的全新轉譯類型，將已簽署的 PDF 檔上傳至Adobe Sign。 您必須針對每個符合Adobe簽名資格的檔案類型宣告Adobe Sign轉譯。
+新的轉譯類型稱為 *「Adobe Sign轉譯」（adobe_sign_rendition__c），* 由 Vault 整合使用，將已簽署的 PDF 檔上傳至Adobe Sign。 您必須針對每個符合Adobe簽名資格的檔案類型宣告Adobe Sign轉譯。
 
 ![轉譯類型的影像](images/rendition-type.png)
 
@@ -235,6 +236,7 @@ Adobe Sign和保存庫整合要求您按照兩個網頁動作建立和設定：
 
    類型：檔
 目標：在保存庫中顯示
+認證：透過「貼文訊息」啟用會話後認證
 URL： <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/agreement?docId=${Document.id}&majVer=${Document.major_version_number__v}&minVer=${Document.minor_version_number__v}&vaultid=${Vault.id}&useWaitPage=true>
 
    ![建立影像Adobe Sign](images/create-adobe-sign.png)
@@ -243,13 +245,14 @@ URL： <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/agree
 
    類型：檔
 目標：在保存庫中顯示
+認證：透過「貼文訊息」啟用會話後認證
 URL：： <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/agreement/cancel?docId=${Document.id}&majVer=${Document.major_version_number__v}&minVer=${Document.minor_version_number__v}&vaultid=${Vault.id}&useWaitPage=true>
 
    ![取消Adobe Sign影像](images/cancel-adobe-sign.png)
 
 ### 步驟 10. 更新檔生命週期 {#document-lifecycle}
 
-針對每個符合「Adobe簽名」的檔案類型，您必須新增生命週期角色和狀態，以更新對應的檔生命週期。
+針對每個符合Adobe簽名資格的檔案類型，您必須新增生命週期角色和狀態，以更新對應的檔生命週期。
 
 Adobe Sign合約生命週期具有下列狀態：
 
@@ -262,7 +265,7 @@ Adobe Sign合約生命週期具有下列狀態：
 
 若要更新檔生命週期，請依照下列步驟操作：
 
-1. 新增生命週期角色。 Adobe Sign「管理員應用程式」角色必須新增到符合Adobe簽名資格的檔所使用的所有生命週期中，如下所示。
+1. 新增生命週期角色。 Adobe Sign管理員應用程式角色必須新增到符合Adobe簽名資格的檔所使用的所有生命週期中，如下所示。
 
    ![生命週期管理員角色的影像](images/document-lifecycle-admin-role.png)
 
@@ -279,7 +282,7 @@ Adobe Sign合約生命週期具有下列狀態：
 
    ![adobe Sign 共用規則的影像](images/create-draft-state.png)
 
-   * 在「Adobe Sign撰寫」中
+   * 在「Adobe Sign製作」中
 
    ![adobe Sign 共用規則的影像](images/create-authoring-state.png)
 
@@ -291,28 +294,28 @@ Adobe Sign合約生命週期具有下列狀態：
 
    將保存檔傳送給Adobe Sign時，其狀態應對應至合約的狀態。 若要這麼做，請在符合Adobe簽名資格的檔所使用的每一個生命週期中新增以下狀態：
 
-   * **在Adobe簽名** 之前 （已審核）：這是可傳送檔至Adobe Sign狀態的預留位置名稱。 根據檔案類型，檔案類型可以是「草稿」狀態或「已審核」。 檔狀態標籤可根據客戶需求自訂。 在Adobe簽署狀態之前，必須先定義下列兩個使用者動作：
+   * **在Adobe簽署** 之前 （已審核）：這是可傳送檔至Adobe Sign狀態的預留位置名稱。 根據檔案類型，檔案類型可以是「草稿」狀態或「已審核」。 檔狀態標籤可根據客戶需求自訂。 在Adobe簽署狀態之前，必須先定義下列兩個使用者動作：
 
       * 將檔狀態變更為 *「在草稿* 中Adobe Sign狀態的動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
-      * 稱為「網頁動作」的「Adobe Sign」動作。 這個狀態必須具備可讓Adobe Sign管理員角色檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態的安全性。
+      * 稱為「網路動作」的「Adobe Sign」動作。 這個狀態必須具備可讓Adobe Sign管理員角色：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 1 的影像](images/lifecycle-state1.png)
 
    * **在「草稿** Adobe Sign中：這是狀態的預留位置名稱，表示檔已上傳至Adobe Sign，且其合約處於「草稿」狀態。 這是必要的狀態。 此狀態必須定義下列五個使用者動作：
 
       * 將檔狀態變更為 *「在編寫Adobe Sign狀態的* 動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
-      * 將檔狀態變更為 *「在簽署Adobe狀態的動作* 。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
+      * 將檔狀態變更為 *「在Adobe簽署狀態」的動作* 。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
       * 將檔狀態變更為 *「已取消* 」狀態Adobe Sign動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
       * 稱為「網頁動作」的動作「Adobe Sign」。
       * 稱為「取消Adobe Sign」網頁動作。 這個狀態必須具備可讓 Adobe Sign 管理員角色具備以下安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 2 的影像](images/lifecycle-state2.png)
 
-   * **在「Adobe Sign編寫** 」中：這是狀態的預留位置名稱，表示檔已上傳至Adobe Sign，且其合約處於 AUTHORING 或DOCUMENTS_NOT_YET_PROCESSED狀態。 這是必要的狀態。 此狀態必須已定義下列四個使用者動作：
+   * **在「Adobe Sign編寫** 」中：這是狀態的預留位置名稱，表示檔已上傳至 Adobe Sign，且其合約處於 AUTHORING 或DOCUMENTS_NOT_YET_PROCESSED狀態。 這是必要的狀態。 此狀態必須已定義下列四個使用者動作：
 
       * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
       * 將檔狀態變更為「在簽署Adobe狀態的動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
-      * 稱為「網頁動作」的動作「Adobe Sign」
+      * 稱為「網路動作」的動作「Adobe Sign」
       * 稱為「取消Adobe Sign」網頁動作。 這個狀態必須具備可讓 Adobe Sign 管理員角色具備以下安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 3 的影像](images/lifecycle-state3.png)
@@ -320,20 +323,20 @@ Adobe Sign合約生命週期具有下列狀態：
    * **在「Adobe簽署** 」中：這是狀態的預留位置名稱，表示檔已上傳至Adobe Sign，且其合約已傳送給參與者 （OUT_FOR_SIGNATURE或OUT_FOR_APPROVAL狀態）。 這是必要的狀態。 此狀態必須已定義下列五個使用者動作：
 
       * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
-      * 將檔狀態變更為「已拒絕」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為Adobe已簽署狀態的動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 但是，無論生命週期如何，此使用者動作的名稱對於所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
+      * 將檔狀態變更為「已拒絕」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
+      * 將檔狀態變更為Adobe已簽署狀態的動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 但是，無論生命週期如何，此使用者動作的名稱對於所有檔案類型都必須相同。 必要時，此動作的標準可以設定為「允許Adobe Sign使用者動作等於是。」
       * 稱為「網頁動作」的動作 *Adobe Sign* 。
       * 稱為「網頁動作取消」的動作 *Adobe Sign* 。 這個狀態必須具備可讓 Adobe Sign 管理員角色具備以下安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 4 的影像](images/lifecycle-state4.png)
 
-      * **Adobe已簽署 （已核准）** ：這是狀態的預留位置名稱，表示檔已上傳至Adobe Sign，且其合約已完成 （已簽署或已核准狀態）。 這是必要的狀態，並且可以是現有的生命週期狀態，例如核准。此狀態不需要使用者動作。 它必須具備安全性，才能讓Adobe Sign管理員角色：檢視檔、檢視內容和編輯欄位。
+      * **Adobe已簽署 （已核准）** ：這是狀態的預留位置名稱，表示檔已上傳至Adobe Sign，且其合約已完成 （已簽署或已核准狀態）。 這是必要的狀態，並且可以是現有的生命週期狀態，例如核准。此狀態不需要使用者動作。 它必須具備可讓Adobe Sign管理員角色：檢視檔、檢視內容和編輯欄位的安全性。
 
-   下圖說明Adobe Sign合約與保存檔狀態之間的對應，其中「簽署之前」狀態為「草稿」Adobe。
+   下圖說明Adobe Sign合約與保存檔狀態之間的對應，其中「簽署前Adobe」狀態為「草稿」。
 
    ![影像](images/sign-vault-mappings.png)
 
-### 步驟 11. 在生命週期階段群組中將Adobe Sign舞臺新增至一般生命週期
+### 步驟 11. 在生命週期階段群組中，將Adobe Sign舞臺新增至一般生命週期
 
 ![影像](images/add-adobe-sign-stage.png)
 
@@ -347,13 +350,13 @@ Adobe Sign合約生命週期具有下列狀態：
 
 ![影像](images/set-atomic-security.png)
 
-### 步驟 14. 為Adobe Sign取消建立檔訊息
+### 步驟 14. 為「取消」Adobe Sign建立檔訊息
 
 ![影像](images/create-cancel-message.png)
 
 ## 使用中介軟體聯 [!DNL Veeva Vault] 機至Adobe Sign {#connect-middleware}
 
-完成 [!DNL Veeva Vault] 設定和Adobe Sign管理員帳戶後，管理員必須使用中間軟體在兩個帳戶之間建立連線。 和 [!DNL Veeva Vault] Adobe Sign 帳戶連線是由 Adobe Sign Identity 起始，然後用來儲存 [!DNL Veeva Vault] 身分。為了提高系統安全性和穩定性，管理員必須使用專用 [!DNL Veeva Vault] 的系統/服務/公用程式帳戶，例如 `adobe.for.veeva@xyz.com` ，而不是個人使用者帳戶，例如 `bob.smith@xyz.com` 。
+完成 [!DNL Veeva Vault] 設定和Adobe Sign管理員帳戶後，管理員必須使用中間軟體在兩個帳戶之間建立連線。 和 [!DNL Veeva Vault] Adobe Sign 帳戶的連線是由 Adobe Sign Identity 起始，然後用來儲存 [!DNL Veeva Vault] 身分。為了提高系統安全性和穩定性，管理員必須使用專用 [!DNL Veeva Vault] 的系統/服務/公用程式帳戶，例如 `adobe.for.veeva@xyz.com` ，而不是個人使用者帳戶，例如 `bob.smith@xyz.com` 。
 
 Adobe Sign帳戶管理員必須依照下列步驟，使用中間軟體聯 [!DNL Veeva Vault] 機至Adobe Sign：
 
@@ -380,7 +383,7 @@ Adobe Sign帳戶管理員必須依照下列步驟，使用中間軟體聯 [!DNL 
 
 1. 在開啟的「新增連線」對話方塊中，提供必要的詳細資料， [!DNL Veeva Vault] 包括認證。
 
-   Adobe Sign憑證會從初始Adobe Sign登入時自動填入。
+   Adobe Sign憑證會在初始Adobe Sign登入時自動填入。
 
    ![影像](images/middleware_addconnection.png)
 
@@ -400,13 +403,13 @@ Adobe Sign帳戶管理員必須依照下列步驟，使用中間軟體聯 [!DNL 
 
 1. 若要允許在Adobe Sign中自動布建使用者，請選取「自動布建 Sign 使用者」 ]**核取方塊**[!UICONTROL  。
 
-   **注意：** 只有在Adobe Sign中的「Adobe Sign帳戶層級」已啟用新Adobe Sign使用者的自動布建，啟用 **[!UICONTROL 「自動布建 Sign 使用者]** [!DNL Veeva Vault] 」進行Adobe Sign整合（如Adobe Sign帳戶管理員下方所示）。
+   **注意：** 只有在Adobe Sign的「Adobe Sign帳戶層級」已啟用新Adobe Sign使用者的自動布建，啟用 **[!UICONTROL 「自動布建 Sign 使用者]** [!DNL Veeva Vault] Adobe Sign整合功能（如Adobe Sign帳戶管理員下方所示）。
 
    ![影像](images/allow-auto-provisioning.png)
 
 1. 選取 **[!UICONTROL 「儲存]** 」以儲存新的連線。
 
-   新連線會顯示在「設定」索引標籤下方，顯示Adobe Sign成功 [!DNL Veeva Vault] 整合。
+   新連線會顯示在「設定」索引標籤下方，顯示已成功Adobe Sign整合 [!DNL Veeva Vault] 。
 
    ![影像](images/middleware_setup.png)
 
