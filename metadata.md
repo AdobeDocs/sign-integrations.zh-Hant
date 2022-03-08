@@ -1,10 +1,10 @@
 ---
 cloud: Document Cloud
 type: Documentation
-solution: Document Cloud, Adobe Sign
+solution: Document Cloud, Acrobat Sign, Adobe Sign
 mini-toc-levels: 2
-git-repo: https://git.corp.adobe.com/AdobeDocs/sign-integrations.zh-Hant
-source-git-commit: 1d3fe474a7fd9d6f50b7355753451e60dd3c601a
+git-repo: https://github.com/AdobeDocs/sign-integrations.zh-Hant
+source-git-commit: f315aa6b1230b1d4357b2fe9ea030310d8cad230
 workflow-type: tm+mt
 source-wordcount: '130'
 ht-degree: 0%
