@@ -10,9 +10,9 @@ solution: Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 23263a9dab4c74fd7fed05ed5a36bede67feaaf8
+source-git-commit: b9d0ac0cccc8785469172fd805e7b878743c7c07
 workflow-type: tm+mt
-source-wordcount: '3501'
+source-wordcount: '3498'
 ht-degree: 3%
 
 ---
@@ -265,7 +265,7 @@ Adobe Sign整合的保存庫系統帳戶使用者必須：
 
 ![轉譯類型的影像](images/rendition-type.png)
 
-![轉譯類型的影像](images/edit-details-clinical-type.png)
+![影像](images/edit-details-clinical-type.png)
 
 「保存庫」整合使用名為 *「原始轉譯」（original_rendition__c）* 的新轉譯類型作為轉譯的名稱，如果已簽署的檔讀入為可檢視的轉譯，則該轉譯應該用來儲存原始可檢視的轉譯。
 
