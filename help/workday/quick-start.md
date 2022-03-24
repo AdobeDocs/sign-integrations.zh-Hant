@@ -7,11 +7,11 @@ content-type: reference
 discoiquuid: 13135c88-4c39-4707-b7ba-63ff94769258
 locnotes: All languages; screenshots to follow what's there already (seems there is a mix within a given language version of the article)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 8b6fa8b4-e240-4ebe-ae2a-8807d75a6c69
-source-git-commit: 5ac9dc27dcdb6cab19281e6aafd4ea0524cc01d6
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '1348'
 ht-degree: 31%
@@ -24,7 +24,7 @@ ht-degree: 31%
 
 ## 概覽 {#overview}
 
-本檔旨在協助 [!DNL Workday] 管理員瞭解如何自訂 [!DNL Workday] 業務流程，以納入Adobe Sign以取得電子簽名。 若要在其中使用 [!DNL Workday] Adobe Sign，您必須知道如何建立和修改專案， [!DNL Workday] 例如：
+本檔旨在協助 [!DNL Workday] 管理員瞭解如何自訂業務流程， [!DNL Workday] 以納入Adobe Sign以取得電子簽名。 若要在應用程式內 [!DNL Workday] 使用Adobe Sign，您必須瞭解如何建立和修改 [!DNL Workday] 專案，例如：
 
 * [!UICONTROL 業務流程框架]
 * 租使用者設定和設定
@@ -32,48 +32,48 @@ ht-degree: 31%
 
 ## 在 中存取 Adobe Sign[!DNL Workday] {#access-adobe-sign}
 
-[!UICONTROL Adobe Sign電子簽名功能 ] 會顯示為  [!UICONTROL  「業務流程架構」（BPF） 中的「審核檔步驟」動作， ] 並顯示為「分送檔工作」。
+[!UICONTROL Adobe Sign電子簽名功能 ] 會顯示為 [!UICONTROL  「業務流程架構」（BPF） ] 中的「審核檔步驟 ] 」動作 [!UICONTROL  ，並顯示為「分送檔工作」。
 
 ## [!UICONTROL 「審核文件」步驟] {#review-document-step}
 
-Adobe Sign會 [!DNL Workday] 透過「 [!UICONTROL  審核檔」步驟公開 ] ，您可以在其中新增到 400 多個業務流程中的任何一個 [!DNL Workday] ，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分發檔和工作 ] 、退約 [!UICONTROL  補償 ] 等。
+[!DNL Workday]「Adobe Sign」會透過 [!UICONTROL  「審核檔」步驟 ] 公開，您可以在其中新增到 400 多個業務流程中 [!DNL Workday] 的任何一個，包括 [!UICONTROL  優惠 ] 、 [!UICONTROL  分派檔和工作 ] 、 [!UICONTROL  賠償 ] 賠償等等。
 
-您可參閱「 [[!DNL Workday]  審核檔步驟」上的社群文章  ](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg) 。
+您可以參閱「 [[!DNL Workday]  審核檔步驟 ] ](https://doc.workday.com/#/reader/3DMnG~27o049IYFWETFtTQ/TboWWKQemecNipWgxLAjqg) 」上的 [!UICONTROL  社群文章。
 
-「審核檔步驟」與含 Adobe Sign [!UICONTROL  的 ] 可計費交易之間有一對一關聯性。 您可以在單一「 [!UICONTROL  審核檔」步驟中合併多份檔 ] ，這些檔會顯示為單一套件以供簽署。
+「審核檔步驟 ] ] 」與含 Adobe Sign 的可計費交易之間 [!UICONTROL [!UICONTROL  有一對一關聯性。您可以在單 [!UICONTROL  一「審核檔」步驟 ] 中合併多份檔，這些檔會顯示為單一套件以供簽署。
 
-**注意** ：只能在 *特定「* 審核檔」步驟中參考單一「動態 [!UICONTROL  檔 ] 」。
+**注意** ：只能在特定 [!UICONTROL  「審核檔」步驟中參照單 *一「動態* 檔」 ] 。
 
 若要定義功能性 [!UICONTROL  「審核檔」步驟 ] ：
 
-1. 插入 [!UICONTROL  「審核檔」步驟 ] 。
-1. 指定可依「審核檔」步驟操作的群組 （角色  ）。
+1. 插入審核 [!UICONTROL  檔步驟 ] 。
+1. 指定可依「審核檔」步驟 ] 操作的 [!UICONTROL  群組 （角色）。
 
 ![業務流程步驟](images/insert-review-doc-steptornm-575.png)
 
 若要設定「 [!UICONTROL  審核檔」步驟 ] ：
 
-1. 請依 *[!UICONTROL Adobe將電子簽名整合類型指定]* 為 ** eSign。
+1. *[!UICONTROL 依Adobe]* 將電子簽名整合類型 ]*指定為*[!UICONTROL  eSign。
 
 1. 在簽名方格新增列.
 
    * 簽名方格會指定文件傳遞過程中的簽名順序：每列可以包含一個或多個角色，而每列也代表簽署流程中的每個步驟。
    * 在特定步驟中，會通知角色的每個成員該簽署事件呈現擱置狀態.
    * 只要角色的某一成員進行簽署，即完成該列步驟，文件會接著進行下一列步驟.
-   * 所有列都已簽署後，「 [!UICONTROL  審核檔」步驟即 ] 完成。
+   * 所有列都已簽署後，「 [!UICONTROL  審核檔」步驟 ] 即完成。
 
-1. 指定要簽署的文件。如果檔是 [!UICONTROL  Offer ] BP，您可以透過「產生檔」步驟加以使用。 否則，請選擇現有的文件或報告。
+1. 指定要簽署的文件。如果檔為 Offer [!UICONTROL  BP ] ，您可以透過「產生檔」步驟加以使用。 否則，請選擇現有的文件或報告。
 
 1. 對所有需要簽署的文件重複執行步驟 3。
 
    ![設定「審核文件」步驟](images/configure-rd-stepsmaller-575.png)
 
-1. 您也可以選擇新增「重新導向使用者」，以擷取「拒絕簽署」動作。 當使用者拒絕時，請 [!DNL Workday] 將檔重新傳送至已設定的安全群組以供審核。
+1. 您也可以選擇新增「重新導向使用者」，以擷取「拒絕簽署」動作。 當使用者拒絕時， [!DNL Workday] 請將檔重新傳送至已設定的安全群組以供審核。
 
-從「審核檔步驟」的相關動作選單  中，選取「 **[!UICONTROL 業務流程]** **[!UICONTROL 」>「維持重新導向]** 」。 接著，選取下列其中一項：
+從「審核檔步驟」的 [!UICONTROL  相關動作選單中，選取 **[!UICONTROL 「業務流程]** 」> **[!UICONTROL 「維持重新導向」]** 。 ]接著，選取下列其中一項：
 
-* **[!UICONTROL 返回]** ：讓安全群組成員退回業務流程的上一步。 業務流程會從該步驟重新開始。
-* **[!UICONTROL 移至下]** 一步：讓安全群組成員可以前進到業務流程的下一步。
+* **[!UICONTROL 「返回]** 」：若要讓安全群組成員退回業務流程中的上一步。 業務流程會從該步驟重新開始。
+* **[!UICONTROL 移至下一步]** ：讓安全群組成員可以前進到業務流程的下一步。
 * **[!UICONTROL 安全群組]** ：以重新導向業務流程中的步驟。 「重新導向」區段的業務流程安全性原則中選取此提示顯示的安全群組。
 
 ## 業務流程步驟說明 {#business-process-step-notes}
@@ -90,9 +90,9 @@ Adobe Sign會 [!DNL Workday] 透過「 [!UICONTROL  審核檔」步驟公開 ] �
 
 ### 範例：優惠 {#example-offer}
 
-Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 Offer BP。 當工作應用程式狀態移至「 [!UICONTROL  優惠 ] 」或「優惠」時，將會觸發  此設定。
+Offer BP 是 Job Application Dynamic BP ] 的 [!UICONTROL  副程式，必須設定為執行 Offer BP。當工作應用程式狀態移至「 [!UICONTROL  優惠 ] 」或「 [!UICONTROL  優惠」時，將會觸發此設定 ] 。
 
-以下範例中，「 [!UICONTROL  審核檔」步驟 ] 是使用北美和日本的「動態檔」步驟。
+以下範例中， [!UICONTROL  「審核檔」步驟 ] 是使用北美和日本的「動態檔」步驟。
 
 ![[!DNL Workday] 業務流程範例](images/bp-for-offersmaller-575.png)
 
@@ -105,22 +105,22 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
    若為 false，則會執行使用日文檔的步驟「bb」。
 
-* 在「審核 [!UICONTROL  檔」步驟 ] 「bc」中定義簽名程式。
+* 在「審核檔」步驟 ] 「bc」中 [!UICONTROL  定義簽名程式。
 * 定義在必要完成步驟「d」中提供優惠的決策點。
 
 在「ba」步驟所產生的動態文件稱為[!UICONTROL 「工作邀請函」]，其中包含名為[!UICONTROL 「快速工作邀請」]的單一文字塊。您可以視需要新增多個文字區塊，例如頁首、標注、補償、Stock、結案、條款等。
 
 ![[!DNL Workday] 檢視檔頁面](images/offer-letter-575.png)
 
-以下動態聘書是在 [!DNL Workday] RTF 文字編輯器中建立的。 以灰色標示 *的專案* 是 [!DNL Workday] 參考上下文資料的物件。
+以下動態聘書是在 RTF 文字編輯器中 [!DNL Workday] 建立的。 以灰色標示 *的專案是 [!DNL Workday] 參考上下文資料的* 物件。
 
 在 {{括弧}} 中的項目為 [Adobe 文字標籤](https://adobe.com/go/adobesign_text_tag_guide_tw)。
 
 ![動態表格範例](images/script.png)
 
-在「 [!UICONTROL  審核檔」步驟中 ] ，系統會參考上一個步驟中的動態檔，並透過兩個簽署群組定義連續的簽名程式。
+在「 [!UICONTROL  審核檔」步驟 ] 中，系統會參考上一個步驟中的動態檔，並透過兩個簽署群組定義連續的簽名程式。
 
-以下說明的行為會先將動態產生的檔傳送給雇用管理員，然後路由至應徵者。
+以下說明的行為會先將動態產生的檔傳送給雇用經理，然後路由至應徵者。
 
 ![[!DNL Workday] 定義的簽署群組](images/configure-rd-stepsmaller-575.png)
 
@@ -128,7 +128,7 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
 在 [!DNL Workday] 30 天內推出「大量分送檔或工作」工作，可用來將單一檔傳送給大量群組 （&lt;20K) of individual signers. 每份文件限一個簽名。從搜尋列存取「 [!UICONTROL  建立分送檔或工作 ] 」動作，以建立分送。
 
-範例：傳送員工股票選擇表格給使用 Global Modern Services 的所有經理  。 您可以視需要進一步篩選給個別經理。
+範例：傳送員工股票選擇表格給使用 Global Modern Services ] 的所有經理 [!UICONTROL  。您可以視需要進一步篩選給個別經理。
 
 您也可以存取「 **檢視分送檔或工作** 」報告，追蹤分送進度。
 
@@ -154,11 +154,11 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
 ## 已簽署的檔 {#signed-documents}
 
-簽署 [!DNL Workday] 週期會透過Adobe Sign來隱藏所有電子郵件通知。 使用者會在其 [!DNL Workday] 收件匣中得知待處理的動作。
+簽署週期會 [!DNL Workday] 透過Adobe Sign來隱藏所有電子郵件通知。 使用者會在其收件匣中 [!DNL Workday] 得知待處理的動作。
 
 一旦所有「簽名群組」簽署檔，已簽署檔的副本便會透過電子郵件分發給「簽名群組」的所有成員。
 
-若要抑制此行為，您可以聯絡 [!UICONTROL  您的Adobe Sign Success Manager ] 或 [ Adobe Sign 支援小組 ](https://adobe.com/go/adobesign-support-center) 。
+若要抑制此行為，您可以聯絡您的 [!UICONTROL  Adobe Sign Success Manager ] 或 [ Adobe Sign 支援小組 ](https://adobe.com/go/adobesign-support-center) 。
 
 在內部 [!DNL Workday] ，您可以在完整程式記錄中存取已簽署的檔。 您可能會發現：
 
@@ -186,7 +186,7 @@ Offer BP 是 Job Application Dynamic BP 的副程式  ，必須設定為執行 O
 
 Adobe Sign 是整合合作夥伴，同時也是當整合無法取得簽名，或待簽名通知失敗時應該連絡的對象。
 
-Adobe Sign客戶應聯絡其客戶成功經理尋求支援。 或者，  您也可以透過電話連絡Adobe技術支援：1-866-318-4100，等候產品清單，然後輸入：4 和 2 （依提示操作）。
+Adobe Sign客戶應聯絡其客戶成功經理尋求支援。 或者， [!UICONTROL  您也可以透過電話連絡Adobe技術支援 ] ：1-866-318-4100，等候產品清單然後輸入：4 和 2 （依提示操作）。
 
 * [新增 Adobe Text 標籤至文件](https://www.adobe.com/go/adobesign_text_tag_guide)
 

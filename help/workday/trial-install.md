@@ -8,11 +8,11 @@ content-type: reference
 discoiquuid: 63ed2d5b-9d82-4f87-97e1-2dde23501e89
 locnotes: All languages; screenshots for Tier 1 and 2 only (see the currently published localized page for guidance)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: beafe6c0-262f-4f5b-9315-a023a4eef4a2
-source-git-commit: c25be043b404e9bf7a90496d4e47c1f22069313d
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '995'
 ht-degree: 39%
@@ -23,7 +23,7 @@ ht-degree: 39%
 
 ## 概覽 {#overview}
 
-本檔旨在協助 [!DNL Workday] 客戶瞭解如何使用 Adobe Sign 啟用試用帳戶，然後將其整合至 [!DNL Workday] 租使用者。 若要在其中使用 [!DNL Workday] Adobe Sign，您必須知道如何建立和修改專案， [!DNL Workday] 例如：
+本檔旨在協助 [!DNL Workday] 客戶瞭解如何使用 Adobe Sign 啟用試用帳戶，然後將其整合至 [!DNL Workday] 租使用者。 若要在應用程式內 [!DNL Workday] 使用Adobe Sign，您必須瞭解如何建立和修改 [!DNL Workday] 專案，例如：
 
 * 業務流程框架
 * 租使用者設定和設定
@@ -39,23 +39,23 @@ ht-degree: 39%
 
 ## 啟用您的Adobe Sign試用帳戶 {#activate-sign-trial-account}
 
-若要申請 30 天的Adobe Sign試用版，您必須填寫此 [ 註冊表單 ](https://land.echosign.com/esign-trial-workday-registration.html) 。
+若要申請 30 天的 Adobe Sign 試用版，您必須填寫此 [ 註冊表單 ](https://land.echosign.com/esign-trial-workday-registration.html) 。
 
 **注意** ：我們強烈建議您使用有效功能的電子郵件地址來建立試用版，而不是臨時電子郵件。 您必須存取此電子郵件才能驗證帳戶，因此該位址必須有效。
 
 ![試用版請求表格](images/trial-land.png)
 
-在一個工作天內，Adobe Sign入門專家會為您的帳戶 （在 Adobe Sign 中） 規定 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
+在一個工作天內，Adobe Sign入門專家會為您的帳戶 （Adobe Sign） 規定 [!DNL Workday] 。 完成後，您會收到確認電子郵件，如下所示。
 
 ![Adobe Sign 傳送的歡迎電子郵件](images/welcome-email-2020.png)
 
-若要初始化您的帳戶並存取Adobe Sign  首頁，請依照電子郵件中的指示操作。
+若要初始化您的帳戶並存取Adobe Sign [!UICONTROL  首 ] 頁，請依照電子郵件中的指示操作。
 
 ![Adobe Sign儀表板](images/classic-home.png)
 
 ## 產生整合金鑰 {#generate-an-integration-key}
 
-對於新的安裝，您必須在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證Adobe Sign和 [!DNL Workday] 環境，以便彼此信任及共用內容。
+若要進行新安裝，您必須在 Adobe Sign 產生整合金鑰，然後將其輸入 [!DNL Workday] 。 此金鑰會驗證Adobe Sign和 [!DNL Workday] 環境，以便彼此信任及共用內容。
 
 若要在 Adobe Sign 中產生整合金鑰：
 
@@ -63,7 +63,7 @@ ht-degree: 39%
 1. 導覽至 **[!UICONTROL **帳戶]** > **[!UICONTROL 個人偏好]** 設定> **[!UICONTROL 存取權杖**]** 。
 1. 在視窗右側按一下&#x200B;**圓圈中有加號的圖示.**
 
-   會開啟「 [!UICONTROL  建立整合金鑰」 ] 介面。
+   會開啟「 [!UICONTROL  建立整合金鑰 ] 」介面。
 
    ![導覽至「存取記號」頁面的影像](images/navigate-to-group-accesstokens.png)
 
@@ -102,24 +102,24 @@ ht-degree: 39%
 
 ### 安裝整合金鑰 {#install-the-integration-key}
 
-將整合金鑰安裝到 [!DNL Workday] 租使用者後，便會與Adobe Sign建立信任關係。 建立關係後，任何業務流程都可以 [!UICONTROL  新增「審核檔」步驟 ] 來啟用簽名程式。
+在租使用者中安裝整合金鑰 [!DNL Workday] 可與 Adobe Sign 建立信任關係。 建立關係後，任何業務流程都可以新增「 [!UICONTROL  審核檔」步驟 ] 來啟用簽名程式。
 
 **注意**[!DNL Workday]：Adobe Sign 在 環境中稱為「Adobe Document Cloud」。
 
 若要安裝整合金鑰：
 
-1. 以 [!DNL Workday] 帳戶管理員的身分登入。
+1. [!DNL Workday]以帳戶管理員的身分登入。
 1. Search取並開啟 **[!UICONTROL 「編輯租使用者設定 - 業務流程」]** 頁面。
 
 1. 提供下列四個欄位的資訊：
 
-   * **[!UICONTROL Adobe Document Cloud確認]** ：整合的修正文字辨識。
+   * **[!UICONTROL Adobe Document Cloud承認]** ：整合的修正文字辨識。
 
    * **[!UICONTROL Adobe Document Cloud API金鑰]** ：安裝整合金鑰的位置
 
-   * **[!UICONTROL Adobe Document Cloud寄件者]** 電子郵件地址：Adobe Sign中群組層級管理員的電子郵件地址
+   * **[!UICONTROL Adobe Document Cloud寄件者電子郵件地址]** ：Adobe Sign中群組層級管理員的電子郵件地址
 
-   * **[!UICONTROL 「檔已取消」時移除需要電子簽名的檔]** ：如果檔已取消，可選擇性設定將檔從簽署週期中移除 [!DNL Workday] 。
+   * **[!UICONTROL 「檔已取消]** 」時移除需要電子簽名的檔：如果檔已取消，可選擇性設定，將檔從簽署週期中 [!DNL Workday] 移除。
 
    ![與 Adobe Sign 整合金鑰相關的欄位](images/bp-filled-torn2-575.png)
 
@@ -131,11 +131,11 @@ ht-degree: 39%
 
    ![整合金鑰欄位和金鑰持有者電子郵件欄位](images/bp-filled-small.png)
 
-Adobe Sign功能現在可以新增到任何業務流程中，方法是新增「 [!UICONTROL  審核檔」步驟 ] ，並將其設為 **[!UICONTROL 透過Adobe]** 作為電子簽名類型來使用 eSign。
+Adobe Sign功能現在可以新增到任何業務流程中，方法是新增「 [!UICONTROL  審核檔」步驟 ] ，並將其設為透過Adobe ]**作為電子簽名類型來使用**[!UICONTROL  eSign。
 
 ### 設定「審核檔」步驟 {#configure-the-review-document-step}
 
-「審核檔」步驟的檔可以是靜態檔;在同一個業務流程中由「產生檔」步驟產生的檔;或是以報告Designer建立格式化 [!DNL Workday] 報告。 這所有的案例都能透過[「Adobe 文字標籤」](https://adobe.com/go/adobesign_text_tag_guide_tw)增強，以控制 Adobe Sign 特定元件的外觀和位置。文件來源必須在業務流程定義中指定。無法在業務程式執行時上傳暫存檔案。
+「審核檔」步驟的檔可以是靜態檔;在同一個業務流程中由「產生檔」步驟產生的檔;或是以報告建立的格式化報告 [!DNL Workday] Designer。 這所有的案例都能透過[「Adobe 文字標籤」](https://adobe.com/go/adobesign_text_tag_guide_tw)增強，以控制 Adobe Sign 特定元件的外觀和位置。文件來源必須在業務流程定義中指定。無法在業務程式執行時上傳暫存檔案。
 
 唯一能透過「審核檔步驟」使用Adobe Sign，是能夠將簽署者群組序列化。 簽署者群組可讓您指定依序登入的角色型群組。 Adobe Sign不支援平行簽署群組。
 

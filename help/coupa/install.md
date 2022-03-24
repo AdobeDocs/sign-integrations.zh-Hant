@@ -6,11 +6,11 @@ topic-tags: EchoSign/Integrations
 content-type: reference
 locnotes: All languages; screenshots for Tier 1 and 2 only (see the currently published localized page for guidance)
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 12c91be5-afec-4918-a8fc-ceb33bedf98b
-source-git-commit: 623307e86f1b32edfbfa59dbd636ff74a6d09b62
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '823'
 ht-degree: 8%
@@ -27,26 +27,26 @@ ht-degree: 8%
 
 必要條件:
 
-* Adobe Sign企業版 [ 、Adobe Sign開發人員版 ](https://www.adobe.com/sign/developer-form.html) 或 [ Adobe Sign企業試用版的訂閱](https://www.adobe.com/sign/business.html)
+* 訂閱 Adobe Sign Enterprise、 [ Adobe Sign Developer Edition ](https://www.adobe.com/sign/developer-form.html) 或 [ Adobe Sign Enterprise 試用版](https://www.adobe.com/sign/business.html)
 * Adobe Sign管理員存取權
 * [!DNL Coupa BSM Suite] 標準或進階實例
 
 完成整合的高階步驟包括：
 
 * 設定要搭配使用的Adobe Sign群組 [!DNL Coupa BSM Suite]
-* 聯 [!DNL Coupa BSM Suite] 機至Adobe Sign
-* 建立Adobe Sign Webhook 以通知您的 [!DNL Coupa BSM Suite] 實例
+* 連線 [!DNL Coupa BSM Suite] 至Adobe Sign
+* 建立Adobe Sign Webhook 來通知您的 [!DNL Coupa BSM Suite] 實例
 
 ## 設定 Adobe Sign 群組 [!DNL Coupa BSM Suite] {#configure-adobe-sign-for-coupa}
 
-若要針對組織內的 Adobe Sign 進行專屬使用 [!DNL Coupa] ，管理員必須建立專門用於用途的Adobe Sign群組 [!DNL Coupa BSM Suite] 。 此Adobe Sign群組應有一個可當做服務帳戶的單一群組管理員使用者帳戶。 由於此服務帳戶用於所有簽名要求，因此應保持匿名，例如 `Legal@xyz.com` ， `Purchasing@xyz.com` 或是 `CoupaCLM@xyz.com` 個人帳戶，例如 `Bob.Smith@xyz.com` 。
+若要針對組織內的 Adobe Sign 進行專屬使用，管理員必須建立專為 [!DNL Coupa] 使用方式 [!DNL Coupa BSM Suite] 而Adobe Sign群組。 此Adobe Sign群組應具有一個可當做服務帳戶的單一群組管理員使用者帳戶。 由於此服務帳戶用於所有簽名要求，因此應保持匿名，例如， `Legal@xyz.com` `Purchasing@xyz.com` 或 `CoupaCLM@xyz.com` 是個人帳戶，例如 `Bob.Smith@xyz.com` 。
 
 ### 在「Adobe Sign中建立群組和使用者 {#create-sign-user-group}
 
 若要在 Adobe Sign 建立用戶：
 
 1. 以帳戶管理員身分登入 Adobe Sign.
-1. 流覽至 **[!UICONTROL 「帳戶]** > **[!UICONTROL 使用者]** 」。
+1. 流覽至「 **[!UICONTROL 帳戶]** > **[!UICONTROL 使用者」]** 。
 1. 若要建立新使用者，請按一下 ![ 加號圖示影像 ](images/icon_plus.png) 圖示。
 1. 在開啟的對話方塊中，提供新的使用者詳細資料：
 
@@ -54,19 +54,19 @@ ht-degree: 8%
 
       * 此使用者建立並維護 OAuth 關係。
       * 電子郵件地址必須是實際的驗證位址。
-   1. 輸入適當的「 [!UICONTROL  名字」 ] 和「 [!UICONTROL  姓氏」 ] 值。
-   1. 在「 [!UICONTROL  主要群組」 ] 欄位中，選取 **[!UICONTROL 「為此使用者建立新的群組]** 」。
-   1. 在「 [!UICONTROL  新增組名」字 ] 段中，提供直覺式組名，例如 *[!DNL Coupa BSM Suite]* 。
+   1. 輸入「名字」和 [!UICONTROL  「姓氏 ] 」 ] 的適當值 [!UICONTROL  。
+   1. 在「 [!UICONTROL  主要群組」 ] 欄位中，選 **[!UICONTROL 取「為此使用者建立新的群組」]** 。
+   1. 在「 [!UICONTROL  新增組名」 ] 欄位中，提供直覺式組名，例如 *[!DNL Coupa BSM Suite]* 。
 
    ![建立用戶面板](images/create-user.png)
 
-1. 選取 **[!UICONTROL 「儲存]** 」。
+1. 選取「 **[!UICONTROL 儲存」]** 。
 
-   儲存詳細資料後，「 [!UICONTROL  使用者 ] 」頁面會顯示狀態為「已建立」的新使用者  。
+   儲存詳細資料後， [!UICONTROL  「使用者 ] 」頁面會顯示狀態為 [!UICONTROL  「已建立 ] 」的新使用者。
 
    ![新建立使用者的視圖](images/post-user-creation.png)
 
-   建立  的狀態表示使用者尚未驗證其電子郵件地址。
+   ]建立 [!UICONTROL  的狀態表示使用者尚未驗證其電子郵件地址。
 
 1. 若要驗證電子郵件地址：
    1. 登入新使用者的電子郵件。
@@ -74,7 +74,7 @@ ht-degree: 8%
    3. 在顯示&#x200B;**[!UICONTROL 「按一下這裡以設定密碼」]**&#x200B;之處按一下
    4. 設定密碼。
 
-   確認電子郵件地址後，使用者的狀態會從「 [!UICONTROL  已建立」變更 ] 為「 [!UICONTROL  作用中 ] 」。
+   確認電子郵件地址後，使用者的狀態會從 [!UICONTROL  「已建立 ] 」變更為「 [!UICONTROL  ACTIVE」 ] 。
 
    ![新啟用使用者的影像](images/active-user.png)
 
@@ -82,39 +82,39 @@ ht-degree: 8%
 
 建立群組和該群組中的使用者後，您必須將該使用者設定為「群組管理員」。
 
-若要提升群組中的新使用者 [!DNL Coupa BSM Suite] ：
+若要提升群組中 [!DNL Coupa BSM Suite] 的新使用者：
 
 1. 導覽至[!UICONTROL 「用戶」]頁面 (若您目前不在該頁面).
 2. 按兩下該使用者。
 
-   會開啟  使用者許可權的「編輯」頁面。
+   會開啟 [!UICONTROL  使用者許可權的「編輯 ] 」頁面。
 
 3. 在「群組成員資格」區段下，選取「 **[!UICONTROL 群組管理員]** 」和「 **[!UICONTROL 可以傳送」]** 選項。
-4. 取消選取「 **[!UICONTROL 使用者是帳戶管理員]** 」，而 **[!UICONTROL 「使用者可以簽署檔]** 」選項。
+4. 取消選取「 **[!UICONTROL 使用者是帳戶管理員]** 」，而 **[!UICONTROL 「使用者可以簽署檔」]** 選項。
 5. 按一下&#x200B;**[!UICONTROL 「儲存」]**。
 
    ![使用者設定的影像](images/user-settings.png)
 
 ## 設定 [!DNL Coupa BSM Suite] 實例 {#configure-coupa}
 
-若 [!DNL Coupa BSM Suite ] 要完成例項與Adobe Sign之間的連線，必須在這些服務之間建立信任關係。
+若要完成例項與Adobe Sign之間的 [!DNL Coupa BSM Suite ] 連線，必須在這些服務之間建立信任關係。
 
-若要設定 [!DNL Coupa BSM Suite] ：
+若要設定： [!DNL Coupa BSM Suite]
 
-1. 將您的 [!DNL Coupa BSM Suite] 實例連線至您在上方建立的 Adobe Sign 服務帳戶。
+1. 將您的 [!DNL Coupa BSM Suite] 實例與您在上方建立的 Adobe Sign 服務帳戶連結。
 1. 建立 Adobe Sign Webhook 實例，以通知您的 Coupa BSM Suite 實例關於合約更新的資訊。
 
-如需連結和 [!DNL Coupa BSM Suite] 如何建立和註冊 Webhook 的詳細資訊，請參閱 [ Adobe Sign Coupa BSM Suite 實例支援檔 ](https://success.coupa.com/Support/Docs/Power_Apps/CLM_Standard/Signing_and_Approvals/Enable_E-Signatures_Through_Adobe_Sign_and_DocuSign) {target=&quot;_blank&quot;}。
+如需連結 [!DNL Coupa BSM Suite] 和如何建立和註冊 Webhook 的詳細資訊，請參閱 [ Adobe Sign Coupa BSM Suite 實例支援檔 ](https://success.coupa.com/Support/Docs/Power_Apps/CLM_Standard/Signing_and_Approvals/Enable_E-Signatures_Through_Adobe_Sign_and_DocuSign) {target=&quot;_blank&quot;}。
 
-## [!DNL Webhook]在Adobe Sign中創作 {#create-webhook}
+## 在Adobe Sign中創作 [!DNL Webhook] {#create-webhook}
 
 Coupa CLM 整合會使用 Adobe Sign 的 Webhook 通知來傳送合約狀態的相關更新。 必須完成 Webhook 設定，否則傳送供簽署的合約將保持不完整，或已簽署的合約不會傳回 Coupa CLM。
 
-若要在「Adobe Sign中建立 Webhook：
+若要在 Adobe Sign 中建立 Webhook：
 
 1. 使用上方建立的群組管理員使用者登入 Adobe Sign，例如 `coupaclm@MyDomain.com` 。
 
-1. 流覽至 **「** 群組> **** Webhook」。
+1. 流覽至「 **群組** > **Webhook」** 。
 
    ![使用者設定的影像](images/webhook-login.png)
 
@@ -128,7 +128,7 @@ Coupa CLM 整合會使用 Adobe Sign 的 Webhook 通知來傳送合約狀態的�
 
 1. 選取所需的通知參數。
 
-1. 選取 **「儲存** 」。
+1. 選取「 **儲存」** 。
 
 ## 支援 {#support}
 

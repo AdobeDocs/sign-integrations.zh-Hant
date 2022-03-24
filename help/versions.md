@@ -1,14 +1,14 @@
 ---
 title: Adobe Sign整合產品版本與生命週期
-description: 瞭解Adobe Sign整合版本和支援生命週期
+description: 瞭解 Adobe Sign 整合版本和支援生命週期
 audience: External
 products: Adobe Sign
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: c1f22848-7951-4066-84d4-f8cf6c2f3a6f
-source-git-commit: 30cb79b6856c7b623dc5118b4aa40193bf749220
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '530'
 ht-degree: 40%
@@ -17,7 +17,7 @@ ht-degree: 40%
 
 # 產品版本與生命週期 {#version}
 
-Adobe Sign整合服務的版本修訂慣例和支援生命週期，與您可能熟悉的其他Adobe產品相同。
+Adobe Sign整合服務的Adobe Sign版本設定慣例和支援生命週期，與您可能熟悉的其他Adobe產品相同。
 
 ## 版本號碼
 
@@ -43,7 +43,7 @@ Adobe Sign整合服務的版本修訂慣例和支援生命週期，與您可能�
 >
 >當產品在開發中反覆運算時，所有版本不會公開。 因此，發行版本之間的修補程式版本可能會大幅提升。
 
-管理員必須將版本保持在最新狀態，以確保帳戶擁有所有功能的完整存取權，且所有已知的安全性問題都修補完畢。 若出於安全關注或是解決重大系統問題，Adobe Sign可能需要升級為最新修補版本。
+管理員必須將版本保持在最新狀態，以確保帳戶擁有所有功能的完整存取權，且所有已知的安全性問題都修補完畢。 出於安全關注或是解決重大系統問題，Adobe Sign可能需要升級為最新修補版本。
 
 ## 版本支援生命週期
 

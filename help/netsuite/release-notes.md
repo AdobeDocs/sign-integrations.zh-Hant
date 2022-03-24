@@ -1,12 +1,12 @@
 ---
 title: Adobe Sign for NetSuite 發行說明
-description: 瞭解最新版 Adobe Sign NetSuite 整合包含的新功能和變更。
+description: 瞭解最新版 Adobe Sign NetSuite 整合中所包含的新功能和變更。
 type: Documentation
-solution: Adobe Sign
+solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 6317723e-447a-4506-a621-4d967bdd6561
-source-git-commit: f8d0bc748872e675dc1c638eb4050efe9e3147ef
+source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
 workflow-type: tm+mt
 source-wordcount: '849'
 ht-degree: 51%
@@ -31,8 +31,8 @@ Adobe Sign 圖示已更新為新圖形。
 
 ### Adobe Sign for NetSuite 4.0.2
 
-品牌重塑為 **Adobe Sign** （從 *Adobe Document Cloud eSign 服務* ）\
-現在 *，* 您Adobe Sign看到 Adobe *eSign Services，* 作為品牌重塑的證據。
+品牌重塑為 **Adobe Sign （從 *Adobe Document Cloud eSign 服務*** ）\
+您現在會看到 *先前看到的* Adobe *eSign Services* Adobe Sign，以證明品牌重塑。
 
 ### Adobe Sign for NetSuite 4.0.1
 
@@ -109,7 +109,7 @@ NetSuite 更新其平台時造成一個 API 迴歸錯誤，已針對此錯誤發
 **所有 EchoSign 文件適用的 Adobe PDF 認證**
 
 * 所有從 EchoSign 傳送或下載的 PDF 檔案都會通過Adobe EchoSign數位憑證認證
-* Acrobat或 Reader 顯示認證，保證檔未經過竄改以獲得額外的信任及安心感
+* Acrobat或 Reader 顯示保證檔未經過竄改以獲得額外信任及安心的認證
 
 **收集支援文件**
 
