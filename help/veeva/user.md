@@ -9,26 +9,26 @@ solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
+source-git-commit: 1eafeb73f7b7055fa958b15a02148898f7c9d406
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '721'
 ht-degree: 2%
 
 ---
 
-# [!DNL Veeva Vault]Adobe Sign： 使用手冊 {#veeva-vault-user-guide}
+# Adobe Acrobat： [!DNL Veeva Vault] 使用手冊 {#veeva-vault-user-guide}
 
-[**連絡 Adobe Sign 支援人員**](https://adobe.com/go/adobesign-support-center_tw)
+[**連絡 Adobe Acrobat Sign 支援**](https://adobe.com/go/adobesign-support-center_tw)
 
-本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用 Adobe Sign 整合 [!DNL Veeva Vault] 來傳送合約。
+本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用 Adobe Acrobat Sign 進行 [!DNL Veeva Vault] 整合以傳送合約。
 
 ## 概覽 {#overview}
 
-Adobe Sign整合 [!DNL Veeva Vault] 有助於取得簽名或核准流程，以取得需要合法簽名或可稽核檔的任何檔。
+Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 有助於取得簽名或核准流程，以利任何需要合法簽名或可稽核檔處理的檔。
 
 傳送檔以供簽署的整體程式類似于傳送電子郵件，因此大多數使用者都容易採用。
 
-Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽名工作流程。 使用整合工作流程，您可以：
+Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽名工作流程。 使用整合工作流程，您可以：
 
 * 節省用於縮圖郵件、隔夜或傳真上的時間和資源。
 * 傳送合約以索取電子簽名或核准， [!DNL Veeva Vault] 存取即時合約記錄，並檢視已儲存的合約。
@@ -36,9 +36,9 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽�
 * eSign 提供超過 20 種語言版本，支援全球超過 50 個地區的傳真回覆服務.
 * 建立可重複使用的合約範本以傳送選項。
 
-## 使用Adobe Sign傳送合約 [!DNL Veeva Vault] {#send-sign-vault-agreement}
+## 使用 Adobe Acrobat Sign 傳送合約 [!DNL Veeva Vault] {#send-sign-vault-agreement}
 
-若要使用 Adobe Sign 來傳送 Veeva 的合約：
+若要使用 Adobe Acrobat Sign for Veeva 傳送合約：
 
 1. 前往登 [[!DNL Veeva Vault]  入頁面 ](https://login.veevavault.com/) ，並輸入您的使用者名稱和密碼。 它會開啟您的保存庫首頁，如下所示。
 
@@ -86,20 +86,24 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽�
 
    ![](images/select-adobe-sign.png)
 
+1. 如果 UMG （使用者加入多個群組） 功能已在 Adobe Acrobat Sign 帳戶上啟用，且傳送者屬於多個群組，您將看到如下所示的對話方塊。 在對話方塊中選取群組，然後選取「 **[!UICONTROL 確定」]** 。
+
+   ![](images/umg-dialog.png)
+
 1. 在「保存庫」中開啟的 iFrame 視窗中，輸入收件者的電子郵件地址，然後選 **[!UICONTROL 取「下一步」]** 。
 
    ![](images/iframe.png)
 
-   **注意：** 如果傳送者的電子郵件沒有Adobe Sign使用者帳戶，iFrame 視窗會顯示一則訊息，如下所示。 也會傳送包含啟用帳戶指示的電子郵件給使用者。
+   **注意：** 如果傳送者的電子郵件沒有 Adobe Acrobat Sign 使用者帳戶，iFrame 視窗會顯示一則訊息，如下所示。 也會傳送包含啟用帳戶指示的電子郵件給使用者。
 
    ![](images/iFrame-registration-message.png)
 
    ![](images/iFrame-confirm-email.png)
 
-   不過，如果 *「自動布建 Sign 使用者* 」功能已停用，Adobe Sign使用者建立失敗，而 iFrame 視窗會顯示訊息，要求使用者連絡其Adobe Sign帳戶管理員。 Adobe Sign帳戶管理員可以採取下列其中一個動作：
+   不過，如果 *「自動布建 Sign 使用者* 」功能已停用，Adobe Acrobat Sign 使用者建立失敗，而 iFrame 視窗會顯示訊息，要求使用者連絡其Adobe Acrobat Sign 帳戶管理員。 Adobe Acrobat Sign 帳戶管理員可以採取下列其中一個動作：
 
    * 啟用帳戶的 *「自動布建 Sign 使用者* 」功能。
-   * 在使用 Veeva 保存庫Adobe Sign整合之前，先在Adobe Sign中建立使用者。
+   * 在使用 Veeva 保存庫Adobe Acrobat Sign 整合之前，先建立 Adobe Acrobat Sign 中的使用者。
 
    ![](images/iFrame-contact-administrator.png)
 
@@ -111,7 +115,7 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽�
 
    ![](images/in-adobe-signing.png)
 
-1. 在Adobe Sign擷取並完成所有簽名後，保存庫中的檔「狀態」會變更為 [!UICONTROL  「已核准」 ] 。
+1. 在 Adobe Acrobat Sign 中擷取並完成所有簽名後，「保存庫中的狀態」檔會變更為 [!UICONTROL  「已核准」 ] 。
 
 1. 選取 **[!UICONTROL 「檔檔案」]** 選項，然後展開「 **[!UICONTROL 保存庫」中的「轉譯」]** 區段。 檔處於核准狀態後，系統會自動建立名為「Adobe Sign轉譯」的新轉譯。
 
@@ -121,7 +125,7 @@ Adobe Sign與 [!DNL Veeva Vault] 簡化程式整合，並加快您的檔和簽�
 
    ![](images/verify-signature.png)
 
-## 使用Adobe Sign取消合約 [!DNL Veeva Vault] {#cancel-sign-vault-agreement}
+## 使用 Adobe Acrobat Sign 取消合約 [!DNL Veeva Vault] {#cancel-sign-vault-agreement}
 
 1. 前往登 [[!DNL Veeva Vault]  入頁面 ](https://login.veevavault.com/) ，並輸入您的使用者名稱和密碼。 它會開啟您的保存庫首頁，如下所示。
 
