@@ -355,7 +355,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >請參閱「 *[設定自訂記錄類型 ] 許可權清單」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html） 「支援中心」中的「.com/app/help/helpcenter.nl?fid=section_N2879931.html」* 主題 [!DNL NetSuite] ，以瞭解詳細資訊
+   >請參閱 *[「設定自訂記錄類型許可權清單 」](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_N2879931.html)* 主題請參 [!DNL NetSuite] 閱「支援中心」以取得詳細資訊
 
    1. 從「角色」清單中 *選取角色* 。
    1. 將「位准」設 *為「**[!UICONTROL 完全」]**。*
