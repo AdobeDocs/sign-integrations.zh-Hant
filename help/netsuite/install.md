@@ -4,11 +4,11 @@ description: Adobe Sign至  [!DNL NetSuite]  安裝與自訂指南
 product: Adobe Sign
 locnotes: All languages; screenshots for Tier 1 and 2 only (see the currently published localized page for guidance)
 type: Documentation
-solution: Acrobat Sign, Adobe Sign
+solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: b326a9afa2c16333d390cac3b30a2c7c741a4360
+source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
 workflow-type: tm+mt
 source-wordcount: '4870'
 ht-degree: 0%
@@ -355,7 +355,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >請參閱 *[「設定自訂記錄類型許可權清單 」](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_N2879931.html)* 主題請參 [!DNL NetSuite] 閱「支援中心」以取得詳細資訊
+   >請參閱「 *[設定自訂記錄類型 ] 許可權清單」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html） 「支援中心」中的「.com/app/help/helpcenter.nl?fid=section_N2879931.html」* 主題 [!DNL NetSuite] ，以瞭解詳細資訊
 
    1. 從「角色」清單中 *選取角色* 。
    1. 將「位准」設 *為「**[!UICONTROL 完全」]**。*
