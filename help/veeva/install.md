@@ -10,9 +10,9 @@ solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 1eafeb73f7b7055fa958b15a02148898f7c9d406
+source-git-commit: 2c2d7ebe427166222cc62c5ab8f867275a97cce9
 workflow-type: tm+mt
-source-wordcount: '3573'
+source-wordcount: '3568'
 ht-degree: 3%
 
 ---
@@ -42,7 +42,7 @@ ht-degree: 3%
 
 ## 配置 [!DNL Veeva Vault] {#configure-veeva}
 
-若要設定 [!DNL Veeva Vault] 與 Adobe Acrobat Sign 整合，您需要執行下列步驟。
+若要設定 [!DNL Veeva Vault] 與 Adobe Acrobat Sign 整合，您必須執行下列步驟。
 
 ### 步驟 1. 建立群組 {#create-group}
 
@@ -222,7 +222,7 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
 ### 步驟 6. 建立使用者角色設定 {#create-user-role-setup}
 
-一旦正確設定生命週期，系統應確保 DAC 為所有符合 Adobe Acrobat Sign 程式資格的檔新增Adobe Sign管理員使用者。 建立適當的「使用者角色設定」記錄可指定：
+在正確設定生命週期後，系統應確保 DAC 新增Adobe Sign管理員使用者，以處理所有符合 Adobe Acrobat Sign 程式資格的檔。 建立適當的「使用者角色設定」記錄可指定：
 
 * Adobe Sign檔案類型群組
 * Adobe Sign管理員角色的應用程式角色
@@ -255,7 +255,7 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
    ![影像](images/use-shared-fields.png)
 
-1. 請注意，這兩個欄位都必須具有特定安全性，僅允許Adobe Sign管理員群組的成員更新其值。
+1. 這兩個欄位都必須具有特定安全性，僅允許「Adobe Sign管理員群組」的成員更新其值。
 
    ![影像](images/security-overrides.png)
 

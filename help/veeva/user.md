@@ -9,7 +9,7 @@ solution: Acrobat Sign, Adobe Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 1eafeb73f7b7055fa958b15a02148898f7c9d406
+source-git-commit: 2c2d7ebe427166222cc62c5ab8f867275a97cce9
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -56,7 +56,7 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
    ![](images/choose-document-type.png)
 
-1. 選取 **[!UICONTROL 「確定]** 」以關閉對話方塊。
+1. 若要關閉對話方塊，請選取「 **[!UICONTROL 確定」]** 。
 
 1. 選取「 **[!UICONTROL 下一步」]** 。
 
@@ -117,11 +117,11 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
 1. 在 Adobe Acrobat Sign 中擷取並完成所有簽名後，「保存庫中的狀態」檔會變更為 [!UICONTROL  「已核准」 ] 。
 
-1. 選取 **[!UICONTROL 「檔檔案」]** 選項，然後展開「 **[!UICONTROL 保存庫」中的「轉譯」]** 區段。 檔處於核准狀態後，系統會自動建立名為「Adobe Sign轉譯」的新轉譯。
+1. 選取 **[!UICONTROL 「檔檔案」]** 選項，然後展開「 **[!UICONTROL 保存庫」中的「轉譯」]** 區段。 一旦檔處於核准狀態，就會自動建立名為「Adobe Sign轉譯」的轉譯。
 
    ![](images/document-files.png)
 
-1. 下載Adobe Sign轉譯」，以驗證再次傳送簽名。
+1. 下載Adobe Sign轉譯」，以驗證收件者簽名。
 
    ![](images/verify-signature.png)
 
