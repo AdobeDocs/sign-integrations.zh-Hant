@@ -9,7 +9,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: 076c575d179f576366c1d9a76be0a582154574b1
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -86,7 +86,7 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
    ![](images/select-adobe-sign.png)
 
-1. 如果 UMG （使用者加入多個群組） 功能已在 Adobe Acrobat Sign 帳戶上啟用，且傳送者屬於多個群組，您將看到如下所示的對話方塊。 在對話方塊中選取群組，然後選取「 **[!UICONTROL 確定」]** 。
+1. 如果 UMG （使用者加入多個群組） 功能已在 Adobe Acrobat Sign 帳戶上啟用，且傳送者屬於多個群組，您將看到如下所示的對話方塊。 在對話方塊中選取群組，然後選 **[!UICONTROL 取「下一步」]** 。
 
    ![](images/umg-dialog.png)
 
