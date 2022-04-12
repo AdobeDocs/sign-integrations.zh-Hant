@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: aa8f965e516bacda8b4172d256da4700d479eab8
 workflow-type: tm+mt
-source-wordcount: '3568'
+source-wordcount: '3909'
 ht-degree: 3%
 
 ---
@@ -59,15 +59,17 @@ ht-degree: 3%
 * 簽名事件物件頁面版面配置
 * 簽署物件頁面版面配置
 * Process Locker 物件頁面版面配置
+* Adobe Sign整合工作記錄物件頁面版面配置
 * Adobe Sign轉譯類型
 * 原始轉譯類型
-* 共用欄位signature__c、allow_adobe_sign_user_actions__c
+* 共用欄位signature__c
 * Adobe Sign網頁動作
 * 取消Adobe Sign網頁動作
 * Adobe Sign管理員動作許可權集
 * Adobe Sign整合描述檔安全性設定檔
 * 管理員角色Adobe Sign應用程式角色
 * 檔案類型群組「Adobe Sign檔」
+* Adobe Sign整合工作記錄物件
 
 #### 簽名物件 {#signature-object}
 
@@ -87,6 +89,9 @@ ht-degree: 3%
 | cancellation_date__c | 取消日期 | Datetime | 保留合約已取消的日期。 |
 | completion_date__c | 完成日期 | Datetime | 保留合約完成的日期。 |
 | viewable_rendition_used__c | 已使用的可檢視轉譯 | 布林值 | 標注，指出已傳送可檢視的轉譯以供簽署。 （預設為正確） |
+| plugin_version__c | 增效模組版本 | 文字 （10） | 其用於允許適當處理在部署新版本 4.0 之前建立的所有合約。 注意：部署 4.0 自訂網頁應用程式版本後，每次建立簽名記錄時，此欄位會設定為 4.0。 |
+| external_environment__c | 外部環境 | 文字 （20） | 保留Adobe Sign建立合約的環境名稱。 |
+
 
 ![簽名物件詳細資料的影像](images/signature-object-details.png)
 
@@ -127,6 +132,7 @@ ht-degree: 3%
 | participant_email__c | 參與者電子郵件 | 字串 | 包含 Adobe Acrobat Sign 參與者的電子郵件 |
 | participant_role__c | 參與者角色 | 字串 | 擁有 Adobe Acrobat Sign 參與者的角色 |
 | signature__c | 簽名 | 物件 （簽名） | 包含簽名父記錄的參考資訊 |
+| external_id__c | 外部 ID | 文字 （200） | 包含由 Adobe Sign 產生的合約事件識別碼。 |
 
 ![影像](images/signature-event-object-details.png)
 
@@ -136,7 +142,25 @@ ht-degree: 3%
 
 ![簽名事件詳細資訊影像](images/process-locker-details.png)
 
-做為部署套件一部分的「簽名」、「簽署者」、「簽名事件」和「處理鎖」物件預設已啟用「此物件的稽核資料變更」屬性。
+#### Adobe Sign整合工作記錄物件 {#task-log}
+
+建立Adobe Sign整合任務記錄 （as_int_task_log__c）。 它是用來追蹤 AgreementsEventsSynchronizerJob 和 AgreementsEventsProcessingJob 執行的大量物件。AgreementsEventsSynchronizerJob：此工作可確保所有從Adobe Sign遺失的合約事件，皆可針對過去 N 天中于保存庫中建立的所有簽名，建立為「保存庫中作用中的簽名事件」。AgreementsEventsProcessingJob：此工作可確保所有具有有效簽名事件記錄的檔都會根據事件種類進行處理。
+
+Adobe Sign整合工作記錄物件欄位
+
+| 欄位 | 標籤 | 類型 | 描述 |
+| --- | --- | ---| --- | 
+| start_date__c | 開始日期 | Datetime | 工作開始日期 |
+| end_date__c | 結束日期 | Datetime | 工作結束日期 |
+| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態：完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
+| task_type__c | 任務類型 | 挑選清單 | 包含工作類型：合約事件同步 （agreements_events_synchronization__c） 合約事件處理 （agreements_events_processing__c） |
+| messages__c | 訊息 | 長 （32000） | 包含工作訊息 |
+
+![任務記錄物件詳細資訊的影像](images/task-log.png)
+
+![任務記錄物件欄位的影像](images/task-log-fields.png)
+
+做為部署套件一部分的簽名、簽署者、簽名事件、處理鎖和任務記錄物件預設會啟用「此物件的稽核資料變更」屬性。
 
 **注意：** 您可以啟用稽核資料變更設定，在稽核記錄中進行保存庫擷取物件記錄資料變更。 此設定預設為關閉狀態。 啟用此設定並建立記錄後，您就無法再停用該設定。 如果此設定關閉且有記錄，則只有保存庫擁有者可以更新設定。
 
@@ -232,12 +256,11 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
 ### 步驟 7. 設定檔欄位 {#create-fields}
 
-套件部署會根據建立整合所需的兩個新共用文件欄位建立：
+套件部署會根據建立整合所需的新共用檔欄位建立：
 
 * 簽名 （signature__c）
-* 允許Adobe Sign使用者動作 （allow_adobe_sign_user_actions__c）
 
-![影像](images/2-document-fields.png)
+![影像](images/document-fields.png)
 
 若要設定檔欄位：
 
@@ -246,8 +269,8 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
    ![影像](images/create-display-section.png)
 
-1. 對於兩個共用的檔欄位 （signature__c 和 allow_adobe_sign_user_actions__c），請更新「UI」區段，並以 **[!UICONTROL 「Adobe簽名]** 」作為區段標籤。
-1. 將三個共用欄位新增至所有符合Adobe Acrobat簽名資格的檔案類型。 若要這麼做，請在「基本檔」頁面中，選 **[!UICONTROL 取右上角的「新增]** > **[!UICONTROL 現有共用欄位]** 」。
+1. 對於共用的檔欄位 （signature__c），請更新「UI」區段，並以 **[!UICONTROL 「Adobe簽名]** 」作為區段標籤。
+1. 將兩個共用欄位新增至所有符合Adobe Acrobat簽名資格的檔案類型。 若要這麼做，請在「基本檔」頁面中，選 **[!UICONTROL 取右上角的「新增]** > **[!UICONTROL 現有共用欄位]** 」。
 
    ![影像](images/create-document-fields.png)
 
@@ -341,39 +364,61 @@ Adobe Acrobat Sign 合約生命週期具有下列狀態：
 
    * **在Adobe簽署** 之前 （已審核）：這是可傳送檔至 Adobe Acrobat Sign 狀態的預留位置名稱。 根據檔案類型，檔案類型可以是「草稿」狀態或「已審核」。 檔狀態標籤可根據客戶需求自訂。 在Adobe簽署狀態之前，必須先定義下列兩個使用者動作：
 
-      * 將檔狀態變更為 *「在草稿* 中Adobe Sign狀態的動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
+      * 將檔狀態變更為 *「在草稿* 中Adobe Sign狀態的動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。
       * 稱為「網頁動作」的「Adobe Sign」動作。 這個狀態必須具備可讓Adobe Sign管理員角色：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 1 的影像](images/lifecycle-state1.png)
 
+      * 「修改 *檢閱* 狀態基本安全性」，將其「 *在「Adobe Sign草稿* 」中設為「隱藏」，且僅限「為 *Adobe Sign管理員角色執行」* 。
+      **注意：** 如果 *Adobe Sign管理員角色* 不屬於 *「基本安全性：使用者動作* 」，請選 **[!UICONTROL 取「編輯]** > **[!UICONTROL 角色覆寫]** 」來新增 **[!UICONTROL Adobe Sign管理員角色]** 。接下來，新增 **「檢閱 *狀態」的Adobe Sign管理員角色*** 」。
+
+      ![影像](images/lifecycle-state-reviewed.png)
+      ![影像](images/lifecycle-state-reviewed-1.png)
+      ![影像](images/lifecycle-state-reviewed-2.png)
+
    * **在「草稿** Adobe Sign中：這是狀態的預留位置名稱，表示檔已上傳至 Adobe Acrobat Sign，且其合約處於「草稿」狀態。 這是必要的狀態。 此狀態必須定義下列五個使用者動作：
 
-      * 將檔狀態變更為 *「在編寫Adobe Sign狀態的* 動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為 *「在簽署Adobe狀態的動作* 。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為 *「已取消* 」狀態Adobe Sign動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 稱為「網頁動作」的動作「Adobe Sign」。
-      * 稱為「取消Adobe Sign」的動作。 這個狀態必須具備可Adobe Sign管理員角色的安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
+      * 將檔狀態變更為 *「在編寫Adobe Sign狀態的* 動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。
+      * 將檔狀態變更為 *「在簽署Adobe狀態的動作* 。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。
+      * 將檔狀態變更為 *「已取消* 」狀態Adobe Sign動作。 對於任何生命週期的所有檔案類型，此使用者動作的名稱必須相同。
+      * 稱為「網頁動作」的動作 *Adobe Sign* 。
+      * 稱為「網頁動作取消」的動作 *Adobe Sign* 。 這個狀態必須具備可Adobe Sign管理員角色的安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 2 的影像](images/lifecycle-state2.png)
 
+      * *「在Adobe Sign以基本安全性草稿* 」修改：「 *已取消* *」Adobe Sign、「在Adobe Sign撰寫* *」中的「Adobe簽署* 」動作必須隱藏給所有人，但「管理員角色」除Adobe Sign除外
+      **注意：** 如果 *「Adobe Sign管理員角色* 不屬於 *「基本安全性」：使用者動作* ，請選 **[!UICONTROL 取「編輯]** >角色覆寫 ]**」來新增**[!UICONTROL  Adobe Sign **[!UICONTROL 管理員角色]** 。接著，在 **[!UICONTROL 「草稿 *」狀態Adobe Sign新增Adobe Sign管理員角色]*** 」。
+
+      ![影像](images/atomic-security.png)
+
    * **在「Adobe Sign編寫** 」中：這是狀態的預留位置名稱，表示檔已上傳至 Adobe Acrobat Sign，且其合約處於 AUTHORING 或DOCUMENTS_NOT_YET_PROCESSED狀態。 這是必要的狀態。 此狀態必須已定義下列四個使用者動作：
 
-      * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為「在簽署Adobe狀態的動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
+      * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。
+      * 將檔狀態變更為「在簽署Adobe狀態的動作。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。
       * 稱為「網頁動作」的動作「Adobe Sign」
       * 稱為「取消Adobe Sign」的動作。 這個狀態必須具備可讓 Adobe Sign 管理員角色具備以下安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 3 的影像](images/lifecycle-state3.png)
 
+      * *「在Adobe Sign原安全性中* 修改」： *除了「管理員角色」之外，所有Adobe Sign「已取消* *」和「在Adobe簽署中」* 動作都必須 Adobe Sign隱藏
+      **注意：** 如果 *「Adobe Sign管理員角色* 不屬於 *「基本安全性」：使用者動作* ，請選 **[!UICONTROL 取「編輯]** >角色覆寫 ]**」來新增**[!UICONTROL  Adobe Sign **[!UICONTROL 管理員角色]** 。接著，在「Adobe Sign編寫狀態」中新增 **[!UICONTROL 「Adobe Sign管理員 *角色]*** 」。
+
+      ![影像](images/adobe-sing-authoring.png)
+
    * **在Adobe簽署** 中：這是狀態的預留位置名稱，表示檔已上傳至 Adobe Acrobat Sign，且其合約已傳送給參與者 （OUT_FOR_SIGNATURE 或OUT_FOR_APPROVAL狀態）。 這是必要的狀態。 此狀態必須已定義下列五個使用者動作：
 
-      * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為「已拒絕」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
-      * 將檔狀態變更為「已簽署Adobe狀態的動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 但是，無論生命週期如何，此使用者動作的名稱對於所有檔案類型都必須相同。 如有需要，此動作的標準可以設定為「允許Adobe Sign使用者動作等於「是」。
+      * 將檔狀態變更為「已取消」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。
+      * 將檔狀態變更為「已拒絕」狀態Adobe Sign動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 無論生命週期如何，此使用者動作的名稱對所有檔案類型都必須相同。
+      * 將檔狀態變更為「已簽署Adobe狀態的動作。 無論客戶的需求是什麼，都可以實現此動作的目標狀態，但針對不同類型可能不同。 但是，無論生命週期如何，此使用者動作的名稱對於所有檔案類型都必須相同。
       * 稱為「網頁動作」的動作 *Adobe Sign* 。
       * 稱為「網頁動作取消」的動作 *Adobe Sign* 。 這個狀態必須具備可讓 Adobe Sign 管理員角色具備以下安全性：檢視檔、檢視內容、編輯欄位、編輯關係、下載來源、管理可檢視轉譯，以及變更狀態。
 
       ![生命週期狀態 4 的影像](images/lifecycle-state4.png)
+
+      * *「在Adobe簽署狀態下修改* 」： *除了「管理員角色」之外，所有Adobe Sign「已取消* 」、 *「已* Adobe Sign拒絕」和 *「已簽署* Adobe Sign Adobe」動作皆必須隱藏
+      **注意：** 如果 *「Adobe Sign管理員角色* 不屬於 *「基本安全性」：使用者動作* ，請選 **[!UICONTROL 取「編輯]** >角色覆寫 ]**」來新增**[!UICONTROL  Adobe Sign **[!UICONTROL 管理員角色]** 。接著，在 **[!UICONTROL 「簽署狀態Adobe新增Adobe Sign *管理員角色*]** 」。
+
+      ![影像](images/in-adobe-signing-2.png)
 
       * **Adobe已簽署 （已核准）** ：這是狀態的預留位置名稱，表示檔已上傳至 Adobe Acrobat Sign，且其合約已完成 （已簽署或已核准狀態）。 這是必要的狀態，並且可以是現有的生命週期狀態，例如核准。此狀態不需要使用者動作。 它必須具備可讓Adobe Sign管理員角色：檢視檔、檢視內容和編輯欄位的安全性。
 
