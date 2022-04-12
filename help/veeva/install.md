@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: aa8f965e516bacda8b4172d256da4700d479eab8
+source-git-commit: 1026d696587b898b6e1132ca1a69642d799dcf1d
 workflow-type: tm+mt
 source-wordcount: '3909'
 ht-degree: 3%
@@ -92,7 +92,6 @@ ht-degree: 3%
 | plugin_version__c | 增效模組版本 | 文字 （10） | 其用於允許適當處理在部署新版本 4.0 之前建立的所有合約。 注意：部署 4.0 自訂網頁應用程式版本後，每次建立簽名記錄時，此欄位會設定為 4.0。 |
 | external_environment__c | 外部環境 | 文字 （20） | 保留Adobe Sign建立合約的環境名稱。 |
 
-
 ![簽名物件詳細資料的影像](images/signature-object-details.png)
 
 #### 簽署物件 {#signatory-object}
@@ -149,7 +148,7 @@ ht-degree: 3%
 Adobe Sign整合工作記錄物件欄位
 
 | 欄位 | 標籤 | 類型 | 描述 |
-| --- | --- | ---| --- | 
+|---|---|---|---| 
 | start_date__c | 開始日期 | Datetime | 工作開始日期 |
 | end_date__c | 結束日期 | Datetime | 工作結束日期 |
 | task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態：完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
