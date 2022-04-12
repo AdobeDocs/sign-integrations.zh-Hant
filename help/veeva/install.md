@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 1026d696587b898b6e1132ca1a69642d799dcf1d
+source-git-commit: c6c0257204ab45776450f77a5a95291a99371063
 workflow-type: tm+mt
 source-wordcount: '3909'
 ht-degree: 3%
@@ -148,11 +148,11 @@ ht-degree: 3%
 Adobe Sign整合工作記錄物件欄位
 
 | 欄位 | 標籤 | 類型 | 描述 |
-|---|---|---|---| 
+|:--|:--|:--|:---------| 
 | start_date__c | 開始日期 | Datetime | 工作開始日期 |
 | end_date__c | 結束日期 | Datetime | 工作結束日期 |
-| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態：完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
-| task_type__c | 任務類型 | 挑選清單 | 包含工作類型：合約事件同步 （agreements_events_synchronization__c） 合約事件處理 （agreements_events_processing__c） |
+| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態： <br><br> 完成 （task_completed__c） <br><br> 失敗 （task_completed_with_errors__c） <br><br> 失敗 （task_failed__c） |
+| task_type__c | 任務類型 | 挑選清單 | 包含工作類型： <br><br> 合約事件同步 （agreements_events_synchronization__c） <br><br> 合約事件處理 （agreements_events_processing__c） |
 | messages__c | 訊息 | 長 （32000） | 包含工作訊息 |
 
 ![任務記錄物件詳細資訊的影像](images/task-log.png)
