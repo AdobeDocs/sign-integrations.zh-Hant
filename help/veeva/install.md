@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: c6c0257204ab45776450f77a5a95291a99371063
+source-git-commit: 5481293e84bd72e09df2c2f4b5ce27c5fdea28d0
 workflow-type: tm+mt
 source-wordcount: '3909'
 ht-degree: 3%
@@ -78,7 +78,7 @@ ht-degree: 3%
 **簽名物件欄位**
 
 | 欄位 | 標籤 | 類型 | 描述 |
-| --- | --- | ---| --- | 
+|:---|:---|:---|:------- | 
 | external_id__c | 合約 ID | 字串 （100） | 包含 Adobe Acrobat Sign 唯一的合約 ID |
 | file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送至 Adobe Acrobat Sign 的檔案 md5 總和檢查碼 |
 | name__v | 名稱 | 字串 （128） | 包含合約名稱 |
@@ -101,7 +101,7 @@ ht-degree: 3%
 **簽署物件欄位**
 
 | 欄位 | 標籤 | 類型 | 描述 |
-| --- | --- | ---| --- | 
+|:---|:---|:---|:------- | 
 | email__c | 電子郵件 | 字串 （120） | 包含 Adobe Acrobat Sign 唯一的合約 ID |
 | external_id__c | 參與者 ID | 字串 （80） | 「Adobe Acrobat簽署」唯一參與者的識別碼 |
 | name__v | 名稱 | 字串 （128） | 包含 Adobe Acrobat Sign 參與者的名稱 |
@@ -120,7 +120,7 @@ ht-degree: 3%
 簽名事件物件欄位
 
 | 欄位 | 標籤 | 類型 | 描述 |
-| --- | --- | ---| --- | 
+|:---|:---|:---|:-------- | 
 | acting_user_email__c | 有效使用者的電子郵件 | 字串 | 儲存執行導致產生事件之動作的 Adobe Acrobat Sign 使用者的電子郵件 |
 | acting_user_name__c | 代理使用者名稱 | 字串 | 包含執行導致產生事件之動作的 Adobe Acrobat Sign 使用者名稱 |
 | description__c | 描述 | 字串 | 包含 Adobe Acrobat Sign 事件的說明 |
@@ -151,8 +151,8 @@ Adobe Sign整合工作記錄物件欄位
 |:--|:--|:--|:---------| 
 | start_date__c | 開始日期 | Datetime | 工作開始日期 |
 | end_date__c | 結束日期 | Datetime | 工作結束日期 |
-| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態： <br><br> 完成 （task_completed__c） <br><br> 失敗 （task_completed_with_errors__c） <br><br> 失敗 （task_failed__c） |
-| task_type__c | 任務類型 | 挑選清單 | 包含工作類型： <br><br> 合約事件同步 （agreements_events_synchronization__c） <br><br> 合約事件處理 （agreements_events_processing__c） |
+| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態： <br><br> 完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
+| task_type__c | 任務類型 | 挑選清單 | 包含工作類型： <br><br> 合約事件同步 （agreements_events_synchronization__c） 合約事件處理 （agreements_events_processing__c） |
 | messages__c | 訊息 | 長 （32000） | 包含工作訊息 |
 
 ![任務記錄物件詳細資訊的影像](images/task-log.png)
