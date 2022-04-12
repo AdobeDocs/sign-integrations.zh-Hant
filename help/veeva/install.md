@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 5481293e84bd72e09df2c2f4b5ce27c5fdea28d0
+source-git-commit: 6b06bb8562ea7464fdbc23a25a4be3572eccdd1e
 workflow-type: tm+mt
 source-wordcount: '3909'
 ht-degree: 3%
@@ -77,7 +77,7 @@ ht-degree: 3%
 
 **簽名物件欄位**
 
-| 欄位 | 標籤 | 類型 | 描述 |
+| 欄位 | 標籤 | 類型 | 描述         |
 |:---|:---|:---|:------- | 
 | external_id__c | 合約 ID | 字串 （100） | 包含 Adobe Acrobat Sign 唯一的合約 ID |
 | file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送至 Adobe Acrobat Sign 的檔案 md5 總和檢查碼 |
