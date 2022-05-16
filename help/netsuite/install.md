@@ -8,7 +8,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: 581b336b4a3610cfe3fd0d92f2a4eebe55b89b27
+source-git-commit: 568d001a05bd0e642036b4a73067689e987c02ba
 workflow-type: tm+mt
 source-wordcount: '4870'
 ht-degree: 1%
@@ -581,7 +581,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ## 解決
 
-### 決定更新進度  {#determineprogress}
+### 決定更新進度 {#determineprogress}
 
 如果更新似乎需要更長的時間，您可以查看「Adobe Sign套裝套裝安裝」腳本的「執行記錄」子索引標籤，以決定更新的進度，如下所示：
 
