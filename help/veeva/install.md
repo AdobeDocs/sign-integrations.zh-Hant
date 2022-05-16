@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 6b06bb8562ea7464fdbc23a25a4be3572eccdd1e
+source-git-commit: 0577f30c35a348174bed27c6eb309fce43f03eca
 workflow-type: tm+mt
 source-wordcount: '3909'
 ht-degree: 3%
@@ -77,7 +77,7 @@ ht-degree: 3%
 
 **簽名物件欄位**
 
-| 欄位 | 標籤 | 類型 | 描述         |
+| 欄位 | 標籤 | 類型 | 描述 |
 |:---|:---|:---|:------- | 
 | external_id__c | 合約 ID | 字串 （100） | 包含 Adobe Acrobat Sign 唯一的合約 ID |
 | file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送至 Adobe Acrobat Sign 的檔案 md5 總和檢查碼 |
@@ -151,7 +151,7 @@ Adobe Sign整合工作記錄物件欄位
 |:--|:--|:--|:---------| 
 | start_date__c | 開始日期 | Datetime | 工作開始日期 |
 | end_date__c | 結束日期 | Datetime | 工作結束日期 |
-| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態： <br><br> 完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
+| task_status__c | 工作狀態 | 挑選清單 | 保持工作狀態： <br /> 完成 （task_completed__c） 失敗 （task_completed_with_errors__c） 失敗 （task_failed__c） |
 | task_type__c | 任務類型 | 挑選清單 | 包含工作類型： <br><br> 合約事件同步 （agreements_events_synchronization__c） 合約事件處理 （agreements_events_processing__c） |
 | messages__c | 訊息 | 長 （32000） | 包含工作訊息 |
 

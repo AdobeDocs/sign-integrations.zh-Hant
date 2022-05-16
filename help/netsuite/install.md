@@ -8,10 +8,10 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: 0577f30c35a348174bed27c6eb309fce43f03eca
 workflow-type: tm+mt
-source-wordcount: '4870'
-ht-degree: 0%
+source-wordcount: '4871'
+ht-degree: 1%
 
 ---
 
@@ -243,7 +243,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    * 在 SuiteScript 區段中，啟用 **[!UICONTROL Client SuiteScript]** 和 **[!UICONTROL Server SuiteScript]** 選項，並同意兩者的服務條款。
 
-1. 選取「 **[!UICONTROL 儲存」]** 。
+1. 選取「**[!UICONTROL 儲存]**」。
 
    您的選項會設定為如影像中所示。
 
@@ -312,7 +312,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    * 在「 **[!UICONTROL 受眾]** 」子索引標籤作用中 （預設為啟用） 時，選取您要授與存取權的特定角色或使用者。 如果您要授與所有角色和使用者的存取權，請啟用各別 **[!UICONTROL 的「選取所有]** 選項」。
 
-   * 選取「 **[!UICONTROL 儲存」]** 。 變更確認訊息顯示後，選取「 **[!UICONTROL 返回」]** 。
+   * 選取「**[!UICONTROL 儲存]**」。變更確認訊息顯示後，選取「 **[!UICONTROL 返回」]** 。
 
 
 1. 選 **[!UICONTROL 取「腳本部署」頁面頂端的「清單]** 」以返回「 *腳本」* 清單頁面。
@@ -355,7 +355,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >請參閱「 *[設定自訂記錄類型 ] 許可權清單」（https://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html） 「支援中心」中的「.com/app/help/helpcenter.nl?fid=section_N2879931.html」* 主題 [!DNL NetSuite] ，以瞭解詳細資訊
+   >請參閱「 *[設定自訂記錄類型 ] 許可權清單」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html）* 有關更多資訊的 NetSuite 支援中心主題
 
    1. 從「角色」清單中 *選取角色* 。
    1. 將「位准」設 *為「**[!UICONTROL 完全」]**。*
