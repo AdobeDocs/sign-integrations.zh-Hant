@@ -11,10 +11,10 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 8b6fa8b4-e240-4ebe-ae2a-8807d75a6c69
-source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
+source-git-commit: 2cc0ea55ee7dca3682896c61c85eec29a555339c
 workflow-type: tm+mt
-source-wordcount: '1348'
-ht-degree: 31%
+source-wordcount: '1347'
+ht-degree: 30%
 
 ---
 
@@ -78,7 +78,7 @@ ht-degree: 31%
 
 ## 業務流程步驟說明 {#business-process-step-notes}
 
-[!UICONTROL 業務流程框架 ] 功能強大，但您必須確保：
+業務 [!UICONTROL  流程框架 ] 功能強大，但您必須確保：
 
 * 每個業務流程都必須有一個完成步驟，最好是在業務流程結束時完成。
 
@@ -114,7 +114,7 @@ Offer BP 是 Job Application Dynamic BP ] 的 [!UICONTROL  副程式，必須設
 
 以下動態聘書是在 RTF 文字編輯器中 [!DNL Workday] 建立的。 以灰色標示 *的專案是 [!DNL Workday] 參考上下文資料的* 物件。
 
-在 {{括弧}} 中的項目為 [Adobe 文字標籤](https://adobe.com/go/adobesign_text_tag_guide_tw)。
+專案Adobe {{brackets}} [ 文字標籤。 ](https://adobe.com/go/adobesign_text_tag_guide_tw)
 
 ![動態表格範例](images/script.png)
 
@@ -186,7 +186,7 @@ Offer BP 是 Job Application Dynamic BP ] 的 [!UICONTROL  副程式，必須設
 
 Adobe Sign 是整合合作夥伴，同時也是當整合無法取得簽名，或待簽名通知失敗時應該連絡的對象。
 
-Adobe Sign客戶應聯絡其客戶成功經理尋求支援。 或者， [!UICONTROL  您也可以透過電話連絡Adobe技術支援 ] ：1-866-318-4100，等候產品清單然後輸入：4 和 2 （依提示操作）。
+Adobe Sign客戶應聯絡其 [!UICONTROL  客戶成功經理 ] 尋求支援。 或者， [!UICONTROL  您也可以透過電話連絡Adobe技術支援 ] ：1-866-318-4100，等候產品清單然後輸入：4 和 2 （依提示操作）。
 
 * [新增 Adobe Text 標籤至文件](https://www.adobe.com/go/adobesign_text_tag_guide)
 
