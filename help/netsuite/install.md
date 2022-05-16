@@ -8,9 +8,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: c54f848d7832e831dc10c8069ac572226f0b31e8
+source-git-commit: 581b336b4a3610cfe3fd0d92f2a4eebe55b89b27
 workflow-type: tm+mt
-source-wordcount: '4873'
+source-wordcount: '4870'
 ht-degree: 1%
 
 ---
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 1. 如果您已是Adobe Sign客戶帳戶，請在安裝或升級後依照「設定 OAuth」的步驟  [ 進行 ](#oauth) 。
 
-   如果您沒有Adobe Sign帳戶，可以 [ 註冊企業試 ] 用版 （HTTPs://esign.adobe.com/adobe-sign-DNL NetSuite-trial-registration.html） 以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
+   如果您沒有Adobe Sign帳戶，可以 [ 註冊企業試 ](https://esign.adobe.com/adobe-sign-netsuite-trial-registration.html) 用帳戶以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
 
 ## 安裝或升級後設定 OAuth {#oauth}
 
@@ -111,13 +111,13 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
    >在沙箱帳戶中設定 OAuth 時，您可能會在授權完成時遇到「無法判斷客戶電腦 ID」錯誤。
    >
    >
-   >若要繼續操作，您必須變更 URL （系統） 的帳戶網域部分。[!DNL NetSuite].com） 在瀏覽器中指向沙箱， [!DNL NetSuite] 如下所示：
+   >若要繼續進行，您必須在瀏覽器中變更URL （system.netsuite.com） 的帳戶網域部分， [!DNL NetSuite] 以指向沙箱，如下所示：
    >
    >
    >變更:
    >
    >
-   >系統。[!DNL NetSuite].com/app/site/hosting/scriptlet.nl？script=745&amp;deploy=1&amp;web_access_point=HTTPs：//echosign.com
+   >system.netsuite.com/app/site/hosting/scriptlet.nl?script=745&amp;deploy=1&amp;web_access_point=https://echosign.com
    >
    >
    >收件人：
@@ -581,7 +581,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ## 解決
 
-### 決定更新進度
+### 決定更新進度  {#determineprogress}
 
 如果更新似乎需要更長的時間，您可以查看「Adobe Sign套裝套裝安裝」腳本的「執行記錄」子索引標籤，以決定更新的進度，如下所示：
 
