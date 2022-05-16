@@ -8,9 +8,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 378cac01-87c9-4288-8839-482121d49402
-source-git-commit: 0577f30c35a348174bed27c6eb309fce43f03eca
+source-git-commit: c54f848d7832e831dc10c8069ac572226f0b31e8
 workflow-type: tm+mt
-source-wordcount: '4871'
+source-wordcount: '4873'
 ht-degree: 1%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 [!DNL NetSuite]Adobe Sign提供與 。 [!DNL NetSuite]您可以使用Adobe Sign [!DNL NetSuite] 整合功能，將合約 （例如合約、報價和其他需要電子簽名的檔） 直接傳 [!DNL NetSuite] 送給收件者。 您可以從客戶、商機、報價和其他 [!DNL NetSuite] 記錄建立和傳送Adobe Sign合約。 Adobe Sign更新 [!DNL NetSuite] 合約的狀態，並在合約完整執行後儲存具有相關 [!DNL NetSuite] 記錄的合約。 您可以檢視從 [!DNL NetSuite] 產品內傳送所有合約的記錄。
 
-如需詳細資訊， [ 請參閱Adobe Sign發行  [!DNL NetSuite]  說明 ](https://experienceleague.adobe.com/docs/sign-integrations/using/netsuite/release-notes.html?lang=en) 。
+如需詳細資訊， [ 請參閱 Adobe Sign for NetSuite 版本資訊 ](https://experienceleague.adobe.com/docs/sign-integrations/using/netsuite/release-notes.html?lang=en) 。
 
 ## 安裝套裝組合並設定 OAuth {#install}
 
@@ -66,7 +66,7 @@ ht-degree: 1%
 
 1. 如果您已是Adobe Sign客戶帳戶，請在安裝或升級後依照「設定 OAuth」的步驟  [ 進行 ](#oauth) 。
 
-   如果您沒有Adobe Sign帳戶，可以 [ 註冊企業試 ] 用版 （HTTPs://esign.adobe.com/adobe-sign-trial-registration.html [!DNL NetSuite] ） 帳戶以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
+   如果您沒有Adobe Sign帳戶，可以 [ 註冊企業試 ] 用版 （HTTPs://esign.adobe.com/adobe-sign-DNL NetSuite-trial-registration.html） 以測試系統。 請依照線上註冊步驟啟用您的Adobe Sign帳戶。
 
 ## 安裝或升級後設定 OAuth {#oauth}
 
@@ -123,7 +123,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
    >收件人：
    >
    >
-   >系統。**沙 箱。**[!DNL NetSuite].com/app/site/hosting/scriptlet.nl？script=745&amp;deploy=1&amp;web_access_point=HTTPs：//echosign.com
+   >系統。**沙 箱。** netsuite.com/app/site/hosting/scriptlet.nl？script=745&amp;deploy=1&amp;web_access_point=HTTPs：//echosign.com
 
 ## 更新套件組合 （現有使用者）
 
@@ -355,7 +355,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >請參閱「 *[設定自訂記錄類型 ] 許可權清單」（HTTPs://system」。[!DNL NetSuite].com/app/help/helpcenter.nl?fid=section_N2879931.html）* 有關更多資訊的 NetSuite 支援中心主題
+   >如需詳細資訊， *[請參閱 NetSuite 說明中心中「設定自訂記錄類型 ](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_N2879931.html)* 」主題的許可權清單
 
    1. 從「角色」清單中 *選取角色* 。
    1. 將「位准」設 *為「**[!UICONTROL 完全」]**。*
@@ -573,7 +573,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ## 卸載套裝組合
 
-若要卸載此套裝組合，請依照「說明」中 [!DNL NetSuite] 提供的步驟操作。 *[如需詳細資訊，請參閱「支援中心」中的「卸載套裝 ] 組合 （HTTPs://docs.oracle.com/cloud/latest/ [!DNL NetSuite] cs_gs/NSBDL/NSBDL.pdf）* 」主題 [!DNL NetSuite] 。
+若要卸載此套裝組合，請依照「說明」中 [!DNL NetSuite] 提供的步驟操作。 如需詳細資訊， *[請參閱「說明中心」中的 [!DNL NetSuite] 「卸載套件 ](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3400972.html)* 」主題。
 
 當您卸載套裝組合時，未簽署的合約會被刪除。 已簽署的合約及其對應的稽核 PDF 檔案不受影響。
 
