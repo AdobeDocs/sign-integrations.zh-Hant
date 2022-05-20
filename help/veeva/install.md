@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 0577f30c35a348174bed27c6eb309fce43f03eca
+source-git-commit: c60fd19fa52fb203fd19da69d58792ef6fb88eec
 workflow-type: tm+mt
-source-wordcount: '3909'
+source-wordcount: '3931'
 ht-degree: 3%
 
 ---
@@ -453,6 +453,10 @@ Adobe Acrobat Sign 帳戶管理員必須依照下列步驟，使用中間軟體�
 1. 從右上角選 **[!UICONTROL 取「登]** 入」。
 
    ![中間軟體登入的影像](images/middleware_login.png)
+
+1. 若要授權對應用程式的存取層級，請選取「Acrobat將 OAuth 範圍選取為「 **[!UICONTROL 帳戶」或**[!UICONTROL  「群組」 ]**]** 。接下來，選取「 **[!UICONTROL 授權」]** 。
+
+   ![影像](images/middleware_oauth.png)
 
 1. 在開啟的 Adobe Acrobat Sign 登入頁面中，提供帳戶管理員電子郵件和密碼，然後選取「 **[!UICONTROL 登入」]** 。
 
