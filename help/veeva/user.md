@@ -9,7 +9,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
-source-git-commit: 076c575d179f576366c1d9a76be0a582154574b1
+source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
 workflow-type: tm+mt
 source-wordcount: '721'
 ht-degree: 2%
@@ -54,11 +54,12 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
 1. 在顯示的對話方塊中，選 **[!UICONTROL 取「類型]** 為 *[!UICONTROL 臨床」]* ，然後視需要選取 **[!UICONTROL 子類型]** 和 **[!UICONTROL 分類]** 。
 
+
    ![](images/choose-document-type.png)
 
 1. 若要關閉對話方塊，請選取「 **[!UICONTROL 確定」]** 。
 
-1. 選取「 **[!UICONTROL 下一步」]** 。
+1. 選取「**[!UICONTROL 下一步]**」。
 
 1. 在顯示的視窗中，填寫中繼資料區段中的所有必要欄位，然後選取「儲存 **[!UICONTROL 」]** 。
 

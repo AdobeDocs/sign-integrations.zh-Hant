@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: c60fd19fa52fb203fd19da69d58792ef6fb88eec
+source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
 workflow-type: tm+mt
 source-wordcount: '3931'
 ht-degree: 3%
@@ -52,7 +52,7 @@ ht-degree: 3%
 
 ### 步驟 2. 部署套件 {#deploy-package}
 
-[部署套件 ](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration.zip) 並依照步驟進行。 部署後，套件會建立：
+[部署套件 ](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration-veeva.zip) 並依照步驟進行。 部署後，套件會建立：
 
 * 自訂物件：簽名物件、簽署物件、簽名事件物件、處理鎖物件
 * 簽名物件頁面版面配置
@@ -323,7 +323,7 @@ URL：： <https://api.na1.adobesign.com/api/gateway/veevavaultintsvc/partner/ag
 
 Adobe Acrobat Sign 合約生命週期具有下列狀態：
 
-* 草案
+* 草稿
 * 編寫或DOCUMENTS_NOT_YET_PROCESSED
 * OUT_FOR_SIGNATURE或OUT_FOR_APPROVAL
 * 已簽署或核准
@@ -449,7 +449,7 @@ Adobe Acrobat Sign 合約生命週期具有下列狀態：
 
 Adobe Acrobat Sign 帳戶管理員必須依照下列步驟，使用中間軟體聯 [!DNL Veeva Vault] 機至 Adobe Acrobat Sign：
 
-1. 前往 Adobe Acrobat [ Sign forHome  [!DNL Veeva Vault]  頁面 ](https://static.adobesigncdn.com/veevavaultintsvc/index.html) 。
+1. 前往「首頁Adobe Acrobat [ Sign  [!DNL Veeva Vault]  」頁面 ](https://static.adobesigncdn.com/veevavaultintsvc/index.html) 。
 1. 從右上角選 **[!UICONTROL 取「登]** 入」。
 
    ![中間軟體登入的影像](images/middleware_login.png)
