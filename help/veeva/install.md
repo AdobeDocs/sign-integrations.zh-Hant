@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
+source-git-commit: 163c74a2e03aeaa0627d972b791166d4ea4e66a6
 workflow-type: tm+mt
-source-wordcount: '3931'
+source-wordcount: '3933'
 ht-degree: 3%
 
 ---
@@ -52,7 +52,7 @@ ht-degree: 3%
 
 ### 步驟 2. 部署套件 {#deploy-package}
 
-[部署套件 ](https://helpx.adobe.com/content/dam/help/en/PKG-AdobeSign-Integration-veeva.zip) 並依照步驟進行。 部署後，套件會建立：
+[部署套件 ](https://helpx.adobe.com/content/dam/help/en/sign-integrations-new/veeva-vault/PKG-AdobeSign-Integration-Veeva.zip) 並依照步驟進行。 部署後，套件會建立：
 
 * 自訂物件：簽名物件、簽署物件、簽名事件物件、處理鎖物件
 * 簽名物件頁面版面配置
