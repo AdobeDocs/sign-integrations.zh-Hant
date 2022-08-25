@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: c09759f2455b476fd1093d845cee4f5c3c3601d7
+source-git-commit: 00db62c894df93abac31bf8196730382d54e8fa0
 workflow-type: tm+mt
-source-wordcount: '4169'
+source-wordcount: '4176'
 ht-degree: 3%
 
 ---
@@ -317,7 +317,7 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
 若要檢視檔內容以及數位簽章和稽核記錄，請勿在管理員UI中選取「將稽核報告附加至已簽署的轉譯」與「顯示Acrobat簽署轉譯」。
 
-您可以將Adobe稽核記錄下載或檢視，作為已簽署轉譯的個別轉譯。
+您可以使用「Adobe稽核記錄轉譯」功能，將Adobe稽核記錄作為已簽署轉譯的個別轉譯下載或檢視。
 
 ![影像](images/audit-trail-rendition-setup-4.png)
 
