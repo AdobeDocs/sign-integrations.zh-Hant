@@ -10,9 +10,9 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 163c74a2e03aeaa0627d972b791166d4ea4e66a6
+source-git-commit: 08d55f79fd4fff8f13dc23b9d155e501ca038be1
 workflow-type: tm+mt
-source-wordcount: '3933'
+source-wordcount: '4169'
 ht-degree: 3%
 
 ---
@@ -82,7 +82,7 @@ ht-degree: 3%
 | external_id__c | 合約 ID | 字串 （100） | 包含 Adobe Acrobat Sign 唯一的合約 ID |
 | file_hash__c | 檔案雜湊 | 字串 （50） | 按住已傳送至 Adobe Acrobat Sign 的檔案 md5 總和檢查碼 |
 | name__v | 名稱 | 字串 （128） | 包含合約名稱 |
-| sender__c | 寄件者 | 物件 （使用者） | 保留已建立合約之保存庫使用者的參照 |
+| sender__c | 傳送者 | 物件 （使用者） | 保留已建立合約之保存庫使用者的參照 |
 | signature_status__c | 簽名狀態 | 字串 （75） | 在 Adobe Acrobat Sign 中保留合約狀態 |
 | signature_type__c | 簽名類型 | 字串 （20） | Adobe Acrobat簽署 （WRITTEN 或 ESIGN） 中包含合約的簽名類型 |
 | start_date__c | 開始日期 | DateTime | 傳送合約以供簽署的日期 |
@@ -287,13 +287,39 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
 「保存庫」整合使用名為 *「Adobe Sign轉譯」（adobe_sign_rendition__c）* 的新轉譯類型，將已簽署的 PDF 檔上傳至 Adobe Acrobat Sign。 您必須針對每個符合Adobe Acrobat簽名資格的檔案類型宣告Adobe Sign轉譯。
 
+您必須針對每個符合Adobe Acrobat簽名資格的檔案類型宣告原始轉譯。
+
 ![轉譯類型的影像](images/rendition-type.png)
 
 ![影像](images/edit-details-clinical.png)
 
-「保存庫」整合使用名為 *「原始轉譯」（original_rendition__c）* 的新轉譯類型作為轉譯的名稱，如果已簽署的檔讀入為可檢視的轉譯，則該轉譯應該用來儲存原始可檢視的轉譯。
+保存庫整合使用名為 *「原始* 轉譯」（original_rendition__c） 的新轉譯類型作為轉譯的名稱，如果已簽署的檔讀入為可檢視的轉譯，則該轉譯應該用來儲存原始可檢視的轉譯。
 
 ![影像](images/original-rendition.png)
+
+您也可以選擇使用保存庫整合來儲存Adobe稽核記錄報告Adobe新的轉譯類型 （adobe_audit_trail_rendition__c）。
+
+請依照下列步驟設定Adobe稽核記錄轉譯：
+
+1. 前往「 **轉譯類型** 」> **建立新的轉譯類型** 。建立新的「轉譯類型」作為「稽核記錄轉譯」（adobe_audit_trail_rendition__c）。
+
+   ![影像](images/audit-trail-rendition-setup-1.png)
+
+1. 若要檢視和下載檔案的Adobe稽核記錄轉譯，請Adobe每個符合「Adobe Acrobat簽名」資格的檔案類型宣告 *「稽核記錄」轉譯* 。
+
+   ![影像](images/audit-trail-rendition-setup-2.png)
+
+**注意** ：您可以選擇將稽核報告附加至已簽署的轉譯，方法是啟 **[!UICONTROL 用「將稽核報告附加至已簽署的轉譯]** 」，也可以在「管理員」UI設定中啟用 ****[!UICONTROL 「顯示Acrobat簽署轉]**** 譯」選項來顯示轉譯。
+
+![影像](images/audit-trail-rendition-setup-3.png)
+
+當使用者選擇具有上述設定的數位簽章合約時，系統會顯示一則訊息 （如下所示），指出 Adobe Acrobat Sign 使用 PDF 文件夾來合併數位簽署的 PDF 和稽核記錄報告。
+
+若要檢視檔內容以及數位簽章和稽核記錄，請勿在管理員UI中選取「將稽核報告附加至已簽署的轉譯」與「顯示Acrobat簽署轉譯」。
+
+您可以將Adobe稽核記錄下載或檢視，作為已簽署轉譯的個別轉譯。
+
+![影像](images/audit-trail-rendition-setup-4.png)
 
 ### 步驟 9. 更新網頁動作 {#web-actions}
 
