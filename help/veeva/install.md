@@ -10,7 +10,7 @@ solution: Acrobat Sign
 role: User, Developer
 topic: Integrations
 exl-id: 5d61a428-06e4-413b-868a-da296532c964
-source-git-commit: 08d55f79fd4fff8f13dc23b9d155e501ca038be1
+source-git-commit: c09759f2455b476fd1093d845cee4f5c3c3601d7
 workflow-type: tm+mt
 source-wordcount: '4169'
 ht-degree: 3%
@@ -287,13 +287,13 @@ Adobe Acrobat Sign 整合的保存庫系統帳戶使用者必須：
 
 「保存庫」整合使用名為 *「Adobe Sign轉譯」（adobe_sign_rendition__c）* 的新轉譯類型，將已簽署的 PDF 檔上傳至 Adobe Acrobat Sign。 您必須針對每個符合Adobe Acrobat簽名資格的檔案類型宣告Adobe Sign轉譯。
 
-您必須針對每個符合Adobe Acrobat簽名資格的檔案類型宣告原始轉譯。
-
 ![轉譯類型的影像](images/rendition-type.png)
 
 ![影像](images/edit-details-clinical.png)
 
 保存庫整合使用名為 *「原始* 轉譯」（original_rendition__c） 的新轉譯類型作為轉譯的名稱，如果已簽署的檔讀入為可檢視的轉譯，則該轉譯應該用來儲存原始可檢視的轉譯。
+
+您必須針對每個符合Adobe Acrobat簽名資格的檔案類型宣告原始轉譯。
 
 ![影像](images/original-rendition.png)
 
