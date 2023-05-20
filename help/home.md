@@ -11,7 +11,7 @@ exl-id: b2fa280d-894c-47da-bbf5-8b4d0c6b6165
 source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
 workflow-type: tm+mt
 source-wordcount: '121'
-ht-degree: 20%
+ht-degree: 0%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 20%
 <tr>
   <td>
     <a href="versions.md">
-    <img alt="商機" src="images/versions.png"/>
+    <img alt="導致" src="images/versions.png"/>
     </a>
     <div>
     <a href="versions.md"><strong>版本和生命週期</strong></a>
@@ -51,7 +51,7 @@ ht-degree: 20%
     <div>
     <a href="https://community.adobe.com/t5/adobe-sign/bd-p/adobe-sign?page=1&amp;sort=latest_replies&amp;filter=all"><strong>Adobe Sign支援社群</strong></a>
     </div>
-    <em>向其他Adobe Sign使用者和愛好者提問、分享意見和提示，或討論 Sign 整合產品和服務。</em>
+    <em>向其他Adobe Sign使用者和愛好者提問、分享回饋和秘訣，或討論 Sign 整合產品和服務。</em>
     <br>
   </td>
 </tr>

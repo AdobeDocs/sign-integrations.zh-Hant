@@ -11,13 +11,13 @@ exl-id: 378cac01-87c9-4288-8839-482121d49402
 source-git-commit: 568d001a05bd0e642036b4a73067689e987c02ba
 workflow-type: tm+mt
 source-wordcount: '4870'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 # [!DNL NetSuite] 安裝和自訂指南 （v4.0.4） {#install-customize-NetSuite}
 
-## 概覽 {#overview}
+## 概述 {#overview}
 
 [!DNL NetSuite]Adobe Sign提供與 。 [!DNL NetSuite]您可以使用Adobe Sign [!DNL NetSuite] 整合功能，將合約 （例如合約、報價和其他需要電子簽名的檔） 直接傳 [!DNL NetSuite] 送給收件者。 您可以從客戶、商機、報價和其他 [!DNL NetSuite] 記錄建立和傳送Adobe Sign合約。 Adobe Sign更新 [!DNL NetSuite] 合約的狀態，並在合約完整執行後儲存具有相關 [!DNL NetSuite] 記錄的合約。 您可以檢視從 [!DNL NetSuite] 產品內傳送所有合約的記錄。
 
@@ -31,7 +31,7 @@ ht-degree: 1%
 
 >[!CAUTION]
 >
->升級至第 4.0.4 版的客戶不應移除現有的API鍵。
+>升級至第 4.0.4 版的客戶不應移除現有的API金鑰。
 >
 >如需如何使用API鍵的詳細資訊，請參閱 [ 「設定自訂偏好 ](#configure) 設定」。
 
@@ -72,21 +72,21 @@ ht-degree: 1%
 
 Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite] 。
 
-此通訊協定授權您已安裝 [!DNL NetSuite] 的套件可以與Adobe Sign通訊，而無需要求您的密碼。 敏感資訊不會直接在應用程式之間共用，因此降低了帳戶遭盜用的可能性。
+此通訊協定授權您已安裝 [!DNL NetSuite] 的套件可以與Adobe Sign通訊，而無需要求您的密碼。 由於敏感資訊不會直接在應用程式之間共用，因此降低了帳戶遭洩露的可能性。
 
 此驗證不會影響您的實作，但您必須在安裝或升級生產或沙箱帳戶中的套件後，進行一次性設定。
 
-設定 [!DNL NetSuite] OAuth 的管理員也必須擁有帳戶層級管理員的存取權，才能Adobe Sign。
+設定 [!DNL NetSuite] OAuth 的管理員還必須擁有帳戶層級管理員的存取權，才能存取Adobe Sign。
 
 1. 在 [!DNL NetSuite] 「設定」 *清單頁面中，流覽至「* Adobe Sign」。
 
 1. **** Search Adobe Sign在頁首中使用「Search」欄位來設定 （自訂記錄類型）。
 
-1. 在「Search結果」頁面中，選 **取「Adobe Sign設定」記錄的 *「檢視**」* 。
+1. 在「Search結果」頁面中，選 **取「Adobe Sign設定」記錄的 *「檢* 視** 」。
 
-   ![搜尋 Adobe Sign](images/search-for-adobesignconfig.png)
+   ![Adobe Sign Search](images/search-for-adobesignconfig.png)
 
-1. 在「Adobe Sign設定清單」頁面上，選 **[!UICONTROL 取「使用 OAuth 存取 Adobe Sign API *」記錄的「檢視]*** 」。
+1. 在「設定清單Adobe Sign中，選 **[!UICONTROL 取「使用 OAuth 存取 Adobe Sign API *」記錄的檢視]*** 。
 
    ![Adobe Sign設定清單](images/adobe-sign-configlist.png)
 
@@ -114,13 +114,13 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
    >若要繼續進行，您必須在瀏覽器中變更URL （system.netsuite.com） 的帳戶網域部分， [!DNL NetSuite] 以指向沙箱，如下所示：
    >
    >
-   >變更:
+   >改變：
    >
    >
    >system.netsuite.com/app/site/hosting/scriptlet.nl?script=745&amp;deploy=1&amp;web_access_point=https://echosign.com
    >
    >
-   >收件人：
+   >自：
    >
    >
    >系統。**沙 箱。** netsuite.com/app/site/hosting/scriptlet.nl？script=745&amp;deploy=1&amp;web_access_point=HTTPs：//echosign.com
@@ -135,13 +135,13 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 >
 >如需如何使用API鍵的詳細資訊，請參閱 [ 「設定自訂偏好 ](#configure) 設定」。
 
-### 必要條件 {#prerequisites}
+### 先決條件 {#prerequisites}
 
 更新至第 4.0.4 版套件所需時間，取決於目前狀態為「傳出進行簽名」的合約數量。 更新 100 份合約通常需要 7 – 10 分鐘。 請注意用來估算更新時間的記錄數。
 
 若要決定要簽署的合約數量：
 
-1. 流覽至「 **[!UICONTROL 自訂>清單、記錄和檔案>記錄類型]** 」，然後找到 *「Adobe Sign合約」。*
+1. 流覽至「 **[!UICONTROL 自訂>清單、記錄和檔案>記錄類型]** 」，然後找到 *Adobe Sign合約」。*
 
    或在搜尋列中搜尋Adobe Sign合約。
 
@@ -187,7 +187,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    >[!NOTE]
    >
-   >如果因為數份合約 *具有「傳出進行簽署* 」狀態而導致更新耗時很久，您可以勾選 **[!UICONTROL 「執行記錄]** 」子 *索引標籤中的「Adobe Sign套裝安裝* 」腳本，以決定更新進度。 如需詳細資訊，請參閱 [ 判斷更新 ](#determineprogress) 進度。
+   >如果因為數份合約 *具有「傳出進行簽名* 」狀態而導致更新耗時很久，您可以勾選 **[!UICONTROL 「執行記錄]** 」子 *索引標籤中的「Adobe Sign套裝安裝* 」腳本，以決定更新進度。 如需詳細資訊，請參閱 [ 判斷更新 ](#determineprogress) 進度。
 
    套裝更新完成後，Adobe Sign *[!DNL NetSuite]* 會顯示在 *「已安裝的* 組合」頁面上。
 
@@ -208,7 +208,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    * **輸入您帳戶** 的 EchoSign API鍵：不要在此欄位中新增或編輯任何值。
    * **以簽署者身分使用父記錄連絡人** ：若啟用此項，父記錄連絡人會在建立合約時預設為第一個簽署者。 傳送者可輕鬆移除或編輯預設簽署者，或在傳送前將其他簽署者新增至合約。
-   * **使用 Trans。 如果存在** ，請以簽署者身分聯絡人：只有在同時啟用「以簽署者身分使用上層記錄連絡人」 *偏好設定時，* 此偏好設定才有效。如果已啟用，當從交易記錄 （例如報價） 產生合約時，主要交易連絡人會預設為第一個簽署者。 如需詳細資訊，請參閱 [ 事務記錄 ](#transrecords) 。 如果沒有主要交易連絡人，或是從 [!DNL NetSuite] 物件記錄傳送 （例如，客戶記錄、合作夥伴記錄），則預設收件者是客戶電子郵件的主要連絡人。 傳送者可輕鬆移除或編輯預設簽署者，或在傳送前將其他簽署者新增至合約。
+   * **使用 Trans。 如果存在** ，請以簽署者身分聯絡人：只有在同時啟用「以簽署者身分使用上層記錄連絡人」 *偏好設定時，* 此偏好設定才有效。如果已啟用，當從交易記錄 （例如報價） 產生合約時，主要交易連絡人會預設為第一個簽署者。 如需詳細資訊，請參閱 [ 事務記錄 ](#transrecords) 。 如果沒有主要交易連絡人，或是從 [!DNL NetSuite] 物件記錄傳送 （例如客戶記錄、合作夥伴記錄），預設收件者是客戶電子郵件的主要連絡人。 傳送者可輕鬆移除或編輯預設簽署者，或在傳送前將其他簽署者新增至合約。
    * **允許將收件者標記為核准者** ：若啟用此項，傳送者可以將收件者標記為核准者。 標示為核准者的收件者可以檢閱及核准合約，但不需要簽署合約。 核准者可能需要在核准過程中將資料輸入欄位。
    * **偏好的合約資料夾 ID** ：用來指定儲存最終簽署合約的檔案夾。 如果您未為此欄位設定值，最終簽署的合約預設會儲存在原始檔案檔案的相同資料夾中。 檔案夾 ID 必須是數位。
    * **自動附加交易 PDF：若啟用此項，交易 PDF** 會在從交易記錄建立新合約時自動附加至合約。
@@ -222,7 +222,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    * **啟用簽署** 所需的密碼：要求籤署者輸入您指定的一次性密碼。
 
-   * **啟用知識型Authentication** ：要求籤署者提供其姓名、位址和 SSN 末四碼的選項，然後回答問題清單來驗證他們提供的資訊。 僅適用于美國。
+   * **啟用知識型Authentication** ：要求籤署者提供其姓名、位址和 SSN 末四碼的選項，然後回答問題清單，確認他們提供的資訊。 僅適用于美國。
 
    * **啟用網頁身分Authentication** ：要求籤署者登入以下其中一個網站以驗證其身分：Facebook、Google、LinkedIn、Microsoft Live、Twitter 或 Yahoo！。
 
@@ -243,7 +243,7 @@ Adobe Sign使用 OAuth 2.0 在其中驗證您的Adobe Sign帳戶 [!DNL NetSuite]
 
    * 在 SuiteScript 區段中，啟用 **[!UICONTROL Client SuiteScript]** 和 **[!UICONTROL Server SuiteScript]** 選項，並同意兩者的服務條款。
 
-1. 選取「**[!UICONTROL 儲存]**」。
+1. 選取「 **[!UICONTROL 儲存」]** 。
 
    您的選項會設定為如影像中所示。
 
@@ -259,9 +259,9 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
 如果合約是從交易記錄建立，合約記錄上的第一份檔就是其來自記錄的 PDF 版本，而第一個收件者就是該記錄的電子郵件地址。 如果您不希望第一份檔成為來自記錄的 PDF 版本， **[!UICONTROL 請前往「設定 > 公司」>「一般偏好設定」>「自訂偏好設定」子卷]** 標，然後停 **[!UICONTROL 用「自動附加交易 PDF」]** 選項。 如需詳細資訊，請參閱 [ 「設定自訂偏好 ](#configure) 設定」。
 
-在「自訂偏好設定」下，您也可以啟用「 **[!UICONTROL 使用跨性別」。 如果您希望將主要交易連絡人自動新增為第一位簽署者，請以「第一個簽署者]** 」偏好設定連絡人。 與交易記錄相關聯時，會顯示 **** 「合約」和 **[!UICONTROL 「傳送以供簽署」]** 按鈕。
+在「自訂偏好設定」下，您也可以啟用「 **[!UICONTROL 使用跨性別」。 如果您希望將主要交易連絡人自動新增為第一位簽署者，請以「第一個簽署者]** 」偏好設定連絡人。 與交易記錄相關聯時，會顯示 **** 「合約」和「 **[!UICONTROL 傳送以供簽署」]** 按鈕。
 
-![引用](images/quote.png)
+![報價](images/quote.png)
 
 ## 實體記錄 {#entity-records}
 
@@ -312,7 +312,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    * 在「 **[!UICONTROL 受眾]** 」子索引標籤作用中 （預設為啟用） 時，選取您要授與存取權的特定角色或使用者。 如果您要授與所有角色和使用者的存取權，請啟用各別 **[!UICONTROL 的「選取所有]** 選項」。
 
-   * 選取「**[!UICONTROL 儲存]**」。變更確認訊息顯示後，選取「 **[!UICONTROL 返回」]** 。
+   * 選取「 **[!UICONTROL 儲存」]** 。 變更確認訊息顯示後，選取「 **[!UICONTROL 返回」]** 。
 
 
 1. 選 **[!UICONTROL 取「腳本部署」頁面頂端的「清單]** 」以返回「 *腳本」* 清單頁面。
@@ -328,7 +328,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
    >[!NOTE]
    >
-   >如果您沒有看到 *「記錄類型」* 專案，請流覽至 **[!UICONTROL 「設定>公司>「啟用套件雲]** 端」標籤>功能」，然後啟用「 *自訂記錄」* 選項。
+   >如果您沒有看到 *「記錄類型」* 專案，請流覽至 **[!UICONTROL 「設定>公司>啟用「套件雲]** 端」標籤>功能」，然後啟用「 *自訂記錄」* 選項。
 
 1. 在「 *記錄類型」* 頁面上，選取 **[!UICONTROL Adobe Sign]** 合約」加以選取
 
@@ -347,7 +347,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
 1. 選取「 **[!UICONTROL 許可權」]** 子索引標籤。
 
-   角色和許可權清單便會顯示。
+   角色和許可權清單會顯示。
 
    ![角色和許可權](images/roles-and-permissions.png)
 
@@ -379,7 +379,7 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
    **[!UICONTROL 不需任何許可權 ] 。** 這適用于下列記錄類型：
 
    * Adobe Sign設定
-   * Adobe Sign 文件
+   * Adobe Sign檔
    * Adobe Sign事件
    * Adobe Sign語言
    * Adobe Sign腳本錯誤
@@ -390,9 +390,9 @@ Adobe Sign整合組合已顯示Adobe Sign合約物件，包含許多標準 [!DNL
 
 Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「客戶」、「估 [ 算報價 ] 」、「商機」等） 的Adobe Sign合約物件。 「 *合約* 」子索引標籤會針對下列類型的物件自動啟用：客戶、商機、機會、合作夥伴、潛在客戶、報價和廠商帳單。
 
-系統 *[!UICONTROL 會自動為「引號」物件啟用&#x200B;**[!UICONTROL  「傳送以供簽署]* 」]** 按鈕。
+「傳 *[!UICONTROL 送以供簽署」]* 按鈕會自動為「引號」物件 ]**啟用** [!UICONTROL  。
 
-[!DNL NetSuite]管理員可以修改許可權，將「合約」子索引標籤、 *「傳送以供簽署* 」按鈕或這兩個物件新 ** 增至這些物件，藉此擴大將合約建立至其他CRM物件的功能。
+[!DNL NetSuite]管理員可以修改許可權，將「合約」子索引標籤、 *「傳送以供簽署* 」按鈕或這兩個物件新 ** 增至其他CRM物件，藉此擴展建立合約的功能。
 
 #### 修改授予「傳送以供簽署」按鈕存取權的許可權  {#modifying-permissions-to-grant-access-to-the-send-for-signature-button}
 
@@ -449,14 +449,14 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
 >[!NOTE]
 >
->建立合約的程式會因建立方式而略有不同。 一般程式涉及指定合約的選項、新增一或多個合約檔，以及指定收件者。 以下說明的程式假設您是從客戶記錄建立合約。
+>建立合約的程式因建立方式而略有不同。 一般程式涉及指定合約的選項、新增一或多個合約檔，以及指定收件者。 以下說明的程式假設您是透過客戶記錄建立合約。
 
 1. 選取或建立要傳送合約的客戶記錄，或者您可以選取已啟用「合約」索引標籤的另一個 [!DNL NetSuite] 記錄類型。
 
 1. 從記錄中，選取「 **[!UICONTROL 合約]** 」子索引標籤。
 1. 選取「 **[!UICONTROL 新合約」]** 。
 
-   ![新增合約](images/new-agreement.png)
+   ![新合約](images/new-agreement.png)
 
 1. 在「合約 *[!UICONTROL Adobe Sign]* 頁面上，選取「 **[!UICONTROL 編輯」]** 。
 
@@ -495,7 +495,7 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
    ![「檔」索引標籤](images/documents-tab.png)
 
-1. 在「檔 *」子標籤上，使用* 「 *檔」下拉式清單，從檔案封裝中附加現有檔Adobe Sign檔* 」，然後選 **[!UICONTROL 取「附加」]** 。
+1. 在「 *檔* 」子索引標籤上，使用 *「檔」下拉式清單，從檔案夾附加現有檔Adobe Sign檔* 」，然後選 **[!UICONTROL 取「附加」]** 。
 
    或者，按一下 **[!UICONTROL 「新增Adobe Sign檔」]** 以存取 *[!UICONTROL 「Adobe Sign檔]* 」頁面，然後在檔案套件中 [!DNL NetSuite] 輸入檔案名稱、從交易記錄中選取檔案 （如果適用） 或附加新檔。
 
@@ -525,7 +525,7 @@ Adobe Sign整合組合已顯示具有許多標準 [!DNL NetSuite] 物件 （「�
 
 * 如果「 *[!UICONTROL 第一個簽署者的主控簽署」]* 選項已啟用，請按一下「傳 **[!UICONTROL 送以供簽署」]** 。 在開啟的視窗中，允許簽署者簽署有傳送者身分的檔。
 
-   「第一 *個簽署者」欄位的「主控簽署」欄位旁邊* 也會出現「目前簽署者 ** 」的主控簽署連結，可在檔簽署前加以存取。使用此連結代管多位簽署者的合約簽署，或在不小心關閉時重新開啟快顯視窗。
+   「第一 *個簽署者」欄位的「主控簽署」欄位旁邊* 也會出現「目前簽署者 ** 」的主控簽署連結，可在檔簽署前加以存取。使用此連結代管多位簽署者的合約簽署，或在意外關閉時重新開啟快顯視窗。
 
 傳送合約後，收件者會收到一封電子郵件，通知他們有待簽署的檔。
 
@@ -573,7 +573,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ## 卸載套裝組合
 
-若要卸載此套裝組合，請依照「說明」中 [!DNL NetSuite] 提供的步驟操作。 如需詳細資訊， *[請參閱「說明中心」中的 [!DNL NetSuite] 「卸載套件 ](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3400972.html)* 」主題。
+若要卸載此套裝組合，請依照「說明」中 [!DNL NetSuite] 提供的步驟操作。 如需詳細資訊， *[請參閱「支援中心」中的 [!DNL NetSuite] 「卸載套件 ](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N3400972.html)* 」主題。
 
 當您卸載套裝組合時，未簽署的合約會被刪除。 已簽署的合約及其對應的稽核 PDF 檔案不受影響。
 
@@ -583,7 +583,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ### 決定更新進度 {#determineprogress}
 
-如果更新似乎需要更長的時間，您可以查看「Adobe Sign套裝套裝安裝」腳本的「執行記錄」子索引標籤，以決定更新的進度，如下所示：
+如果更新似乎需要更長的時間，您可以查看「Adobe Sign套裝組合安裝」腳本的「執行記錄」子索引標籤，以決定更新的進度，如下所示：
 
 1. 流覽至「 **[!UICONTROL 自訂>腳本>腳本」]** 。
 1. 在「 [!UICONTROL  腳本」頁面上 ] ，找到 *[!UICONTROL 「Adobe Sign套件安裝]* 」腳本，然後選取「 **[!UICONTROL 編輯」]** 。
@@ -596,7 +596,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ### 解決存取權杖問題
 
-與合約互動時，您可能會收到「提供的存取權杖無效或已過期」訊息。
+與合約互動時，您可能會收到「所提供的存取權杖無效或已過期」訊息。
 
 這可能是因為下列原因：
 
@@ -612,7 +612,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 如果 [ 設定自動狀態更新 ](#asu) ，但合約狀態並未在傳送合約後更新，請嘗試下列操作：
 
-1. 檢查 Adobe Sign External Update *腳本的部署執行記錄* ，查看您是否收到來自 Adobe Sign 的呼叫，如下所示：
+1. 檢查 Adobe Sign External Update *腳本的部署執行記錄* ，查看您是否收到來自 Adobe Sign 的電話，如下所示：
 
    1. 導覽至「 **[!UICONTROL 自訂>腳本部署>腳本]**
    1. 在「 *腳本部署」頁面上* ，找到 *「Adobe Sign外部更新* 」腳本，然後選取「 **[!UICONTROL 編輯」]**
@@ -631,7 +631,7 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ### 解決 MIME 類型錯誤  {#resolving-mime-type-errors}
 
-如果您在傳送合約時收到 MIME 類型錯誤，這可能是因為「檔案名」欄位中的名稱與上傳檔案的檔案名和副檔名不符。 如果您將「檔案名」欄位保留空白，將會自動填入正確的檔案名和副檔名。
+如果您在傳送合約時收到 MIME 類型錯誤，這可能是因為「檔案名」欄位中的名稱不符合上傳檔案的檔案名和副檔名。 如果您將「檔案名」欄位保留空白，將會自動填入正確的檔案名和副檔名。
 
 ### 檢視腳本記錄 {#viewing-script-logs}
 
@@ -647,4 +647,4 @@ Adobe Sign與引號直接整合，系統會自動產生引號 [!DNL NetSuite] PD
 
 ## 支援 {#support}
 
-前往 [ Adobe Sign 支援入口網站 ](https://adobe.com/go/adobesign-support-center_tw) 存取常見問答集、檔、知識庫文章，或聯絡Adobe支援。
+前往 [ Adobe Sign 支援入口網站 ](https://adobe.com/go/adobesign-support-center) 存取常見問題、檔、知識庫文章，或聯絡Adobe支援。

@@ -1,6 +1,6 @@
 ---
 title: Veeva 保存庫使用手冊
-description: Veeva Vault 客戶使用手冊，瞭解如何與 Veeva 整合Adobe Sign使用者
+description: Veeva Vault 客戶使用手冊，瞭解如何與 Veeva Adobe Sign使用者整合
 products: Adobe Sign
 content-type: reference
 locnotes: All languages; screenshots to follow what's there already (seems there is a mix within a given language version of the article)
@@ -12,28 +12,28 @@ exl-id: 39a43637-af3f-432e-a784-8f472aa86df5
 source-git-commit: c164692d78608c436d136caef44b19fe8d37b9d8
 workflow-type: tm+mt
 source-wordcount: '721'
-ht-degree: 2%
+ht-degree: 0%
 
 ---
 
 # Adobe Acrobat： [!DNL Veeva Vault] 使用手冊 {#veeva-vault-user-guide}
 
-[**連絡 Adobe Acrobat Sign 支援**](https://adobe.com/go/adobesign-support-center_tw)
+[**連絡 Adobe Acrobat Sign 支援**](https://adobe.com/go/adobesign-support-center)
 
 本檔旨在協助 [!DNL Veeva Vault] 客戶瞭解如何使用 Adobe Acrobat Sign 進行 [!DNL Veeva Vault] 整合以傳送合約。
 
-## 概覽 {#overview}
+## 概述 {#overview}
 
 Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 有助於取得簽名或核准流程，以利任何需要合法簽名或可稽核檔處理的檔。
 
 傳送檔以供簽署的整體程式類似于傳送電子郵件，因此大多數使用者都容易採用。
 
-Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽名工作流程。 使用整合工作流程，您可以：
+Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽名工作流程。 使用整合工作流程時，您：
 
 * 節省用於縮圖郵件、隔夜或傳真上的時間和資源。
 * 傳送合約以索取電子簽名或核准， [!DNL Veeva Vault] 存取即時合約記錄，並檢視已儲存的合約。
 * 即時追蹤整個組織的交易，並在合約被檢視、簽署、取消或拒絕時取得更新。
-* eSign 提供超過 20 種語言版本，支援全球超過 50 個地區的傳真回覆服務.
+* eSign 提供超過 20 種語言版本，並在全球超過 50 種地區支援傳真回傳服務。
 * 建立可重複使用的合約範本以傳送選項。
 
 ## 使用 Adobe Acrobat Sign 傳送合約 [!DNL Veeva Vault] {#send-sign-vault-agreement}
@@ -59,7 +59,7 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
 1. 若要關閉對話方塊，請選取「 **[!UICONTROL 確定」]** 。
 
-1. 選取「**[!UICONTROL 下一步]**」。
+1. 選取「 **[!UICONTROL 下一步」]** 。
 
 1. 在顯示的視窗中，填寫中繼資料區段中的所有必要欄位，然後選取「儲存 **[!UICONTROL 」]** 。
 
@@ -91,7 +91,7 @@ Adobe Acrobat Sign 整合 [!DNL Veeva Vault] 簡化作業，並加快檔和簽�
 
    ![](images/umg-dialog.png)
 
-1. 在「保存庫」中開啟的 iFrame 視窗中，輸入收件者的電子郵件地址，然後選 **[!UICONTROL 取「下一步」]** 。
+1. 在「保存庫」中開啟的 iFrame 視窗中，輸入收件者的電子郵件地址，然後選取 **[!UICONTROL 「下一步」]** 。
 
    ![](images/iframe.png)
 

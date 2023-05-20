@@ -11,14 +11,14 @@ exl-id: 0512f616-568a-4b96-9bd1-48e67bc3536b
 source-git-commit: 4d73ff36408283805386bd3266b683bc187d6031
 workflow-type: tm+mt
 source-wordcount: '2354'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
 
 # [!DNL SugarCRM] 安裝指南 {#sugarcrm-install-guide}
 
-[連絡客戶服務](https://adobe.com/go/adobesign-support-center_tw)
+[連絡客戶服務](https://adobe.com/go/adobesign-support-center)
 
 [!DNL EchoSign] [!DNL SugarCRM] Adobe是領先業界的電子簽名和網頁合約解決方案，可針對電子簽名和傳真簽名提供電子簽名自動化 [!DNL SugarCRM] 。使用者可以直接從 這些帳戶和產品中傳送合約、檢視合約記錄，以及儲存包含相關帳戶、連絡人、報價等的 eSigned 合約。[!DNL EchoSign] [!DNL SugarCRM] Adobe版本適用于所有受支援的 3.3 - 6.7 版 ，適用于隨選或內部部署解決方案。
 
@@ -30,14 +30,14 @@ ht-degree: 1%
 1. [!DNL SugarCRM]使用您的管理員帳戶登入。
 1. 前往 **[!UICONTROL 「管理]** > **[!UICONTROL 模組載入器」]** 。
 
-   ![影像](images/module-loader.png)
+   ![圖像](images/module-loader.png)
 
 1. 若要上傳外掛程式Adobe [!DNL EchoSign] 的 [!DNL SugarCRM] 封存檔案，請選 **[!UICONTROL 取「流覽]** 」，然後選擇封存檔案，然後選 **[!UICONTROL 取「上傳」]** 。
 1. 上傳封存檔案後，選取「 **[!UICONTROL 安裝]** 」即可開始安裝。
 1. 檢閱條款與條件，然後選取「 **[!UICONTROL 接受]** > **[!UICONTROL 提交」]** 。
 1. 如果外掛程式安裝成功，進度列會顯示 100% 成功。  如果進度列未達到 100%，請選取 **[!UICONTROL 「顯示記錄]** 」以查看在 100 度選單中發生的錯誤。
 
-   ![影像](images/display-log.png)
+   ![圖像](images/display-log.png)
 
 1. 安裝後，移至 **[!UICONTROL 「管理」>「修復]** 」，然後選取 **[!UICONTROL 「快速修復和重建」]** 。
 
@@ -61,7 +61,7 @@ ht-degree: 1%
    1. 選 **[!UICONTROL 取左下角的「EchoSign API]** 」。
    1. 選 **[!UICONTROL 取「啟用API存取]** 」，然後從頁面取得API鍵。
 
-   ![影像](images/enable-api-access.png)
+   ![圖像](images/enable-api-access.png)
 
 1. 在「小插字調整」中，前往 **[!UICONTROL 「管理]** >Adobe EchoSign **[!UICONTROL 設定]** 」，然後在標示為「EchoSign API 鍵」的 **[!UICONTROL 欄位中輸入API鍵]** 。
 1. 您也可以選擇使用下列設定來設定外掛程式：
@@ -99,7 +99,7 @@ ht-degree: 1%
 
    **注意：** 如果您有許多合約需要簽署，經常執行可能會導致系統變慢。
 
-   ![影像](images/echosign-status-updater.png)
+   ![圖像](images/echosign-status-updater.png)
 
 1. 前往 **[!UICONTROL 「管理]** >Adobe EchoSign **[!UICONTROL 設定」]** 。
 1. 取消勾選「使用 EchoSign 回呼方法 ]**更新合約的事件和狀態」方塊**[!UICONTROL  。
@@ -113,15 +113,15 @@ ht-degree: 1%
 1. 從下拉式選單中，選取「類型為 **[!UICONTROL 一到多]** 」，並將模組選取為 **[!UICONTROL EchoSign 合約]** 。
 1. 選取「 **[!UICONTROL 儲存和部署」]** 。
 
-   ![影像](images/save-and-deploy.png)
+   ![圖像](images/save-and-deploy.png)
 
    [!DNL EchoSign] 合約現在會出現在模組中，並且可以在此建立和追蹤合約。
 
-   ![影像](images/echosign-agreements.png)
+   ![圖像](images/echosign-agreements.png)
 
 **其他設定步驟**
 
-* **隱藏 [!DNL EchoSign] 模組** ：您可以前往「管理 」 – 「顯示模組索引標籤」和「子面板」，然後將「收件者」和 [!DNL EchoSign] 「事件」模組移至隱藏欄，藉此隱藏 [!DNL EchoSign] 「收件者」和「事件」模組。
+* **隱藏 [!DNL EchoSign] 模組** ：您可以前往「管理 」 – 「顯示模組索引標籤」和「子面板」，然後將「收件者」和 [!DNL EchoSign] 「事件」模組移至隱藏的欄，藉此隱藏 [!DNL EchoSign] 「收件者」和「事件」模組。
 * **停用套件掃描** ：如果您已在自己的系統上啟用 packageScan，則需要在安裝期間停用它。 如果您使用 [!DNL SugarCRM] 「隨選」，請聯絡 [!DNL SugarCRM] 支援人員以停用 PackageScan。
 
 ## 卸載增效模組 {#uninstall-plugin}
@@ -131,11 +131,11 @@ ht-degree: 1%
 1. 選 **[!UICONTROL 取 EchoSign for SiliconCRM 增效模組旁 [!UICONTROL  的「卸載]** 」 ] 。
 1. 選取 **[!UICONTROL 「確認]** 」以開始卸載。 您也可以選取以移除為外掛程式建立的資料庫表格。
 
-   ![影像](images/uninstall-plugin.png)
+   ![圖像](images/uninstall-plugin.png)
 
    如果外掛程式成功卸載，進度列將表示 100% 成功。 如果進度列未達到 100%，請選取 [!UICONTROL  「顯示記錄 ] 」以查看在 100 度選單中發生的錯誤。
 
-   ![影像](images/uninstall-display-log.png)
+   ![圖像](images/uninstall-display-log.png)
 
 ## 將Adobe [!DNL EchoSign] 用於 [!DNL SugarCRM] {#use-echosign-for-sugarcrm}
 
@@ -160,7 +160,7 @@ ht-degree: 1%
       * **[!UICONTROL 帳戶、機會、報價：]** 選取或修改與此合約相關聯的「帳戶」、「機會」或「報價」。
       * **[!UICONTROL 語言：]** 指定簽署頁面和電子郵件通知顯示給收件者的語言。
 
-      ![影像](images/create-agreements.png)
+      ![圖像](images/create-agreements.png)
 
 
 1. 在 EchoSign ] 合約的 [!UICONTROL  「 [!UICONTROL  安全性選項 ] 」區段中，輸入下列資訊：
@@ -170,7 +170,7 @@ c） **[!UICONTROL 密碼：]** 指定用來簽署或開啟檔的密碼。d） *
 
 1. 在合約的其他區段中 [!DNL EchoSign] ，輸入下列資訊：
 
-   a） **[!UICONTROL 使用者：]** 指定 [!DNL SugarCRM] 使用者。 預設值為使用者目前登入系統。b） **[!UICONTROL 團隊：]** 若要變更主要團隊指派，請輸入新的主要團隊名稱。 若要為記錄指派其他團隊，請按一下「 **[!UICONTROL 選]** 取」並從「團隊清單」選取團隊，或選 **[!UICONTROL 取「新增」以]** 新增團隊欄位並輸入團隊名稱。 如需詳細資訊，請參閱應用程式指南中的 [!DNL SugarCRM] 「將記錄指派給使用者和團隊」。
+   a） **[!UICONTROL 使用者：]** 指定 [!DNL SugarCRM] 使用者。 預設值為使用者目前登入系統。b） **[!UICONTROL 團隊：]** 若要變更主要團隊指派，請輸入新的主要團隊名稱。 若要為記錄指派其他團隊，請按一下 **[!UICONTROL 「選]** 取」並從「團隊清單」中選取團隊，或選 **[!UICONTROL 取「新增」以]** 新增團隊欄位並輸入團隊名稱。 如需詳細資訊，請參閱應用程式指南中的 [!DNL SugarCRM] 「將記錄指派給使用者和團隊」。
 
 1. 選取「 **[!UICONTROL 儲存」]** 。
 
@@ -182,19 +182,19 @@ c） **[!UICONTROL 密碼：]** 指定用來簽署或開啟檔的密碼。d） *
 * **[!UICONTROL 檔：]** 上傳新檔或選取已上傳至 [!DNL SugarCRM] 檔以傳送以供簽署。
 * **[!UICONTROL 事件：]** 此子面板會列出與合約有關的任何動作，例如傳送以供簽署、檢視或簽署的合約。若要編輯合約 [!DNL EchoSign] ，請選取 [!UICONTROL  合約「細節檢視 ] 」上的「 [!UICONTROL  編輯 ] 」按鈕。
 
-![影像](images/agreement-detail-view.png)
+![圖像](images/agreement-detail-view.png)
 
-**注意：** 傳送合約以供簽署後， [!UICONTROL  「細節檢視」中的「編輯 ] 」按鈕會移除，以保留事件記錄。 不過，您可以啟用「編輯」按鈕。 若要這麼做，請移至 [!UICONTROL  「管理員 ] >Adobe EchoSign [!UICONTROL  設定 ] 」，然後取消勾選「傳送合約以索取簽名」選項 *[!UICONTROL ，停用編輯或刪除]* 的功能。
+**注意：** 傳送合約以供簽署後， [!UICONTROL  「細節檢視」中的「編輯 ] 」按鈕會移除，以保留事件記錄。 不過，您可以啟用「編輯」按鈕。 若要這麼做，請移至 [!UICONTROL  「管理員 ] >Adobe EchoSign [!UICONTROL  設定 ] 」，然後取消勾選「傳送合約以索取簽名」選項 *[!UICONTROL ，停用編輯或刪除]* 功能。
 
 ### 將檔新增至 [!DNL EchoSign] 合約 {#add-document}
 
 [!DNL SugarCRM] 使用者可以上傳新檔，或使用 EchoSign 合約記錄的「檔」子面板，選取已上傳至 [!DNL SugarCRM] 的檔。若要上傳檔，請選取 **[!UICONTROL 「檔」子面板中的「 [!UICONTROL  上傳檔]** ] 」。
 
-如需該表單個別欄位的 [!DNL SugarCRM] 詳細資訊，請參閱應用程式指南的「檔模組」區段。
+如需有關該表單個別欄位的 [!DNL SugarCRM] 詳細資訊，請參閱應用程式指南的「檔模組」區段。
 
 若要選取檔，請按一下 **[!UICONTROL 「檔」子面板中的「選]** 取」。 如需如何在子面板中管理相關資訊的 [!DNL SugarCRM] 詳細資訊，請參閱應用程式指南中的「檢視和記錄管理資訊」。
 
-![影像](images/add-document-to-agreement.png)
+![圖像](images/add-document-to-agreement.png)
 
 ### 指定合約的 [!DNL EchoSign] 收件者 {#specify-recipient}
 
@@ -203,13 +203,13 @@ c） **[!UICONTROL 密碼：]** 指定用來簽署或開啟檔的密碼。d） *
 a） [!UICONTROL  收件者： ] 從下拉式選單中選取收件者類型。 在文字欄位中輸入收件者的名稱或電子郵件地址。 [!DNL SugarCRM] 在輸入時查看名稱，並提供選取範圍清單。 如果找到符合的名稱，請選取名稱。 您也可以選取箭頭圖示，從彈出式視窗中選取名稱。 若要清除欄位中的名稱，請選 **[!UICONTROL 取 X]** 圖示。b） [!UICONTROL  角色： ] 從下拉式選單中選取角色。 這些選項包括「簽署者」、「副本」和「核准者」。 核准者不必簽署檔。
 1. 選取「儲存」。
 
-![影像](images/add-recipient-to-agreement.png)
+![圖像](images/add-recipient-to-agreement.png)
 
 ### 傳送合約以供簽署 {#send-for-signature}
 
 當合約準備好傳送以供簽署時，請從頁面左上方的下拉式選單中選 **[!UICONTROL 取「傳送以供簽署]** 」。 收件者接著會收到一封電子郵件，通知他們有待簽署的檔。 收件者簽署檔後，傳送者會收到電子郵件通知。如果核取「 [!UICONTROL  第一個簽署者主控簽署」 ] 選項，您可以選 **[!UICONTROL 取「傳送以供簽署]** 」，讓簽署者簽署有傳送者在場的檔。
 
-![影像](images/send-for-signature.png)
+![圖像](images/send-for-signature.png)
 
 「第一 **[!UICONTROL 個簽署者」欄位的「主控簽署」欄位旁邊 [!UICONTROL  也會出現「目前簽署者]** ] 」的主控簽署連結，可在檔簽署前加以存取。您可以使用此連結代管多位簽署者的合約簽署，或在不小心關閉時重新開啟快顯視窗。如果 [!UICONTROL  核取「預覽」、「定位簽名或新增表單欄位 ] 」選項，請選 **[!UICONTROL 取「傳送以供簽署]** 」，讓傳送者能夠在傳送檔之前預覽檔或將欄位拖曳到檔上。 您必須在該視窗中選取 **[!UICONTROL 「傳送]** 」，才能將合約傳送給收件者。
 
@@ -219,7 +219,7 @@ a） [!UICONTROL  收件者： ] 從下拉式選單中選取收件者類型。 �
 
 [!DNL EchoSign]Adobe與引號直接整合，因此引號 [!DNL SugarCRM] 的 PDF 會自動產生並附加至合約記錄。檢視報價時，選取「 **[!UICONTROL 建立 EchoSign 合約」]** 以產生引號，並自動將引號附加至合約。 新合約也會自動建立任何相關「機會」、「帳戶」或「報價」的關聯。
 
-![影像](images/create-echosign-agreement.png)
+![圖像](images/create-echosign-agreement.png)
 
 若要關閉合約中引號 PDF 的自動附件，請移至 **[!UICONTROL 「管理]** 」>Adobe EchoSign **[!UICONTROL 設定]** 」，然後取消勾選「從報價 ]*建立合約時自動附加 PDF」方塊*[!UICONTROL  。
 
@@ -227,7 +227,7 @@ a） [!UICONTROL  收件者： ] 從下拉式選單中選取收件者類型。 �
 
 如果所有收件者尚未簽署檔，您可在傳送合約以索取簽名後取消 [!DNL EchoSign] 合約。 傳 [!UICONTROL  送檔以供簽署後，合約的「細節檢視」中會顯示「取消 ] 合約」按鈕。 選取 **[!UICONTROL 「取消合約」]** 以取消合約。
 
-![影像](images/cancel-agreement.png)
+![圖像](images/cancel-agreement.png)
 
 注意：如果傳 [!DNL EchoSign] 送合約以供簽署，且記錄遭到刪除，您必須先取消合約，再將其刪除。
 
@@ -235,14 +235,14 @@ a） [!UICONTROL  收件者： ] 從下拉式選單中選取收件者類型。 �
 
 合約 [!UICONTROL  的 [!DNL EchoSign] 「事件 ] 」子面板會追蹤傳送以供簽署的合約狀態。若要查看合約的最新 [!DNL EchoSign] 更新，請選取 **[!UICONTROL 「更新狀態」]** 。 只有在 [!UICONTROL  傳送合約以供簽署後，才能使用「更新狀態 ] 」按鈕。
 
-![影像](images/update-cancel-status.png)
+![圖像](images/update-cancel-status.png)
 
 傳送合約以索取簽名後，選 **[!UICONTROL 取「更新狀態]** 」以擷取最新狀態。
 
-![影像](images/events-subpanel.png)
+![圖像](images/events-subpanel.png)
 
 ### 傳送提醒 {#send-reminders}
 
 若要在傳送合約後傳送提醒給目前的簽署者，請選取 **[!UICONTROL 「傳送提醒」]** 。 系統會立即傳送電子郵件提醒給目前的簽署者，告知您有待簽署的合約。
 
-![影像](images/send-reminder.png)
+![圖像](images/send-reminder.png)
